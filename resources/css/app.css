@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+
+/* Navbar */
+#navbar-link li a{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+    color: #9C9C9C;
+}
+#navbar-link :active{
+
+}
+#button-navbar{
+    background: rgba(70, 107, 243, 0.1);
+    border: none;
+    border-radius: 12px;
+    color: #466BF3;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: right;
+}
