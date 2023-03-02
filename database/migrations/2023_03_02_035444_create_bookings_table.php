@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
-            $table->string('email')->unique();
-            $table->string("password");
-            $table->string("fullname");
-            $table->integer("nik");
-            $table->integer("nomor_telepon");
+        Schema::create('bookings', function (Blueprint $table) {
+            $table->uuid("id")->primary();
+            $table->foreignId("user_id")->constrained();
+            $table->foreignId("tempat_wisata_id")->constrained();
+            $table->integer("jumlah_tiket");
+            $table->date("tanggal");
+            $table->integer("total_harga");
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('bookings');
     }
 };
