@@ -1,4 +1,6 @@
-const Navbar = () => {
+import { Link } from "@inertiajs/react";
+
+const Navbar = (props) => {
     return (
         <div className="navbar bg-base-100 pt-[30px] pb-[30px] flex justify-between">
             <div className="navbar-start">
@@ -36,9 +38,12 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end hidden lg:flex">
-                <a className="btn w-[143px] h-[48px]" id="button-navbar">
-                    Login
-                </a>
+                {
+                    props.user ? "Hai, " + props.user.name : 
+                    <Link href={"login"} className="btn w-[143px] h-[48px]" id="button-navbar">
+                        Login
+                    </Link>
+                }
             </div>
             <div className="dropdown dropdown-end md:hidden">
                 <label tabIndex={0} className="btn btn-ghost rounded-btn">

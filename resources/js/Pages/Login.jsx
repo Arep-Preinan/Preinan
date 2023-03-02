@@ -1,35 +1,34 @@
 import ButtonLoginRegister from "@/Components/ButtonLoginRegister";
 import Label from "@/Components/Label";
 import Input from "./../Components/Input";
-import { useState } from "react";
+import { useForm } from "@inertiajs/react";
 
-const Login = () => {
-    const [formData, setFormData] = useState({
-        name: "",
-        password: "",
-    });
+const Login = (props) => {
+    const {data, setData, post} = useForm({
+        email: '',
+        password: ''
+    })
 
-    const handleInputChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-    };
-
-    const handleSubmit = (e) => {
+    const submit = (e) => {
         e.preventDefault();
-    };
+
+        post(route('login'));
+    }
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={submit}>
             <div className="grid place-items-center h-screen">
                 <div className="card bg-base-100 md:shadow-md max-w-lg w-full">
                     <div className="card-body p-[50px] flex flex-col gap-[20px]">
                         <h1 className="text-[32px] font-semibold">Login</h1>
+                        {props.errors.status && <div className="alert alert-error">{props.errors.status}</div>}
                         <div className="email flex flex-col gap-[12px]">
                             <Label text={"Alamat Email"} />
                             <Input
                                 type="email"
-                                name="name"
-                                value={formData.name}
-                                onChange={handleInputChange}
+                                name="email"
+                                value={data.email}
+                                onChange={(e) => setData('email', e.target.value)}
                             />
                         </div>
                         <div>
@@ -38,9 +37,9 @@ const Login = () => {
                                     <Label text={"Password"} />
                                     <Input
                                         name="password"
-                                        value={formData.password}
                                         type="password"
-                                        onChange={handleInputChange}
+                                        value={data.password}
+                                        onChange={(e) => setData('password', e.target.value)}
                                     />
                                 </div>
                             </div>
@@ -55,12 +54,12 @@ const Login = () => {
                         </div>
                         <ButtonLoginRegister
                             text={"Login"}
-                            disabled={
-                                formData.name.length > 0 &&
-                                formData.password.length > 0
-                                    ? false
-                                    : true
-                            }
+                            // disabled={
+                            //     data.email &&
+                            //     data.length
+                            //         ? false
+                            //         : true
+                            // }
                         />
                         <a href="" className="text-center text-[#868B90]">
                             <p className="underline underline-offset-1 text-[12px] md:text-[16px]">

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
@@ -25,7 +26,8 @@ Route::get('/login', function () {
     return Inertia::render('Login');
 })->name('login');
 
-Route::post('/login', [LoginController::class, "authLogin"])->name('login.auth');
+Route::post('/login', [AuthController::class, "login"])->name('login.auth');
+Route::get('/logout', [AuthController::class, "logout"])->name('logout');
 
 Route::get('/register', function () {
     return Inertia::render('Register');
