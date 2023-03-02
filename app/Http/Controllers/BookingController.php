@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Booking;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Redirect;
 
 class BookingController extends Controller
 {
@@ -20,15 +21,26 @@ class BookingController extends Controller
      */
     public function create(Request $request)
     {
-        echo $request->all();
+        
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Booking $booking)
     {
-        //
+        $booking->id = \Illuminate\Support\Str::uuid();
+        $booking->kode = rand(100000, 999999);
+        $booking->user_id = $request->user_id;
+        $booking->tempat_wisata_id = $request->id_wisata;
+        $booking->jumlah_tiket = $request->jumlahTiket;
+        $booking->total_harga = $request->totalHarga;
+        $booking->tanggal = $request->tanggal;
+        $booking->valid = true;
+        // tunggu 3 detik
+        // sleep(3);
+        $booking->save();
+        return Redirect::route('home');
     }
 
     /**

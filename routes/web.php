@@ -5,6 +5,7 @@ use App\Http\Controllers\BookingController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TempatWisataController;
+use App\Http\Controllers\TiketController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -33,7 +34,13 @@ Route::get('/register', function () {
     return Inertia::render('Register');
 })->name('register');
 
-Route::post('/booking', [BookingController::class, 'create'])->name('booking.create');
+Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
+
+Route::get('/tiket', [TiketController::class, "index"])->name('tiket');
+
+// slug
+Route::get('/{kode}/{uuid}', [TiketController::class, "scan"])->name('tiket.show');
+
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
 //         'canLogin' => Route::has('login'),

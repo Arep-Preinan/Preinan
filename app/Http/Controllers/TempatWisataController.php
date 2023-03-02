@@ -13,8 +13,10 @@ class TempatWisataController extends Controller
         $tempatWisata = TempatWisata::all();
 
         return Inertia::render('Home', [
+            'title' => 'Beranda',
             'tempatWisata' => $tempatWisata
         ]);
+    
     }
     /**
      * Display a listing of the resource.

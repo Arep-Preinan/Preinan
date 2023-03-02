@@ -13,11 +13,13 @@ return new class extends Migration
     {
         Schema::create('bookings', function (Blueprint $table) {
             $table->uuid("id")->primary();
+            $table->integer("kode");
             $table->foreignId("user_id")->constrained();
             $table->foreignId("tempat_wisata_id")->constrained();
             $table->integer("jumlah_tiket");
             $table->date("tanggal");
             $table->integer("total_harga");
+            $table->boolean("valid");
             $table->timestamps();
         });
     }

@@ -14,8 +14,8 @@ const Navbar = (props) => {
                     <path
                         d="M22 14.5V13.0413C22 12.3887 21.6816 11.7771 21.1469 11.4028L13.1469 5.80285C12.4583 5.3208 11.5417 5.3208 10.8531 5.80285L2.85308 11.4028C2.31842 11.7771 2 12.3887 2 13.0413V27.3146C2 28.9015 3.75947 29.8563 5.08998 28.9915L10.91 25.2085C11.5728 24.7777 12.4272 24.7777 13.09 25.2085L18.9606 29.0244C20.2694 29.8751 22 28.9359 22 27.375V27.375"
                         stroke="#466BF3"
-                        stroke-width="4"
-                        stroke-linecap="round"
+                        strokeWidth="4"
+                        strokeLinecap="round"
                     />
                     <circle cx="22" cy="21" r="3" fill="#466BF3" />
                     <path
@@ -39,7 +39,22 @@ const Navbar = (props) => {
             </div>
             <div className="navbar-end hidden lg:flex">
                 {
-                    props.user ? "Hai, " + props.user.name : 
+                    props.user ? 
+                    <>
+                        <ul className="menu menu-horizontal px-1">
+                            <li tabIndex={0}>
+                                <a>
+                                Hai, {props.user.name}
+                                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24"><path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z"/></svg>
+                                </a>
+                                <ul className="p-2 bg-base-100">
+                                <li><Link href={"tiket"}>Tiket ku</Link></li>
+                                <li><a>Submenu 2</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </> 
+                    : 
                     <Link href={"login"} className="btn w-[143px] h-[48px]" id="button-navbar">
                         Login
                     </Link>

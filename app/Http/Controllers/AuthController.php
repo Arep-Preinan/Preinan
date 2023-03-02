@@ -15,7 +15,6 @@ class AuthController extends Controller
 {
     
     public function login(Request $request){
-        // make login auth in session
         $user = User::where('email', $request->email)->first();
         
         if($user && Hash::check($request->password, $user->password)){
@@ -26,7 +25,6 @@ class AuthController extends Controller
                 'status' => 'Email atau password salah.',
             ]);             
         }
-        // dd($request->all());
     }
 
     public function logout(){
