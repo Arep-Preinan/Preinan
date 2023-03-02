@@ -1,6 +1,9 @@
 <?php
 
+use App\Http\Controllers\BookingController;
+use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\TempatWisataController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
@@ -16,18 +19,19 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', function () {
-    return Inertia::render('Home');
-})->name('home');
+Route::get('/', [TempatWisataController::class, "home"])->name('home');
 
 Route::get('/login', function () {
     return Inertia::render('Login');
 })->name('login');
 
+Route::post('/login', [LoginController::class, "authLogin"])->name('login.auth');
+
 Route::get('/register', function () {
     return Inertia::render('Register');
 })->name('register');
 
+Route::post('/booking', [BookingController::class, 'create'])->name('booking.create');
 // Route::get('/', function () {
 //     return Inertia::render('Welcome', [
 //         'canLogin' => Route::has('login'),
