@@ -23,7 +23,18 @@ class TempatWisataController extends Controller
      */
     public function index()
     {
-        //
+        $gunung = TempatWisata::where('kategori', 'gunung')->get();
+        $air_terjun = TempatWisata::where('kategori', 'air terjun')->get();
+        $danau = TempatWisata::where('kategori', 'danau')->get();
+        $all = TempatWisata::all();
+
+        return Inertia::render('Destinasi', [
+            'title' => 'Destinasi',
+            'gunung' => $gunung,
+            'air_terjun' => $air_terjun,
+            'danau' => $danau,
+            'all' => $all
+        ]);
     }
 
     /**

@@ -17,7 +17,6 @@ return new class extends Migration
             $table->string("alamat");
             $table->string("gmaps");
             $table->longText("deskripsi");
-            $table->string("gambar");
             $table->string("kategori");
             $table->float("rating");
             $table->integer("harga");

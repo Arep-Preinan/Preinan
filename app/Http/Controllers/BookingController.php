@@ -3,17 +3,20 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\TempatWisata;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Inertia\Inertia;
 
 class BookingController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+
     }
 
     /**
@@ -21,7 +24,12 @@ class BookingController extends Controller
      */
     public function create(Request $request)
     {
-        
+        $destinasi = TempatWisata::where('id', $request->id_destinasi)->first();
+        $user = User::where('id', $request->user_id)->first();
+        return Inertia::render('Booking', [
+            'destinasi' => $destinasi,
+            'user' => $user
+        ]);
     }
 
     /**
