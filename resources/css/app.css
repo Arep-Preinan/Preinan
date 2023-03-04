@@ -3,7 +3,12 @@
 @tailwind utilities;
 
 
-
+*{
+    margin: 0;
+    padding: 0;
+    --main-color: #3258E8;
+    box-sizing: border-box;
+}
 
 /* Navbar */
 #navbar-link li a{
@@ -13,9 +18,7 @@
     text-align: center;
     color: #9C9C9C;
 }
-#navbar-link :active{
 
-}
 #button-navbar{
     background: rgba(70, 107, 243, 0.1);
     border: none;
@@ -26,4 +29,46 @@
     font-size: 16px;
     line-height: 24px;
     text-align: right;
+}
+
+
+/* Layout Pertama */
+.layout-pertama-tagline{
+    color:  #3258E8 ;
+    line-height: 140%;
+    font-size: 18px;
+    font-weight: 600;
+}
+.layout-pertama-heading{
+    color:  #232631;
+    font-size: 36px;
+    line-height: 54px;
+    font-weight: 900;
+}
+.layout-pertama-description{
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: capitalize;
+    color: #848484;
+}
+
+.overview-data-textup{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #232631;
+}
+.overview-data-textdown{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #848484;
+}
+/* component */
+.typography-button{
+    font-weight: 600;
+font-size: 16px;
+line-height: 24px;
 }
