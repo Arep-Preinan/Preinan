@@ -17,7 +17,7 @@ class TiketController extends Controller
         $tiket = Booking::where('user_id', Auth::user()->id)->get();    
 
         foreach ($tiket as $t) {
-            $t->tempat_wisata = TempatWisata::where('id', $t->tempat_wisata_id)->first();
+            $t->tempat_wisata = TempatWisata::where('uuid', $t->tempat_wisata_id)->first();
             $t->user = User::where('id', $t->user_id)->first();
         }
 

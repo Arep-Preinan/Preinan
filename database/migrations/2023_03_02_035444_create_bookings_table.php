@@ -15,7 +15,8 @@ return new class extends Migration
             $table->uuid("id")->primary();
             $table->integer("kode");
             $table->foreignId("user_id")->constrained();
-            $table->foreignId("tempat_wisata_id")->constrained();
+            $table->uuid('tempat_wisata_id');
+            $table->foreign('tempat_wisata_id')->references('uuid')->on('tempat_wisatas')->onDelete('cascade');
             $table->integer("jumlah_tiket");
             $table->date("tanggal");
             $table->integer("total_harga");

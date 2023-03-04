@@ -24,11 +24,9 @@ class BookingController extends Controller
      */
     public function create(Request $request)
     {
-        $destinasi = TempatWisata::where('id', $request->id_destinasi)->first();
-        $user = User::where('id', $request->user_id)->first();
+        $destinasi = TempatWisata::where('uuid', $request->id_destinasi)->first();
         return Inertia::render('Booking', [
-            'destinasi' => $destinasi,
-            'user' => $user
+            'destinasi' => $destinasi
         ]);
     }
 
@@ -39,16 +37,14 @@ class BookingController extends Controller
     {
         $booking->id = \Illuminate\Support\Str::uuid();
         $booking->kode = rand(100000, 999999);
-        $booking->user_id = $request->user_id;
+        $booking->user_id = $request->id_user;
         $booking->tempat_wisata_id = $request->id_wisata;
         $booking->jumlah_tiket = $request->jumlahTiket;
         $booking->total_harga = $request->totalHarga;
         $booking->tanggal = $request->tanggal;
         $booking->valid = true;
-        // tunggu 3 detik
-        // sleep(3);
         $booking->save();
-        return Redirect::route('home');
+        return redirect()->back();
     }
 
     /**

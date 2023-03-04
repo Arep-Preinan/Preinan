@@ -2,8 +2,9 @@ import { Link, useForm } from "@inertiajs/react"
 
 const DestinasiCard = ({ destinasi }) => {
     
+
     const { data, get } = useForm({
-        id_destinasi: destinasi.id
+        id_destinasi: destinasi.uuid
     })
 
     const handleBooking = () => {
@@ -17,7 +18,6 @@ const DestinasiCard = ({ destinasi }) => {
     }
 
     const ambilKataSebelumKoma = (string) => {
-        // ambil kata sebelum koma
         let pisahkan = string.split(",")
         return pisahkan[0]
     }

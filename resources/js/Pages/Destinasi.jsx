@@ -2,7 +2,7 @@ import { useState } from "react"
 import DestinasiCard from "@/Components/DestinasiCard"
 
 const Destinasi = (props) => {
-
+    console.log(props)
     const [all] = useState(props.all)
     const [gunung] = useState(props.gunung)
     const [airTerjun] = useState(props.air_terjun)
