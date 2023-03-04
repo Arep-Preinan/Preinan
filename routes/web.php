@@ -26,13 +26,12 @@ Route::get('/', [TempatWisataController::class, "home"])->name('home');
 Route::get('/destinasi' , [TempatWisataController::class, "index"])->name('destinasi');
 Route::post('/destinasi/{kategori}' , [TempatWisataController::class, "data"])->name('destinasi');
 
-
 Route::get('/login', function () {
     return Inertia::render('Login');
 })->name('login');
 
 Route::post('/login', [AuthController::class, "login"])->name('login.auth');
-Route::get('/logout', [AuthController::class, "logout"])->name('logout');
+Route::post('/logout', [AuthController::class, "logout"])->name('logout');
 
 Route::get('/register', function () {
     return Inertia::render('Register');

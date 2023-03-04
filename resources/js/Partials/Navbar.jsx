@@ -59,7 +59,9 @@ const Navbar = (props) => {
                                         <Link href={"tiket"}>Tiket ku</Link>
                                     </li>
                                     <li>
-                                        <a>Submenu 2</a>
+                                        <Link method="post" href="logout">
+                                            Logout
+                                        </Link>
                                     </li>
                                 </ul>
                             </li>
