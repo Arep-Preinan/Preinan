@@ -9,6 +9,11 @@
     --main-color: #3258E8;
     box-sizing: border-box;
 }
+body{
+    font-family: 'Poppins', sans-serif !important;
+    font-style: normal !important;
+}
+
 
 /* Navbar */
 #navbar-link li a{
@@ -69,6 +74,11 @@
 /* component */
 .typography-button{
     font-weight: 600;
-font-size: 16px;
-line-height: 24px;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#login-onboarding{
+    background-image: url('/images/foto-onboarding.svg');
+    background-size: cover;
 }
