@@ -2,7 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
-
+body{
+    font-family: 'Poppins', sans-serif !important;
+}
 
 
 /* Navbar */
