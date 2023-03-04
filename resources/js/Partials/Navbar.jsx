@@ -30,7 +30,7 @@ const Navbar = (props) => {
                         <a className="text-[#466BF3]">Halaman Utama</a>
                     </li>
                     <li>
-                        <a>Destinasi</a>
+                        <Link href="destinasi">Destinasi</Link>
                     </li>
                     <li>
                         <a>Hubungi Kami</a>

@@ -27,7 +27,6 @@ class TempatWisataController extends Controller
         $air_terjun = TempatWisata::where('kategori', 'air terjun')->get();
         $danau = TempatWisata::where('kategori', 'danau')->get();
         $all = TempatWisata::all();
-
         return Inertia::render('Destinasi', [
             'title' => 'Destinasi',
             'gunung' => $gunung,
