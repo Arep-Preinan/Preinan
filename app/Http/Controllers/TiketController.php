@@ -14,7 +14,10 @@ class TiketController extends Controller
     
     public function index()
     {
-        $tiket = Booking::where('user_id', Auth::user()->id)->get();    
+        // get tiket berdasarkan tanggal
+        $tiket = Booking::where('user_id', Auth::user()->id)
+                ->orderBy('tanggal', 'ASC')
+                ->get();
 
         foreach ($tiket as $t) {
             $t->tempat_wisata = TempatWisata::where('uuid', $t->tempat_wisata_id)->first();

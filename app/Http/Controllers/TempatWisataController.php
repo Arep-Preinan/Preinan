@@ -10,11 +10,13 @@ class TempatWisataController extends Controller
 {
 
     public function home(){
-        $tempatWisata = TempatWisata::all();
+        $gunung = TempatWisata::where('kategori', 'gunung')->limit(5)->get();
+        $danau = TempatWisata::where('kategori', 'danau')->limit(4)->get();
 
         return Inertia::render('Home', [
             'title' => 'Beranda',
-            'tempatWisata' => $tempatWisata
+            'gunung' => $gunung,
+            'danau' => $danau
         ]);
     
     }

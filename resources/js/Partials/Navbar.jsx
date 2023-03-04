@@ -49,7 +49,7 @@ const Navbar = (props) => {
                                 </a>
                                 <ul className="p-2 bg-base-100">
                                 <li><Link href={"tiket"}>Tiket ku</Link></li>
-                                <li><a>Submenu 2</a></li>
+                                <li><Link method="post" href="logout">Logout</Link></li>
                                 </ul>
                             </li>
                         </ul>
