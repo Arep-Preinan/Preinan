@@ -35,7 +35,7 @@ class TiketController extends Controller
         $tiket->tempat_wisata = TempatWisata::where('uuid', $tiket->tempat_wisata_id)->first();
         $tiket->user = User::where('id', $tiket->user_id)->first();
 
-        return Inertia::render('ETiket', [
+        return Inertia::render('E-Tiket', [
             'tiket' => $tiket
         ]);
     }
@@ -46,7 +46,6 @@ class TiketController extends Controller
         $valid = false;
         dd($tiket);
         if($tiket->valid == 1){
-            // update booking valid to 0
             $tiket->valid = 0;
             $tiket->save();
             $valid = true;

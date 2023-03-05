@@ -133,10 +133,16 @@ const DestinasiCard = ({
                         text={"Pesan"}
                         className="bg-[#3258E8] text-white w-[168px] cardhome-button "
                     />
-                    <Button
-                        text={"Details"}
-                        className="text-[#3258E8] w-[168px]"
-                    />
+                    <Link
+                        href={`/destinasi/${pisahkanStripSetiapKata(
+                            destinasi.nama
+                        )}`}        
+                    >
+                         <Button
+                            text={"Details"}
+                            className="text-[#3258E8] w-[168px]"
+                        />
+                    </Link>
                 </div>
             </div>
         </div>
