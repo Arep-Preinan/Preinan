@@ -35,7 +35,7 @@ class BookingController extends Controller
      */
     public function store(Request $request, Booking $booking)
     {
-        $booking->id = \Illuminate\Support\Str::uuid();
+        $booking->uuid = \Illuminate\Support\Str::uuid();
         $booking->kode = rand(100000, 999999);
         $booking->user_id = $request->id_user;
         $booking->tempat_wisata_id = $request->id_wisata;
@@ -46,7 +46,7 @@ class BookingController extends Controller
         $booking->save();
 
         // redirect to success with method post
-        return redirect()->route('success', ['kode' => $booking->kode]);
+        return redirect()->route('sukses', ['kode' => $booking->kode]);
     }
 
     public function success(Request $request)

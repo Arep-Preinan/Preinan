@@ -12,7 +12,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('bookings', function (Blueprint $table) {
-            $table->uuid("id")->primary();
+            $table->id();
+            $table->uuid('uuid')->unique();
             $table->integer("kode");
             $table->foreignId("user_id")->constrained();
             $table->uuid('tempat_wisata_id');

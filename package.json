@@ -23,6 +23,7 @@
         "daisyui": "^2.51.3",
         "dayjs": "^1.11.7",
         "js-cookie": "^3.0.1",
+        "qrcode.react": "^3.1.0",
         "universal-cookie": "^4.0.4"
     }
 }

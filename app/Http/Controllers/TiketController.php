@@ -29,11 +29,22 @@ class TiketController extends Controller
         ]);
     }
 
+    public function show($uuid){
+        // get tiket berdasarkan tanggal
+        $tiket = Booking::where('uuid', $uuid)->first();
+        $tiket->tempat_wisata = TempatWisata::where('uuid', $tiket->tempat_wisata_id)->first();
+        $tiket->user = User::where('id', $tiket->user_id)->first();
+
+        return Inertia::render('ETiket', [
+            'tiket' => $tiket
+        ]);
+    }
+
     public function scan(){
         // get slug
-        $tiket = Booking::where('kode', request()->kode)->where('id', request()->uuid)->first();
+        $tiket = Booking::where('kode', request()->kode)->where('uuid', request()->uuid)->first();
         $valid = false;
-
+        dd($tiket);
         if($tiket->valid == 1){
             // update booking valid to 0
             $tiket->valid = 0;

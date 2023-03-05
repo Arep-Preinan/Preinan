@@ -45,8 +45,10 @@ Route::middleware('auth')->group(function () {
     Route::get('/booking', [BookingController::class, 'create'])->name('booking.create')->middleware('auth');
     Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
     
-    Route::get('/tiket', [TiketController::class, "index"])->name('tiket');
-    Route::get('/success/{kode}', [BookingController::class, "success"])->name('success');
+    Route::get('/tiket-ku', [TiketController::class, "index"])->name('tiket');
+    Route::get('/sukses/{kode}', [BookingController::class, "success"])->name('sukses');
+
+    Route::get('/e-tiket/{uuid}', [TiketController::class, "show"])->name('tiket.show');
 });
 
 

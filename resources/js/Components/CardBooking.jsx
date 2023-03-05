@@ -1,6 +1,7 @@
 import ButtonLoading from "@/Components/ButtonLoading"
 import { useForm, usePage  } from "@inertiajs/react"
 import { useEffect, useState } from "react"
+import DetailKontak from "./DetailKontak";
 
 const CardBooking = (props) => {
 
@@ -80,16 +81,7 @@ const CardBooking = (props) => {
 
                 {/* section detail pemesanan */}
                 <h1>Detail Pemesanan</h1>
-                <div className="border rounded-lg p-4">
-                    <div className="flex flex-rows-2 gap-4">
-                        <img src="../../images/icons/user.svg" alt="" />
-                        <p>{props.booking.auth.user.name}</p>
-                    </div>
-                    <div className="flex flex-rows-2 gap-4">
-                        <img src="../../images/icons/kontak.svg" alt="" />
-                        <p>{props.booking.auth.user.nomor_telepon}</p>
-                    </div>
-                </div>
+                <DetailKontak data={props.booking} />
                 {/* end section detail pemesanan */}
 
 
