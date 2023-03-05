@@ -2,8 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
+*{
+    margin: 0;
+    padding: 0;
+    --main-color: #3258E8;
+    box-sizing: border-box;
+    
+}
 body{
     font-family: 'Poppins', sans-serif !important;
+    font-style: normal !important;
 }
 
 
@@ -15,9 +24,7 @@ body{
     text-align: center;
     color: #9C9C9C;
 }
-#navbar-link :active{
 
-}
 #button-navbar{
     background: rgba(70, 107, 243, 0.1);
     border: none;
@@ -28,4 +35,109 @@ body{
     font-size: 16px;
     line-height: 24px;
     text-align: right;
+}
+
+
+/* Layout Pertama */
+.layout-pertama-tagline{
+    color:  #3258E8 ;
+    line-height: 140%;
+    font-size: 18px;
+    font-weight: 600;
+}
+.layout-pertama-heading{
+    color:  #232631;
+    font-size: 36px;
+    line-height: 54px;
+    font-weight: 700;
+}
+.layout-pertama-description{
+    font-style: normal;
+    font-weight: 300;
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: capitalize;
+    color: #848484;
+}
+
+.overview-data-textup{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #232631;
+}
+.overview-data-textdown{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 30px;
+    color: #848484;
+}
+/* component */
+.typography-button{
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+#login-onboarding{
+    background-image: url('/images/foto-onboarding.svg');
+    background-size: cover;
+}
+
+
+/* Cardhome */
+#cardhome-category{
+    padding: 5px 16px;
+    background: rgba(50, 88, 232, 0.1);
+    border-radius: 12px;
+    color: #3258E8;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 21px;
+    letter-spacing: 0.005em;
+    text-transform: capitalize;
+    color: #3258E8;
+}
+.cardhome-nama{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0.005em;
+    text-transform: capitalize;
+    color: #232631;
+}
+.cardhome-lokasi{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: capitalize;
+    color: #848484;
+}
+.cardhome-button{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    text-transform: capitalize;
+    color: #FFFFFF;
+}
+
+/* destinasi page */
+.button-breadcumbs-destinasi{
+    padding: 12.5px 24px;
+    background: rgba(50, 88, 232, 0.05);
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: capitalize;
+    color: #3258E8;
+}
+.button-breadcumbs-breadcumbs{
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 27px;
+    text-transform: capitalize;
+    color: #9C9C9C;
 }
