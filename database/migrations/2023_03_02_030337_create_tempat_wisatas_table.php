@@ -15,7 +15,6 @@ return new class extends Migration
         Schema::create('tempat_wisatas', function (Blueprint $table) {
             $table->uuid('uuid')->default(DB::raw('uuid()'))->primary();
             $table->string("nama");
-            $table->string("slug");
             $table->string("alamat");
             $table->string("gmaps");
             $table->longText("deskripsi");

@@ -46,7 +46,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
     
     Route::get('/tiket', [TiketController::class, "index"])->name('tiket');
-
+    Route::get('/success/{kode}', [BookingController::class, "success"])->name('success');
 });
 
 

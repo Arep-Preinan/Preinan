@@ -1,11 +1,9 @@
 import ButtonLoading from "@/Components/ButtonLoading"
 import CardBooking from "@/Components/CardBooking"
 import { useForm , Link } from "@inertiajs/react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const Booking = (props) => {
-    const success = document.cookie;
-    console.log(success)
 
     let [page, setPage] = useState(1)
 
@@ -16,7 +14,6 @@ const Booking = (props) => {
     return (
         <>
             {
-                page === 1 ? (
                             /* section pertama */
                     <div className="flex flex-col my-auto items-center bgimg bg-cover">
 
@@ -29,20 +26,6 @@ const Booking = (props) => {
                         <CardBooking booking={props} onPindahHalaman={pindahHalaman} />
                     
                     </div>
-
-                    ) : (
-
-                    <div className="flex flex-col my-auto items-center bgimg bg-cover">
-
-                        {/* section judul */}
-                        <h1 className="font-semibold text-4xl">Terimakasih</h1>
-                        <img src="images/icons/transaction-success.svg" alt="" />
-                        <p className="font-light text-gray-400 text-[18px]">Pembayaran anda akan dikonfirmasi secara otomatis</p>
-                        <Link href={"tiket"}className="btn btn-primary px-6">Cek Tiket</Link>
-                        {/* end section judul */}
-                    </div>
-
-                    )
             }
         </>
     )

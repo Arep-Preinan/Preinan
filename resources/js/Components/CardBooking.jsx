@@ -1,9 +1,12 @@
 import ButtonLoading from "@/Components/ButtonLoading"
 import { useForm, usePage  } from "@inertiajs/react"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 const CardBooking = (props) => {
 
+    useEffect(() => {
+        console.log(props.page)
+    }, [])
 
     let [isLoading, setLoading] = useState(false)
 
@@ -29,8 +32,6 @@ const CardBooking = (props) => {
             preserveScroll: true,
             onSuccess: () => {
                 setLoading(false)
-                destroyData()
-                props.onPindahHalaman(2)
             },
             onError: () => {
                 console.log("error")

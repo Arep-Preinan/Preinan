@@ -1,8 +1,15 @@
 import CardBooking from "@/Components/CardBooking"
+import { useState } from "react"
 
 const DetailWisata = (props) => {
-    console.log(props)
     
+    let [page, setPage] = useState(1)
+
+
+    const pindahHalaman = () => {
+        setPage(e)
+    }
+
     // buatkan data seperti ini booking {destinasi : {}}
     let destinasi = {
         destinasi: props.tempat_wisata,
@@ -36,7 +43,7 @@ const DetailWisata = (props) => {
             {/* akhir konten yang rekomendasi */}
 
             {/* card booking */}
-                <CardBooking booking={destinasi} />
+                <CardBooking booking={destinasi} page={2} />
         </>
 
     )
