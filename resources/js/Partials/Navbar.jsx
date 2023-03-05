@@ -28,10 +28,10 @@ const Navbar = (props) => {
                 <div className="flex-none hidden lg:block">
                     <ul className="menu menu-horizontal px-1" id="navbar-link">
                         <li className="text-blue-600">
-                            <a className="text-[#466BF3]">Halaman Utama</a>
+                            <Link href={"/"} className="text-[#466BF3]">Halaman Utama</Link>
                         </li>
                         <li>
-                            <Link href={"destinasi"}>Destinasi</Link>
+                            <Link href={"/destinasi"}>Destinasi</Link>
                         </li>
                         <li>
                             <a>Hubungi Kami</a>

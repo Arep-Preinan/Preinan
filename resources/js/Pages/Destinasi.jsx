@@ -17,13 +17,41 @@ const Destinasi = (props) => {
 
     return (
         <div className="bg-[#FAFAFA]">
-            <Navbar />
+            <Navbar user={props.auth.user} />
             <div
                 id="destinasi"
                 className="mx-auto container pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col gap-[50px]"
             >
                 {/* Layout gambar diatas */}
                 <BreadCumbs />
+
+                <div className="flex flex-col gap-[32px]">
+                <div id="button-breadcumbs" className="flex gap-4 items-center">
+                    <p className="button-breadcumbs-destinasi">Destinasi</p>
+                    <p className="button-breadcumbs-breadcumbs">
+                        Halaman Utama /{" "}
+                        <span className="text-[#3258E8]">Destinasi</span>{" "}
+                    </p>
+                </div>
+                <Heading>
+                    <Heading.Title
+                        text={
+                            "Eksplorasi & Nikmati Keindahan Alam Kota Wonosobo"
+                        }
+                    />
+                </Heading>
+                <div className="grid md:grid-cols-[auto_auto] lg:grid-cols-[auto_420px] gap-5 h-[540px] ">
+                    <div className="bg-slate-500 rounded-[24px]">Gambar 1</div>
+                    <div className="grid grid-cols-2 md:grid-cols-1 gap-5">
+                        <div className="bg-slate-500 rounded-[24px]">
+                            Gambar 2
+                        </div>
+                        <div className="bg-slate-500 rounded-[24px]">
+                            Gambar 3
+                        </div>
+                    </div>
+                </div>
+            </div>
                 {/* end of Layout gambar diatas */}
                 <div className="flex flex-col my-auto items-center bgimg bg-cover">
                     <div className="flex flex-col text-center gap-[8px]">
@@ -69,6 +97,7 @@ const Destinasi = (props) => {
                     id="kumpulan-destinasi"
                     className=" grid md:gap-[16px] md:grid-cols-2 lg:grid-cols-4 lg:gap-[60px] lg:flex-row lg:flex-wrap lg:items-stretch items-center  mt-10"
                 >
+
                     {isActived === "all"
                         ? all.map((destinasi) => {
                               return (
@@ -82,7 +111,7 @@ const Destinasi = (props) => {
                         ? gunung.map((destinasi) => {
                               return (
                                   <DestinasiCard
-                                      key={destinasi.id}
+                                      key={destinasi.uuid}
                                       destinasi={destinasi}
                                   />
                               );
@@ -91,7 +120,7 @@ const Destinasi = (props) => {
                         ? danau.map((destinasi) => {
                               return (
                                   <DestinasiCard
-                                      key={destinasi.id}
+                                      key={destinasi.uuid}
                                       destinasi={destinasi}
                                   />
                               );
@@ -99,7 +128,7 @@ const Destinasi = (props) => {
                         : airTerjun.map((destinasi) => {
                               return (
                                   <DestinasiCard
-                                      key={destinasi.id}
+                                      key={destinasi.uuid}
                                       destinasi={destinasi}
                                   />
                               );

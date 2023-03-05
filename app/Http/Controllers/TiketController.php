@@ -41,10 +41,8 @@ class TiketController extends Controller
     }
 
     public function scan(){
-        // get slug
         $tiket = Booking::where('kode', request()->kode)->where('uuid', request()->uuid)->first();
         $valid = false;
-        dd($tiket);
         if($tiket->valid == 1){
             $tiket->valid = 0;
             $tiket->save();

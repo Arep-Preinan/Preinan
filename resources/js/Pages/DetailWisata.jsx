@@ -19,7 +19,7 @@ const DetailWisata = (props) => {
     console.log(destinasi);
     return (
         <div className="bg-[#fafafa]">
-            <Navbar />
+            <Navbar user={props.auth.user} />
             {/* konten yang ada pada bawah foto */}
 
             <div className="container mx-auto pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col gap-[48px]">
@@ -84,7 +84,9 @@ const DetailWisata = (props) => {
                 })}
                 {/* akhir konten yang rekomendasi */}
                 {/* card booking */}
-                <CardBooking booking={destinasi} page={2} />
+                {
+                    props.auth.user ? <CardBooking booking={destinasi} page={2}/> :<p>Login</p>
+                }
             </div>
         </div>
     );

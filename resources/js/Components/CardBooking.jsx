@@ -4,9 +4,8 @@ import { useEffect, useState } from "react";
 import DetailKontak from "./DetailKontak";
 
 const CardBooking = (props) => {
-    useEffect(() => {
-        console.log(props.page);
-    }, []);
+    
+    console.log(props);
 
     let [isLoading, setLoading] = useState(false);
 
