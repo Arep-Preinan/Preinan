@@ -1,4 +1,6 @@
+import pisahkanStripSetiapKata from "@/function/pisahkanStripSetiapKata";
 import Button from "./Button";
+
 
 const CardHome = ({
     kategori = "gunung",
@@ -9,7 +11,7 @@ const CardHome = ({
     return (
         <div className="card w-96 bg-base-100 p-6 flex gap-[36px] rounded-3xl">
             <div className="flex flex-col gap-4">
-                <CardHome.Image url={url} />
+                <CardHome.Image url={pisahkanStripSetiapKata(nama)} />
                 <CardHome.KategoriRating kategori={kategori} />
                 <CardHome.NamaLokasi nama={nama} lokasi={lokasi} />
             </div>
@@ -30,7 +32,7 @@ const CardHome = ({
 const Image = ({ url }) => {
     return (
         <figure>
-            <img src={`${url}`} alt="Shoes" className="rounded-3xl" />
+            <img src={`../../images/wisata/${url}/1.jpg`} alt="Shoes" className="rounded-3xl" />
         </figure>
     );
 };

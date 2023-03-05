@@ -78,7 +78,7 @@ class TempatWisataSeeder extends Seeder
                 "harga" => 2000
             ],
             [
-                "nama" => "Gunung Lanang Mergolangu",
+                "nama" => "Gunung Lanang",
                 "alamat" => "Wanajari, Mergolangu, Kec. Kalibawang, Kab. Wonosobo, Jawa Tengah",
                 "gmaps" => "https://goo.gl/maps/qnhLRTuhntLpW4Db7",
                 "deskripsi" => "<p>Meski tergolong baru, justru pemandangan alamnya masih begitu alami dan memiliki kesejukan dari air terjun di sana. Nantinya di sore hari, Anda bisa menyaksikan keindahan matahari terbenam yang mana aksesnya juga sudah dipermudah.</p> <p>Letak tempat wisata ini ada di Mergolangu, Kalibawang. Adanya akses yang mudah tidak hanya membuat pengunjung juga lebih mudah datang ke Gunung Lanang tetapi akses ini juga meningkatkan lapangan pekerjaan yang ada di sekitar Gunung Lanang.</p>",

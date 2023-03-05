@@ -43,7 +43,7 @@ const DetailWisata = (props) => {
             {/* akhir konten yang rekomendasi */}
 
             {/* card booking */}
-                <CardBooking booking={destinasi} page={2} />
+            <CardBooking booking={destinasi} page={2} />
         </>
 
     )
