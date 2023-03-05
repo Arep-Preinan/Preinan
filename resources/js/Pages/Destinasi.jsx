@@ -4,7 +4,6 @@ import Navbar from "./../Partials/Navbar";
 import Heading from "@/Components/Heading";
 
 const Destinasi = (props) => {
-    console.log(props);
     const [all] = useState(props.all);
     const [gunung] = useState(props.gunung);
     const [airTerjun] = useState(props.air_terjun);

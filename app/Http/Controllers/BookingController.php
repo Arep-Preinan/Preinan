@@ -44,7 +44,23 @@ class BookingController extends Controller
         $booking->tanggal = $request->tanggal;
         $booking->valid = true;
         $booking->save();
-        return redirect()->back();
+
+        // redirect to success with method post
+        return redirect()->route('success', ['kode' => $booking->kode]);
+    }
+
+    public function success(Request $request)
+    {
+        $booking = Booking::where('kode', $request->kode)->first();
+
+        // if booking not found 404
+        if (!$booking) {
+            abort(404);
+        }
+
+        return Inertia::render('Success', [
+            'booking' => $booking
+        ]);
     }
 
     /**

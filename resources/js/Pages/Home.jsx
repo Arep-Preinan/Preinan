@@ -8,6 +8,7 @@ import Heading from "./../Components/Heading";
 import CardHome from "@/Components/CardHome";
 
 export default function Home(props) {
+    console.log(props);
     const [shoModal, setShowModal] = useState(false);
     const [data, setData] = useState({});
 
