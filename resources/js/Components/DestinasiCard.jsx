@@ -2,13 +2,7 @@ import { Link, useForm } from "@inertiajs/react";
 import Button from "./Button";
 import pisahkanStripSetiapKata from "@/function/pisahkanStripSetiapKata";
 
-const DestinasiCard = ({
-    destinasi,
-    kategori = "gunung",
-    nama = "Mereum Sanctuary",
-    lokasi = "Dusun Sukajadi",
-    url = "/images/wisata/Gunung-Lanang-Mergolangu/1.jpg",
-}) => {
+const DestinasiCard = ({ destinasi }) => {
     const { data, get } = useForm({
         id_destinasi: destinasi.uuid,
     });
@@ -53,9 +47,9 @@ const DestinasiCard = ({
                     <Link
                         href={`/destinasi/${pisahkanStripSetiapKata(
                             destinasi.nama
-                        )}`}        
+                        )}`}
                     >
-                         <Button
+                        <Button
                             text={"Details"}
                             className="text-[#3258E8] w-[168px]"
                         />
@@ -82,7 +76,7 @@ const KategoriRating = ({ kategori }) => {
                     {kategori}
                 </p>
             </div>
-            <div>
+            <div className="flex">
                 <div className="rating">
                     <input
                         type="radio"

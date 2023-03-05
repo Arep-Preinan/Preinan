@@ -2,8 +2,8 @@ import { Link } from "@inertiajs/react";
 
 const Navbar = (props) => {
     return (
-        <div className="navbar pt-[48px] pb-[48px] flex flex-col justify-between ">
-            <div className="w-full flex justify-between">
+        <div className="pt-[30px] pb-[30px] flex flex-col justify-between bg-white ">
+            <div className="container mx-auto w-full flex justify-between pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px]">
                 <div className="">
                     <svg
                         width="171"
