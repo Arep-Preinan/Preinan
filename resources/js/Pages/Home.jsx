@@ -21,9 +21,10 @@ export default function Home(props) {
 
     return (
         <div className="bg-[#fafafa]">
-            <div className="mx-auto max-w-[1440px] pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col gap-[120px] ">
+            <Navbar user={props.auth.user} />
+            <div className="mx-auto container pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col gap-[120px] ">
                 <Head title="Home" />
-                <Navbar user={props.auth.user} />
+
                 {/* {props.tempatWisata.map((item, index) => {
                     return (
                         <div key={index}>

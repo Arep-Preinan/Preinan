@@ -1,13 +1,7 @@
 import { Link, useForm } from "@inertiajs/react";
 import Button from "./Button";
 
-const DestinasiCard = ({
-    destinasi,
-    kategori = "gunung",
-    nama = "Mereum Sanctuary",
-    lokasi = "Dusun Sukajadi",
-    url = "/images/wisata/Gunung-Lanang-Mergolangu/1.jpg",
-}) => {
+const DestinasiCard = ({ destinasi }) => {
     const { data, get } = useForm({
         id_destinasi: destinasi.uuid,
     });
@@ -108,7 +102,7 @@ const DestinasiCard = ({
         //         </div>
         //     </div>
         // </div>
-        <div className="card w-[295px] bg-base-100 flex justify-between gap-[12px] rounded-3xl">
+        <div className="card w-[100%] md:w-full lg:w-[295px] bg-base-100 flex justify-between gap-[12px] rounded-3xl shadow-sm">
             <div className="flex flex-col gap-4 ">
                 <DestinasiCard.Image
                     url={`/images/wisata/${pisahkanStripSetiapKata(
@@ -136,9 +130,9 @@ const DestinasiCard = ({
                     <Link
                         href={`/destinasi/${pisahkanStripSetiapKata(
                             destinasi.nama
-                        )}`}        
+                        )}`}
                     >
-                         <Button
+                        <Button
                             text={"Details"}
                             className="text-[#3258E8] w-[168px]"
                         />
@@ -165,7 +159,7 @@ const KategoriRating = ({ kategori }) => {
                     {kategori}
                 </p>
             </div>
-            <div>
+            <div className="flex">
                 <div className="rating">
                     <input
                         type="radio"
