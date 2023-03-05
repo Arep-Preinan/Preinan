@@ -44,7 +44,7 @@ class BookingController extends Controller
         $booking->tanggal = $request->tanggal;
         $booking->valid = true;
         $booking->save();
-        return redirect()->back();
+        return redirect()->route('booking.create', ['id_destinasi' => $request->id_wisata])->with('success', 'Berhasil memesan tiket');
     }
 
     /**

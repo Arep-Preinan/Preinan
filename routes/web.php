@@ -24,6 +24,8 @@ use Inertia\Inertia;
 Route::get('/', [TempatWisataController::class, "home"])->name('home');
 
 Route::get('/destinasi' , [TempatWisataController::class, "index"])->name('destinasi');
+
+Route::get('/destinasi/{slug}' , [TempatWisataController::class, "detailWisata"])->name('destinasi.detail');
 Route::post('/destinasi/{kategori}' , [TempatWisataController::class, "data"])->name('destinasi');
 
 Route::get('/login', function () {
@@ -37,10 +39,17 @@ Route::get('/register', function () {
     return Inertia::render('Register');
 })->name('register');
 
-Route::get('/booking', [BookingController::class, 'create'])->name('booking.create');
-Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
+Route::middleware('auth')->group(function () {
+    // Route::get('/profile', [ProfileController::class, "index"])->name('profile');
+    // Route::post('/profile', [ProfileController::class, "update"])->name('profile.update');
+    Route::get('/booking', [BookingController::class, 'create'])->name('booking.create')->middleware('auth');
+    Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
+    
+    Route::get('/tiket', [TiketController::class, "index"])->name('tiket');
 
-Route::get('/tiket', [TiketController::class, "index"])->name('tiket');
+});
+
+
 
 // slug
 Route::get('/{kode}/{uuid}', [TiketController::class, "scan"])->name('tiket.show');

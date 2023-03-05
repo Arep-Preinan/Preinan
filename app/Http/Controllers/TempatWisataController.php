@@ -38,6 +38,17 @@ class TempatWisataController extends Controller
         ]);
     }
 
+    public function detailWisata($slug){
+        $slug = str_replace('-', ' ', $slug);
+        $tempat_wisata = TempatWisata::where('nama', $slug)->first();
+        $rekomendasi = TempatWisata::where('kategori', $tempat_wisata->kategori)->inRandomOrder()->limit(3)->get();
+
+        return Inertia::render('DetailWisata', [
+            'tempat_wisata' => $tempat_wisata,
+            'rekomendasi' => $rekomendasi
+        ]);
+    }
+
     /**
      * Show the form for creating a new resource.
      */

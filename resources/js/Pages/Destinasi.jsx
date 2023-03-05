@@ -2,7 +2,6 @@ import { useState } from "react"
 import DestinasiCard from "@/Components/DestinasiCard"
 
 const Destinasi = (props) => {
-    console.log(props)
     const [all] = useState(props.all)
     const [gunung] = useState(props.gunung)
     const [airTerjun] = useState(props.air_terjun)
@@ -13,7 +12,6 @@ const Destinasi = (props) => {
         setIsActived(kategori)
     }
 
-    console.log(danau)
     return (
         <div id="destinasi" className="mt-20">
             <div className="flex flex-col my-auto items-center bgimg bg-cover">
