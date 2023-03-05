@@ -1,8 +1,9 @@
-const Button = ({ text, className }) => {
+const Button = ({ text, className, ...props }) => {
     return (
         <>
             <button
-                className={`${className} typography-button pl-[32px] pr-[32px] pt-[12px] pb-[12px]  rounded-xl`}
+                {...props}
+                className={`${className} typography-button pl-[32px] pr-[32px] pt-[12px] pb-[12px] rounded-xl`}
             >
                 {text}
             </button>

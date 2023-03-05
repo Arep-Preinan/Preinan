@@ -2,8 +2,8 @@ import { Link } from "@inertiajs/react";
 
 const Navbar = (props) => {
     return (
-        <div className="navbar bg-base-100 pt-[48px] pb-[48px] flex flex-col justify-between">
-            <div className="w-full navbar flex justify-between">
+        <div className="navbar pt-[48px] pb-[48px] flex flex-col justify-between ">
+            <div className="w-full flex justify-between">
                 <div className="">
                     <svg
                         width="171"
@@ -40,7 +40,7 @@ const Navbar = (props) => {
                 </div>
                 {props.user ? (
                     <>
-                        <ul className="menu menu-horizontal px-1">
+                        <ul className="menu menu-horizontal px-1 hidden lg:flex">
                             <li tabIndex={0}>
                                 <a>
                                     Hai, {props.user.name}
