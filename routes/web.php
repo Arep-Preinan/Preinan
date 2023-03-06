@@ -40,8 +40,7 @@ Route::get('/register', function () {
 })->name('register');
 
 Route::middleware('auth')->group(function () {
-    // Route::get('/profile', [ProfileController::class, "index"])->name('profile');
-    // Route::post('/profile', [ProfileController::class, "update"])->name('profile.update');
+    
     Route::get('/booking', [BookingController::class, 'create'])->name('booking.create')->middleware('auth');
     Route::post('/booking', [BookingController::class, 'store'])->name('booking.store');
     

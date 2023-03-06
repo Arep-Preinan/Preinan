@@ -13,7 +13,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('tempat_wisatas', function (Blueprint $table) {
-            $table->uuid('uuid')->default(DB::raw('uuid()'))->primary();
+            $table->id();
+            $table->uuid('uuid')->default(DB::raw('uuid()'));
             $table->string("nama");
             $table->string("alamat");
             $table->string("gmaps");
