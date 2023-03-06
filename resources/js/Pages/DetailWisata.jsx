@@ -15,8 +15,7 @@ const DetailWisata = (props) => {
         destinasi: props.tempat_wisata,
         auth: props.auth,
     };
-
-    console.log(destinasi);
+    console.log(props);
     return (
         <div className="bg-[#fafafa]">
             <Navbar user={props.auth.user} />
@@ -83,10 +82,26 @@ const DetailWisata = (props) => {
                     );
                 })}
                 {/* akhir konten yang rekomendasi */}
+
                 {/* card booking */}
                 {
                     props.auth.user ? <CardBooking booking={destinasi} page={2}/> :<p>Login</p>
                 }
+                {/* akhir card booking */}
+
+                {/* komentar */}
+                <h1>==================</h1>
+                <h1>Komentar</h1>
+                {props.komentar.map((item, index) => {
+                    return (
+                        <>
+                            <h1>{item.user.fullnameA}</h1>
+                            <h1>{item.isi}</h1>
+                            <h1>{item.rating}</h1>
+                            <br />
+                        </>
+                    );
+                })}
             </div>
         </div>
     );

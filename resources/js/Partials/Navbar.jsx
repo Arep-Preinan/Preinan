@@ -55,7 +55,7 @@ const Navbar = (props) => {
                                     </svg>
                                 </a>
                                 <ul className="p-2 bg-base-100">
-                                <li><Link href={"tiket-ku"}>Tiket ku</Link></li>
+                                <li><Link href={"/tiket-ku"}>Tiket ku</Link></li>
                                 <li><Link method="post" href="logout" as="button">Logout</Link></li>
                                 </ul>
                             </li>
@@ -63,7 +63,7 @@ const Navbar = (props) => {
                     </>
                 ) : (
                     <Link
-                        href={"login"}
+                        href={"/login"}
                         className="btn w-[143px] h-[48px] hidden md:flex"
                         id="button-navbar"
                     >
