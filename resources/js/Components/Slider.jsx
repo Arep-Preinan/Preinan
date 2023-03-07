@@ -18,17 +18,17 @@ const SliderGunung = ({ data }) => {
                 640: {
                     perPage: 1,
                     perMove: 1,
-                    gap: "0.5rem",
+                    gap: "32px",
                 },
                 768: {
                     perPage: 2,
                     perMove: 1,
-                    gap: "0.5rem",
+                    gap: "32px",
                 },
                 1024: {
-                    perPage: 3,
+                    perPage: 4,
                     perMove: 1,
-                    gap: "1rem",
+                    gap: "32px",
                 },
             },
         }).mount();
@@ -37,7 +37,7 @@ const SliderGunung = ({ data }) => {
     return (
         <div className="splide splide-gunung">
             <div className="splide__track">
-                <div className="splide__list">
+                <div className="splide__list flex">
                     {data.map((item) => {
                         return (
                             <div key={item.uuid} className="splide__slide">
@@ -60,7 +60,7 @@ const SliderDanau = ({ data }) => {
         new Splide(".splide-danau", {
             type: "slide",
             rewind: true,
-            perPage: 5,
+            perPage: 2,
             perMove: 1,
             gap: "10px", // ubah nilai gap menjadi lebih kecil
             pagination: false,
@@ -70,17 +70,17 @@ const SliderDanau = ({ data }) => {
                 640: {
                     perPage: 1,
                     perMove: 1,
-                    gap: "32px",
+                    gap: "0",
                 },
                 768: {
                     perPage: 2,
                     perMove: 1,
-                    gap: "32px",
+                    gap: "",
                 },
                 1024: {
                     perPage: 3,
                     perMove: 1,
-                    gap: "32px",
+                    gap: "0",
                 },
             },
         }).mount();
@@ -89,7 +89,7 @@ const SliderDanau = ({ data }) => {
     return (
         <div className="splide splide-danau">
             <div className="splide__track">
-                <div className="splide__list">
+                <div className="splide__list flex ">
                     {data.map((item) => {
                         return (
                             <div key={item.uuid} className="splide__slide">

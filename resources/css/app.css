@@ -145,5 +145,15 @@ body{
 }
 .button-cardbooking{
     background: #3252DF;
-box-shadow: 0px 8px 15px rgba(50, 82, 223, 0.3);
+    box-shadow: 0px 8px 15px rgba(50, 82, 223, 0.3);
+}
+
+/* detail wisata */
+#rekomendasi-detail-wisata{
+    border: 1px solid #EAEAEA;
+}
+
+/* feature preinan home */
+#feature-preinan-home{
+    border: 1px solid #DFDFDF;
 }

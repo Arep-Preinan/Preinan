@@ -17,7 +17,7 @@ const DestinasiCard = ({ destinasi }) => {
     };
 
     return (
-        <div className="card lg:w-[295px] bg-base-100 flex justify-between gap-[4px] rounded-3xl border-2 ">
+        <div className="card min-w-[295px] md:min-w-[auto] md:w-full bg-base-100 flex justify-between gap-[4px] rounded-3xl border-2 ">
             <div className="flex flex-col">
                 <DestinasiCard.Image
                     url={`/images/wisata/${pisahkanStripSetiapKata(
@@ -35,22 +35,21 @@ const DestinasiCard = ({ destinasi }) => {
                 </div>
             </div>
             <div className="flex flex-col pl-4 pr-4 pb-4 gap-3">
-                <p>{destinasi.harga == 0 ? "Free" : `Rp.${destinasi.harga}`}</p>
-                <div className="flex">
+                <p className="text-lg font-semibold text-red-600">
+                    {destinasi.harga == 0 ? "Free" : `Rp. ${destinasi.harga}`}
+                </p>
+                <div className="grid grid-cols-2">
                     <Button
                         onClick={() => handleBooking()}
                         text={"Pesan"}
-                        className="bg-[#3258E8] text-white w-[168px] cardhome-button "
+                        className="bg-[#3258E8] text-white cardhome-button "
                     />
                     <Link
                         href={`/destinasi/${pisahkanStripSetiapKata(
                             destinasi.nama
                         )}`}
                     >
-                        <Button
-                            text={"Details"}
-                            className="text-[#3258E8] w-[168px]"
-                        />
+                        <Button text={"Details"} className="text-[#3258E8] " />
                     </Link>
                 </div>
             </div>
@@ -60,13 +59,11 @@ const DestinasiCard = ({ destinasi }) => {
 
 const Image = ({ url }) => {
     return (
-        <figure>
-            <img
-                src={`${url}`}
-                alt="Shoes"
-                className="rounded-3xl h-[280px] image-full "
-            />
-        </figure>
+        <img
+            src={`${url}`}
+            alt="/"
+            className="rounded-3xl h-[280px] image-full "
+        />
     );
 };
 

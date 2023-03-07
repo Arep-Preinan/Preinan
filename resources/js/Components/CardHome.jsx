@@ -1,7 +1,6 @@
 import pisahkanStripSetiapKata from "@/function/pisahkanStripSetiapKata";
 import Button from "./Button";
 
-
 const CardHome = ({
     kategori = "gunung",
     nama = "Mereum Sanctuary",
@@ -9,20 +8,20 @@ const CardHome = ({
     url = "/images/wisata/Gunung-Lanang-Mergolangu/1.jpg",
 }) => {
     return (
-        <div className="card w-96 bg-base-100 p-6 flex gap-[36px] rounded-3xl">
+        <div className="card lg:w-[384px] bg-[#ffff] p-6 flex gap-[36px] rounded-3xl">
             <div className="flex flex-col gap-4">
                 <CardHome.Image url={pisahkanStripSetiapKata(nama)} />
                 <CardHome.KategoriRating kategori={kategori} />
                 <CardHome.NamaLokasi nama={nama} lokasi={lokasi} />
             </div>
-            <div className="flex flex-row">
+            <div className="flex flex-col  lg:flex-row ">
                 <Button
                     text={"Pesan Tiket"}
-                    className="bg-[#3258E8] text-white w-[168px] cardhome-button "
+                    className="bg-[#3258E8] text-white cardhome-button flex justify-center"
                 />
                 <Button
-                    text={"View Details"}
-                    className="text-[#3258E8] w-[168px]"
+                    text={"Detail"}
+                    className="text-[#3258E8] lg:w-[168px] flex justify-center"
                 />
             </div>
         </div>
@@ -32,7 +31,11 @@ const CardHome = ({
 const Image = ({ url }) => {
     return (
         <figure>
-            <img src={`../../images/wisata/${url}/1.jpg`} alt="Shoes" className="rounded-3xl" />
+            <img
+                src={`../../images/wisata/${url}/1.jpg`}
+                alt="Shoes"
+                className="rounded-3xl h-[280px]"
+            />
         </figure>
     );
 };

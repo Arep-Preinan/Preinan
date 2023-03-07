@@ -90,7 +90,7 @@ const Destinasi = (props) => {
                 </div>
                 <div
                     id="kumpulan-destinasi"
-                    className=" grid md:gap-[16px] md:grid-cols-2 lg:grid-cols-4 lg:gap-[20px] lg:flex-row lg:flex-wrap lg:items-stretch items-center  mt-10"
+                    className=" grid gap-[16px] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:gap-[20px] lg:flex-row lg:flex-wrap lg:items-stretch items-center  mt-10"
                 >
                     {isActived === "all"
                         ? all.map((destinasi) => {

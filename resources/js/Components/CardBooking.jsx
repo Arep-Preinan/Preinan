@@ -72,11 +72,14 @@ const CardBooking = (props) => {
 
     return (
         /* section card */
-        <div className="card w-[511px] bg-base-100 shadow-lg p-6">
+        <div
+            className="card w-full xl:w-[511px] md:max-h-[493px] bg-base-100 p-6"
+            id="rekomendasi-detail-wisata"
+        >
             <div className="flex flex-col gap-6">
                 {/* section tujuan */}
                 <CardBooking.Structure text={"Destinasi"}>
-                    <div className="flex justify-between">
+                    <div className="flex flex-col md:flex-row justify-between gap-3 md:gap-0">
                         <div className="flex flex-rows-2 gap-4">
                             <img
                                 src="../../images/icons/destinasi.svg"
@@ -108,7 +111,7 @@ const CardBooking = (props) => {
                 {/* end section detail pemesanan */}
 
                 {/* section hitung tiket */}
-                <div className="border rounded-xl border-[#EAEAEA] grid grid-cols-[auto_40%] gap-4">
+                <div className="border rounded-xl border-[#EAEAEA] grid md:grid-cols-[auto_40%] gap-4 grid-cols-1 ">
                     <div className="flex-1 justify-start">
                         <div className="flex items-center justify-between p-4 gap-5 ">
                             <button
@@ -134,7 +137,7 @@ const CardBooking = (props) => {
                         </div>
                     </div>
                     <div className="bg-cardbooking rounded-xl">
-                        <div className="w-[182px] grid place-items-center h-full ">
+                        <div className="w-full p-3 md:p-0 lg:w-[182px] grid place-items-center h-full ">
                             <h1
                                 className="text-center text-[#3258E8] text-[20px] leading-[30px] font-semibold"
                                 id="counterInput"
@@ -148,8 +151,8 @@ const CardBooking = (props) => {
                 {/* end section hitung tiket */}
 
                 {/* section bayar */}
-                <div className="flex justify-between items-center">
-                    <select className="select select-ghost  max-w-xs font-normal text-[16px] leading-[24px] text-[#6D6D6D]">
+                <div className="flex flex-col md:flex-row justify-between items-center">
+                    <select className="select select-ghost md:max-w-xs font-normal text-[16px] leading-[24px] text-[#6D6D6D]">
                         <option disabled selected>
                             <h1 className="flex-grow ">
                                 Pilih Metode Pembayaran
@@ -165,7 +168,11 @@ const CardBooking = (props) => {
                     ) : (
                         <button
                             onClick={() => submitBooking()}
-                            className="btn btn-primary w-[194px] rounded-xl button-cardbooking"
+                            className={`btn btn-primary w-full md:w-[194px] rounded-xl ${
+                                data.tanggal === ""
+                                    ? null
+                                    : "button-cardbooking"
+                            } `}
                             disabled={data.tanggal === "" ? true : false}
                         >
                             Bayar

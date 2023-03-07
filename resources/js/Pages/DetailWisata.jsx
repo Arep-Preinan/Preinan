@@ -18,15 +18,20 @@ const DetailWisata = (props) => {
     };
 
     const imageName = (name) => {
-        console.log(name.split(" ").join("-"));
+        // console.log(name.split(" ").join("-"));
     };
 
-    console.log(destinasi);
+    const [activeTab, setActiveTab] = useState("komentar");
+
+    const handleActiveTab = (e) => {
+        setActiveTab(e);
+    };
+    console.log(activeTab);
+
     return (
         <div className="bg-[#fafafa]">
             <Navbar user={props.auth.user} />
             {/* konten yang ada pada bawah foto */}
-
             <div className="container mx-auto pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col gap-[48px]">
                 <BreadCumbs />
                 {/* Layout Foto Galeri */}
@@ -49,97 +54,184 @@ const DetailWisata = (props) => {
                 </div>
                 {/*end of Layout Foto Galeri */}
                 <div
-                    className="flex justify-between"
+                    className="grid grid-cols-1 max-lg:place-items-center xl:grid-cols-[auto_511px] gap-[64px]"
                     id="data-detail-destinasi"
                 >
                     <div className="flex flex-col gap-[32px]">
-                        <div className="heading-and-rating-detail-wisata flex ">
-                            <h1 className="text-[26px] md:text-[40px] leading-[120%] font-bold">
-                                {props.tempat_wisata.nama}
-                            </h1>
-                            <h1 className="flex items-center">
-                                {props.tempat_wisata.rating}
-                            </h1>
-                        </div>
-                        <h1>Harga Tiket : Rp. {props.tempat_wisata.harga}</h1>
-                        <div className="flex">
-                            <img src="../images/icons/iconlokasi.svg" alt="" />
-                            <h1>{props.tempat_wisata.alamat}</h1>
+                        <div className="flex flex-col gap-[12px]">
+                            <div className="heading-and-rating-detail-wisata flex ">
+                                <h1 className="text-[26px] md:text-[40px] leading-[120%] font-bold">
+                                    {props.tempat_wisata.nama}
+                                </h1>
+                            </div>
                         </div>
                         <div
-                            className="font-normal text-base leading-[150%] w-[649px]"
+                            className="font-normal text-base text-justify leading-[150%] "
                             dangerouslySetInnerHTML={{
                                 __html: props.tempat_wisata.deskripsi,
                             }}
                         ></div>
-                    </div>
-                    {props.auth.user ? (
-                        <CardBooking booking={destinasi} page={2} />
-                    ) : (
-                        <div className="card w-[511px] grid place-items-center bg-base-100 shadow-lg p-6">
-                            <div className="flex flex-col w-full border-opacity-50">
-                                <h1>Login or Register to Continue</h1>
-                                <div className="grid h-20 card w-full rounded-box place-items-center">
-                                    <Button
-                                        className={"btn btn-primary btn-block"}
-                                        text="Login"
-                                    />
-                                </div>
-                                <div className="divider">OR</div>
-                                <div className="grid h-20 rounded-box place-items-center">
-                                    <Button
-                                        className={
-                                            "btn text-[#3258E8] btn-outline btn-block"
-                                        }
-                                        text="Register"
-                                    />
-                                </div>
+                        <div className="flex flex-col justify-between rounded-xl">
+                            {/* komentar */}
+                            <div className="tabs">
+                                <a
+                                    className={`tab tab-lg tab-lifted ${
+                                        activeTab == "komentar"
+                                            ? "tab-active"
+                                            : ""
+                                    }`}
+                                    onClick={() => handleActiveTab("komentar")}
+                                >
+                                    Komentar
+                                </a>
+                                <p
+                                    className={`tab tab-lg tab-lifted ${
+                                        activeTab == "maps" ? "tab-active" : ""
+                                    }`}
+                                    onClick={() => handleActiveTab("maps")}
+                                >
+                                    Maps
+                                </p>
+                            </div>
+                            <div
+                                className="bg-white rounded-tr-xl rounded-b-xl p-6 flex flex-col gap-6"
+                                id="rekomendasi-detail-wisata"
+                            >
+                                {activeTab === "komentar" ? (
+                                    props.komentar.map((item) => {
+                                        return (
+                                            <div>
+                                                <div className="flex gap-4">
+                                                    <div className="avatar">
+                                                        <div className="w-10 h-10 rounded-full">
+                                                            <img src="../images/wisata/Bukit-Sikunir/1.jpg" />
+                                                        </div>
+                                                    </div>
+                                                    <div>
+                                                        <div className="flex gap-4">
+                                                            <div className="flex gap-2">
+                                                                <h1 className="text-lg text-[#112211] font-normal">
+                                                                    {
+                                                                        item.rating
+                                                                    }
+                                                                </h1>{" "}
+                                                                <div className="rating">
+                                                                    <input
+                                                                        type="radio"
+                                                                        name="rating-1"
+                                                                        className="mask mask-star bg-orange-400"
+                                                                    />
+                                                                </div>
+                                                            </div>
+                                                            <h1>|</h1>
+                                                            <h1>
+                                                                {
+                                                                    item.user
+                                                                        .fullname
+                                                                }
+                                                            </h1>
+                                                        </div>
+                                                        <h1>{item.isi}</h1>
+                                                    </div>
+                                                </div>
+                                                <div className="h-[1px] w-full bg-[#EAEAEA] mt-2"></div>
+                                            </div>
+                                        );
+                                    })
+                                ) : (
+                                    <div className="flex gap-2">
+                                        <img
+                                            src="../images/icons/iconlokasi.svg"
+                                            alt=""
+                                        />
+                                        <p className="cardhome-lokasi text-sm">
+                                            {props.tempat_wisata.alamat}
+                                        </p>
+                                    </div>
+                                )}
                             </div>
                         </div>
-                    )}
+                    </div>
+                    <div className="flex flex-col gap-6">
+                        {props.auth.user ? (
+                            <CardBooking booking={destinasi} page={2} />
+                        ) : (
+                            <div className="card lg:w-[511px] grid place-items-center bg-base-100 shadow-lg p-6">
+                                <div className="flex flex-col w-full border-opacity-50">
+                                    <h1>
+                                        Login / Register Sebelum Melanjutkan
+                                    </h1>
+                                    <div className="grid h-20 card w-full rounded-box place-items-center">
+                                        <Button
+                                            className={
+                                                "btn btn-primary btn-block"
+                                            }
+                                            text="Login"
+                                        />
+                                    </div>
+                                    <div className="divider">OR</div>
+                                    <div className="grid h-20 rounded-box place-items-center">
+                                        <Button
+                                            className={
+                                                "btn text-[#3258E8] btn-outline btn-block"
+                                            }
+                                            text="Register"
+                                        />
+                                    </div>
+                                </div>
+                            </div>
+                        )}
+                        <div
+                            className="card bg-[#ffffff] p-[24px] w-full flex gap-[24px] rounded-xl"
+                            id="rekomendasi-detail-wisata"
+                        >
+                            <h1 className="text-[#232631] text-[20px] font-semibold leading-[30px]">
+                                Rekomendasi Destinasi Sejenis
+                            </h1>
+                            <div className="h-[1px] w-full bg-[#EAEAEA]"></div>
+                            {props.rekomendasi.map((item) => {
+                                return (
+                                    <div className="flex flex-start flex-col md:flex-row gap-[16px]">
+                                        <div className="w-full md:w-[350px] h-[200px] bg-slate-300 rounded-xl bg-[url(../images/wisata/Bukit-Sikunir/1.jpg)] bg-cover"></div>
+                                        <div className="flex flex-col justify-center gap-2">
+                                            <div className="flex gap-2">
+                                                <img
+                                                    src="../images/icons/loveicons.svg"
+                                                    alt=""
+                                                />
+                                                <p className="text-sm">
+                                                    1262 Menyukai Tempat Ini
+                                                </p>
+                                            </div>
+                                            <h1 className="font-semibold text-[18px] text-[#232631] leading-[27px]">
+                                                {item.nama}
+                                            </h1>
+                                            <div
+                                                className="font-normal text-[14px] leading-[200%] text-[#9c9c9c]"
+                                                dangerouslySetInnerHTML={{
+                                                    __html:
+                                                        item.deskripsi
+                                                            .substring(0, 75)
+                                                            .trim() + "...",
+                                                }}
+                                            ></div>
+                                            <div className="flex gap-2">
+                                                <h1 className="leading-[21px] text-[14px] font-normal text-[#3258E8]">
+                                                    Lihat Destinasi
+                                                </h1>
+                                                <img
+                                                    src="../images/icons/vectorKanan.svg"
+                                                    alt=""
+                                                />
+                                            </div>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </div>
+                    </div>
                 </div>
                 {/* akhir konten yang ada pada bawah foto */}
-                {/* konten yang rekomendasi */}
-                <h1>Rekomendasi</h1>
-                {props.rekomendasi.map((item, index) => {
-                    return (
-                        <>
-                            <h1>{item.nama}</h1>
-                            <div
-                                className="text-lg"
-                                dangerouslySetInnerHTML={{
-                                    __html:
-                                        item.deskripsi.substring(0, 75).trim() +
-                                        "...",
-                                }}
-                            ></div>
-                            <br />
-                        </>
-                    );
-                })}
-                {/* akhir konten yang rekomendasi */}
-
-                {/* card booking */}
-                {props.auth.user ? (
-                    <CardBooking booking={destinasi} page={2} />
-                ) : (
-                    <p>Login</p>
-                )}
-                {/* akhir card booking */}
-
-                {/* komentar */}
-                <h1>==================</h1>
-                <h1>Komentar</h1>
-                {props.komentar.map((item, index) => {
-                    return (
-                        <>
-                            <h1>{item.user.fullnameA}</h1>
-                            <h1>{item.isi}</h1>
-                            <h1>{item.rating}</h1>
-                            <br />
-                        </>
-                    );
-                })}
             </div>
         </div>
     );
