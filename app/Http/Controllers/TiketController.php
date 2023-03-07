@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Booking;
+use App\Models\Komentar;
 use App\Models\TempatWisata;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -15,17 +16,29 @@ class TiketController extends Controller
     public function index()
     {
         // get tiket berdasarkan tanggal
-        $tiket = Booking::where('user_id', Auth::user()->id)
+        $tiket_valid = Booking::where('user_id', Auth::user()->id)
                 ->orderBy('tanggal', 'ASC')
                 ->get();
 
-        foreach ($tiket as $t) {
+        foreach ($tiket_valid as $t) {
             $t->tempat_wisata = TempatWisata::where('uuid', $t->tempat_wisata_id)->first();
             $t->user = User::where('id', $t->user_id)->first();
         }
 
+        $tiket_unvalid = Booking::where('user_id', Auth::user()->id)
+                ->where('valid', 0)
+                ->orderBy('tanggal', 'ASC')
+                ->get();
+
+        foreach ($tiket_unvalid as $t) {
+            $t->tempat_wisata = TempatWisata::where('uuid', $t->tempat_wisata_id)->first();
+            $t->user = User::where('id', $t->user_id)->first();
+            $t->komentar = Komentar::where('booking_id', $t->id)->first();
+        }
+
         return Inertia::render('Tiket', [
-            'tiket' => $tiket
+            'tiket_valid' => $tiket_valid,
+            'tiket_unvalid' => $tiket_unvalid
         ]);
     }
 

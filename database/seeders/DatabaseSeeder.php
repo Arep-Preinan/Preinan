@@ -30,7 +30,10 @@ class DatabaseSeeder extends Seeder
         // panggil seeder tempat wisara
         $this->call(TempatWisataSeeder::class);
 
+        $this->call(BookingSeeder::class);
+
         // panggil seeder komentar
         $this->call(KomentarSeeder::class);
+
     }
 }

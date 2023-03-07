@@ -36,7 +36,7 @@ class BookingController extends Controller
     public function store(Request $request, Booking $booking)
     {
         $booking->uuid = \Illuminate\Support\Str::uuid();
-        $booking->kode = rand(100000, 999999);
+        $booking->kode = rand(100000000, 999999999);
         $booking->user_id = $request->id_user;
         $booking->tempat_wisata_id = $request->id_wisata;
         $booking->jumlah_tiket = $request->jumlahTiket;

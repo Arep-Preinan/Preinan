@@ -26,9 +26,17 @@ class KomentarController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(Request $request, Komentar $komentar)
     {
-        //
+        // save komentar
+        $komentar->user_id = $request->user_id;
+        $komentar->booking_id = $request->booking_id;
+        $komentar->tempat_wisata_id = $request->tempat_wisata_id;
+        $komentar->isi = $request->komentar;
+        $komentar->rating = $request->rating;
+        $komentar->save();
+
+        return redirect()->back()->with('success', 'Komentar berhasil ditambahkan');
     }
 
     /**

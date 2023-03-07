@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('komentars', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('tempat_wisata_id')->constrained('tempat_wisatas');
+            $table->foreignId('booking_id')->constrained('bookings')->uniqid();
+            $table->uuid('tempat_wisata_id')->constrained('tempat_wisatas');
             $table->text('isi');
             $table->integer('rating');
             $table->timestamps();

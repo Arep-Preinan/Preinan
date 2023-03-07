@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BookingController;
+use App\Http\Controllers\KomentarController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TempatWisataController;
@@ -48,6 +49,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/sukses/{kode}', [BookingController::class, "success"])->name('sukses');
 
     Route::get('/e-tiket/{uuid}', [TiketController::class, "show"])->name('tiket.show');
+
+    Route::post('/komentar', [KomentarController::class, "store"])->name('komentar.store');
 });
 
 
