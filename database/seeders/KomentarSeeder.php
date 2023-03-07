@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Booking;
 use App\Models\Komentar;
 use App\Models\TempatWisata;
 use App\Models\User;
@@ -16,20 +17,33 @@ class KomentarSeeder extends Seeder
     public function run(): void
     {
           //
-         // Ambil semua tempat wisata dan user yang ada
-         $tempatWisata = TempatWisata::all();
-         $user = User::all();
- 
-         // Loop sebanyak 100 kali untuk menambahkan 100 komentar
-         for ($i = 0; $i < 100; $i++) {
-             // Buat instance Komentar dan isikan dengan data acak
-             $komentar = new Komentar;
-             $komentar->user_id = $user->random()->id;
-             $komentar->tempat_wisata_id = $tempatWisata->random()->id;
-             $komentar->isi = fake()->text(20);
-             $komentar->rating = fake()->numberBetween(1, 5);
- 
-             $komentar->save();
-         }
+          $tempatWisata = TempatWisata::all();
+          $user = User::all();
+          $booking = Booking::all();
+          
+          for ($i = 0; $i < 100; $i++) {
+              $komentar = new Komentar;
+              $komentar->user_id = $user->random()->id;
+          
+              // Mengambil id booking yang belum digunakan
+              $bookingIds = $booking->pluck('id')->toArray();
+              $usedBookingIds = $komentar->pluck('booking_id')->toArray();
+              $availableBookingIds = array_diff($bookingIds, $usedBookingIds);
+          
+              if (empty($availableBookingIds)) {
+                  break; // keluar dari loop jika sudah tidak ada booking_id yang tersedia
+              }
+          
+              $bookingId = \Illuminate\Support\Arr::random($availableBookingIds);
+              $komentar->booking_id = $bookingId;
+          
+              $komentar->tempat_wisata_id = $tempatWisata->random()->uuid;
+              $komentar->isi = fake()->text(20);
+              $komentar->rating = fake()->numberBetween(1, 5);
+          
+              $komentar->save();
+          }
+          
+         
     }
 }
