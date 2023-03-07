@@ -13,11 +13,11 @@ import {
     SliderAirTerjun,
 } from "@/Components/Slider";
 import pisahkanStripSetiapKata from "@/function/pisahkanStripSetiapKata";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function Home(props) {
     const [shoModal, setShowModal] = useState(false);
     const [data, setData] = useState({});
+
     const [dataSearch, setDataSearch] = useState([]);
     const [loadingPage, setLoadingPage] = useState(true);
 
@@ -33,6 +33,7 @@ export default function Home(props) {
     const handleSearchWisata = (e) => {
         e.preventDefault();
         const data = props.semua;
+        console.log(data);
         const search = e.target.value;
         if (search === "") {
             setDataSearch([]);
@@ -201,13 +202,10 @@ export default function Home(props) {
                                 />
                             </div>
                             <div className="layout-pertama-button-group flex gap-3">
-                                <Link href="/destinasi">
-                                    <Button
-                                        // onclick href to destinasi
-                                        text={"Eksplor Destinasi"}
-                                        className="bg-[#3258E8] text-white"
-                                    />
-                                </Link>
+                                <Button
+                                    text={"Eksplor Destinasi"}
+                                    className="bg-[#3258E8] text-white"
+                                />
                             </div>
                         </div>
                     </div>
@@ -232,12 +230,10 @@ export default function Home(props) {
                                         className={"text-white"}
                                     />
                                 </div>
-                                <Link>
-                                    <Button
-                                        text={"Lihat Selengkapnya"}
-                                        className={"text-[#466BF3] bg-white"}
-                                    />
-                                </Link>
+                                <Button
+                                    text={"Lihat Selengkapnya"}
+                                    className={"text-[#466BF3] bg-white"}
+                                />
                             </div>
                             <div className="flex">
                                 <div className="mySlider overflow-x-hidden">
@@ -294,25 +290,27 @@ export default function Home(props) {
                         <div className="flex flex-col gap-[24px] ">
                             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
                                 <div>
-                                    <Heading.Title
-                                        text={"Nikmati Segarnya Air Terjun"}
-                                        className={"text-white"}
-                                    />
-                                    <Heading.Title
-                                        text={"Keramaian"}
-                                        className={"text-white"}
-                                    />
+                                    <Heading>
+                                        <h1 className="leading-[140%] font-semibold text-[18px] text-[#FFBE58]">
+                                            Destinasi Air Terjun
+                                        </h1>
+                                        <Heading.Title
+                                            text={"Nikmati Segarnya Air Terjun"}
+                                            className={"text-white"}
+                                        />
+                                    </Heading>
                                 </div>
-                                <Button
-                                    text={"Lihat Selengkapnya"}
-                                    className={"text-[#466BF3] bg-white"}
-                                />
+                                <Link href="destinasi">
+                                    <Button
+                                        text={"Lihat Selengkapnya"}
+                                        className={"text-[#466BF3] bg-white"}
+                                    />
+                                </Link>
                             </div>
-                            <div className="flex">
-                                <div className="mySlider overflow-x-hidden">
-                                    {/* <SliderAirTerjun data={props.air_terjun} /> */}
-                                </div>
-                            </div>
+                            <div
+                                id="destinasi-gunung-container"
+                                className="flex gap-[36px] "
+                            ></div>
                         </div>
                     </div>
                 </div>
