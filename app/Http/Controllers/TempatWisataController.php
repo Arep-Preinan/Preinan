@@ -12,8 +12,10 @@ class TempatWisataController extends Controller
 {
 
     public function home(){
-        $gunung = TempatWisata::where('kategori', 'gunung')->inRandomOrder()->limit(6)->get();
-        $danau = TempatWisata::inRandomOrder()->limit(6)->get();
+        $gunung = TempatWisata::where('kategori', 'gunung')->limit(6)->get();
+        $danau = TempatWisata::where('kategori', 'danau')->limit(6)->get();
+        // $air_terjun = TempatWisata::where('kategori', 'air terjun')->limit(3)->get();
+        $semua = TempatWisata::get();
 
         return Inertia::render('Home', [
             'title' => 'Beranda',
@@ -44,7 +46,7 @@ class TempatWisataController extends Controller
         $slug = str_replace('-', ' ', $slug);
         $tempat_wisata = TempatWisata::where('nama', $slug)->first();
         $rekomendasi = TempatWisata::where('kategori', $tempat_wisata->kategori)->inRandomOrder()->limit(3)->get();
-        $komentar = Komentar::where('tempat_wisata_id', $tempat_wisata->id)->get();
+        $komentar = Komentar::where('tempat_wisata_id', $tempat_wisata->uuid)->get();
 
         foreach ($komentar as $k) {
             $k->user = User::where('id', $k->user_id)->first();

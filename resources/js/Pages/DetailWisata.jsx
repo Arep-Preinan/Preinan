@@ -3,22 +3,13 @@ import { useState } from "react";
 import Navbar from "./../Partials/Navbar";
 import BreadCumbs from "./../Components/BreadCumbs";
 import Button from "./../Components/Button";
+import pisahkanStripSetiapKata from "@/function/pisahkanStripSetiapKata";
 
 const DetailWisata = (props) => {
-    let [page, setPage] = useState(1);
 
-    const pindahHalaman = () => {
-        setPage(e);
-    };
-
-    // buatkan data seperti ini booking {destinasi : {}}
     let destinasi = {
         destinasi: props.tempat_wisata,
         auth: props.auth,
-    };
-
-    const imageName = (name) => {
-        // console.log(name.split(" ").join("-"));
     };
 
     const [activeTab, setActiveTab] = useState("komentar");
@@ -26,7 +17,11 @@ const DetailWisata = (props) => {
     const handleActiveTab = (e) => {
         setActiveTab(e);
     };
-    console.log(activeTab);
+
+    const handleBackground = (nama, item) => {
+        return `../images/wisata/${pisahkanStripSetiapKata(nama)}/${item}.jpg`;
+    };
+
 
     return (
         <div className="bg-[#fafafa]">
@@ -37,18 +32,33 @@ const DetailWisata = (props) => {
                 {/* Layout Foto Galeri */}
                 <div className="h-[612px] grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-5 overflow-hidden">
                     <div
-                        className={`bg-slate-300 rounded-3xl bg-[url(../images/wisata/${imageName(
-                            props.tempat_wisata.nama
-                        )}/1.jpg)]`}
+                        style={{
+                            backgroundImage: `url(${handleBackground(props.tempat_wisata.nama, 1)})`,
+                        }}
+                        className={`bg-slate-300 rounded-3xl`}
                     ></div>
                     <div className="grid  md:grid-cols-1 gap-5">
                         <div className="grid grid-cols-2 lg:grid-cols-[60%_auto] gap-5">
-                            <div className="bg-slate-300 rounded-3xl"></div>
-                            <div className="bg-slate-300 rounded-3xl"></div>
+                            <div style={{
+                                backgroundImage: `url(${handleBackground(props.tempat_wisata.nama, 2)})`,
+                             }} className="bg-slate-300 rounded-3xl"></div>
+                            <div 
+                                style={{
+                                    backgroundImage: `url(${handleBackground(props.tempat_wisata.nama, 3)})`,
+                                }}
+                            className="bg-slate-300 rounded-3xl"></div>
                         </div>
                         <div className="hidden md:grid lg:grid-cols-[40%_auto]  gap-5">
-                            <div className="bg-slate-300 rounded-3xl"></div>
-                            <div className="bg-slate-300 rounded-3xl"></div>
+                            <div 
+                                style={{
+                                    backgroundImage: `url(${handleBackground(props.tempat_wisata.nama, 4)})`,
+                                }}
+                                className="bg-slate-300 rounded-3xl"></div>
+                            <div 
+                                style={{
+                                    backgroundImage: `url(${handleBackground(props.tempat_wisata.nama, 5)})`,
+                                }}
+                            className="bg-slate-300 rounded-3xl"></div>
                         </div>
                     </div>
                 </div>
@@ -97,10 +107,11 @@ const DetailWisata = (props) => {
                                 className="bg-white rounded-tr-xl rounded-b-xl p-6 flex flex-col gap-6"
                                 id="rekomendasi-detail-wisata"
                             >
-                                {activeTab === "komentar" ? (
+                                {
+                                    activeTab === "komentar" ? (
                                     props.komentar.map((item) => {
                                         return (
-                                            <div>
+                                            <div key={item.id}>
                                                 <div className="flex gap-4">
                                                     <div className="avatar">
                                                         <div className="w-10 h-10 rounded-full">
@@ -191,7 +202,7 @@ const DetailWisata = (props) => {
                             <div className="h-[1px] w-full bg-[#EAEAEA]"></div>
                             {props.rekomendasi.map((item) => {
                                 return (
-                                    <div className="flex flex-start flex-col md:flex-row gap-[16px]">
+                                    <div key={item.id} className="flex flex-start flex-col md:flex-row gap-[16px]">
                                         <div className="w-full md:w-[350px] h-[200px] bg-slate-300 rounded-xl bg-[url(../images/wisata/Bukit-Sikunir/1.jpg)] bg-cover"></div>
                                         <div className="flex flex-col justify-center gap-2">
                                             <div className="flex gap-2">
