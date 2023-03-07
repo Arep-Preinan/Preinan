@@ -53,35 +53,37 @@ const Destinasi = (props) => {
                         <Heading.Tagline text={"Temukan Hidden Gems"} />
                         <Heading.Title text={"Kota Wisata Wonosobo"} />
                     </div>
-                    <div className="grid grid-cols-4 gap-1 mt-8">
+                    <div className="flex gap-3 mt-8">
                         <button
-                            className={`btn ${
-                                isActived !== "all" ? "btn-outline" : ""
-                            } btn-primary`}
+                            className={` ${
+                                isActived !== "all" ? "btn-notActive" : ""
+                            } btn-Active`}
                             onClick={() => handleActive("all")}
                         >
                             Semua Destinasi
                         </button>
                         <button
-                            className={`btn ${
-                                isActived !== "gunung" ? "btn-outline" : ""
-                            } btn-primary`}
+                            className={` ${
+                                isActived !== "gunung" ? "btn-notActive" : ""
+                            } btn-Active`}
                             onClick={() => handleActive("gunung")}
                         >
                             Gunung
                         </button>
                         <button
-                            className={`btn ${
-                                isActived !== "danau" ? "btn-outline" : ""
-                            } btn-primary`}
+                            className={` ${
+                                isActived !== "danau" ? "btn-notActive" : ""
+                            } btn-Active`}
                             onClick={() => handleActive("danau")}
                         >
                             Danau
                         </button>
                         <button
-                            className={`btn ${
-                                isActived !== "air terjun" ? "btn-outline" : ""
-                            } btn-primary`}
+                            className={` ${
+                                isActived !== "air terjun"
+                                    ? "btn-notActive"
+                                    : ""
+                            } btn-Active`}
                             onClick={() => handleActive("air terjun")}
                         >
                             Air Terjun

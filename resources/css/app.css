@@ -47,8 +47,6 @@ body{
 }
 .layout-pertama-heading{
     color:  #232631;
-    font-size: 36px;
-    line-height: 54px;
     font-weight: 700;
 }
 .layout-pertama-description{
@@ -86,6 +84,9 @@ body{
 
 
 /* Cardhome */
+.cardhome-border{
+    border: 1px solid #DFDFDF;
+}
 #cardhome-category{
     padding: 5px 16px;
     background: rgba(50, 88, 232, 0.1);
@@ -156,4 +157,32 @@ body{
 /* feature preinan home */
 #feature-preinan-home{
     border: 1px solid #DFDFDF;
+}
+
+/* active btn */
+.btn-Active{
+    padding: 12px;
+    background: #ECF1FE;
+    border: 1px solid #0D6EFD;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 19px;
+    color: #0D6EFD;
+}
+.btn-notActive{
+    background: #fafafa;
+    border: 1px solid #E9ECEF;
+    border-radius: 8px;
+    color: #3E5569;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19px;
+    color: #3E5569;
+}
+.btn-notActive:hover{
+    opacity: 1;
+    transition: all 0.1s ease-in;
+    background: #3252DF;
+    color: #FFFFFF;
 }

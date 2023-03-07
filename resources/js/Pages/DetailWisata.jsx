@@ -37,9 +37,7 @@ const DetailWisata = (props) => {
                 {/* Layout Foto Galeri */}
                 <div className="h-[612px] grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-5 overflow-hidden">
                     <div
-                        className={`bg-slate-300 rounded-3xl bg-[url(../images/wisata/${imageName(
-                            props.tempat_wisata.nama
-                        )}/1.jpg)]`}
+                        className={`bg-slate-300 rounded-3xl bg-[url(../images/wisata/Bukit-Sikunir/1.jpg)] bg-cover`}
                     ></div>
                     <div className="grid  md:grid-cols-1 gap-5">
                         <div className="grid grid-cols-2 lg:grid-cols-[60%_auto] gap-5">

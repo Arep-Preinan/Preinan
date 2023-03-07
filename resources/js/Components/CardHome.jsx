@@ -8,7 +8,7 @@ const CardHome = ({
     url = "/images/wisata/Gunung-Lanang-Mergolangu/1.jpg",
 }) => {
     return (
-        <div className="card lg:w-[384px] bg-[#ffff] p-6 flex gap-[36px] rounded-3xl">
+        <div className="card lg:w-[384px] bg-[#ffff] p-6 flex gap-[36px] rounded-3xl cardhome-border">
             <div className="flex flex-col gap-4">
                 <CardHome.Image url={pisahkanStripSetiapKata(nama)} />
                 <CardHome.KategoriRating kategori={kategori} />

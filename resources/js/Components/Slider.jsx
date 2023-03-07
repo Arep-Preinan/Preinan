@@ -10,7 +10,7 @@ const SliderGunung = ({ data }) => {
             rewind: true,
             perPage: 3,
             perMove: 1,
-            gap: "10px", // ubah nilai gap menjadi lebih kecil
+            gap: "32px", // ubah nilai gap menjadi lebih kecil
             pagination: false,
             focus: "center",
             arrows: false,
@@ -60,7 +60,7 @@ const SliderDanau = ({ data }) => {
         new Splide(".splide-danau", {
             type: "slide",
             rewind: true,
-            perPage: 2,
+            perPage: 3,
             perMove: 1,
             gap: "10px", // ubah nilai gap menjadi lebih kecil
             pagination: false,
@@ -70,17 +70,17 @@ const SliderDanau = ({ data }) => {
                 640: {
                     perPage: 1,
                     perMove: 1,
-                    gap: "0",
+                    gap: "32px",
                 },
                 768: {
                     perPage: 2,
                     perMove: 1,
-                    gap: "",
+                    gap: "32px",
                 },
                 1024: {
                     perPage: 3,
                     perMove: 1,
-                    gap: "0",
+                    gap: "32px",
                 },
             },
         }).mount();
@@ -89,7 +89,7 @@ const SliderDanau = ({ data }) => {
     return (
         <div className="splide splide-danau">
             <div className="splide__track">
-                <div className="splide__list flex ">
+                <div className="splide__list ">
                     {data.map((item) => {
                         return (
                             <div key={item.uuid} className="splide__slide">
