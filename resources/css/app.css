@@ -186,3 +186,6 @@ body{
     background: #3252DF;
     color: #FFFFFF;
 }
+#scroll-search::-webkit-scrollbar {
+    display: none;
+}

@@ -1,26 +1,54 @@
 import ModalBooking from "@/Components/ModalBooking";
 import { Head, Link } from "@inertiajs/react";
 import Navbar from "../Partials/Navbar";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import OverviewData from "@/Components/OverviewData";
 import Button from "./../Components/Button";
 import Heading from "./../Components/Heading";
 import CardHome from "@/Components/CardHome";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
-import { SliderDanau, SliderGunung } from "@/Components/Slider";
+import {
+    SliderDanau,
+    SliderGunung,
+    SliderAirTerjun,
+} from "@/Components/Slider";
+import pisahkanStripSetiapKata from "@/function/pisahkanStripSetiapKata";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 export default function Home(props) {
     const [shoModal, setShowModal] = useState(false);
     const [data, setData] = useState({});
+    const [dataSearch, setDataSearch] = useState([]);
+    const [loadingPage, setLoadingPage] = useState(true);
+
+    useEffect(() => {
+        setLoadingPage(false);
+    }, []);
 
     const Modal = (item) => {
         setData(item);
         setShowModal(true);
     };
 
+    const handleSearchWisata = (e) => {
+        e.preventDefault();
+        const data = props.semua;
+        const search = e.target.value;
+        if (search === "") {
+            setDataSearch([]);
+        } else {
+            const dataSearch = data.filter((item) => {
+                return item.nama.toLowerCase().includes(search.toLowerCase());
+            });
+            // jika kosong maka hapus data search
+            setDataSearch(dataSearch);
+        }
+    };
+
     return (
         <div className="bg-[#fafafa]">
             <Navbar user={props.auth.user} />
+
             <div className="grid text-center place-items-center h-[631px] w-full bg-[url(../images/headerHero.svg)] bg-no-repeat bg-cover bg-bottom bg">
                 <div className="flex flex-col justify-center gap-[40px]">
                     <div className="flex flex-col md:gap-[8px] lg:gap-[12px]">
@@ -32,16 +60,36 @@ export default function Home(props) {
                         </h1>
                     </div>
                     <div className="flex flex-col md:flex-row justify-center gap-[12px] w-full pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px]">
+                        <img src="../images/icons/search.svg" alt="" />
                         <input
+                            onChange={handleSearchWisata}
                             type="text"
-                            placeholder="Search"
+                            placeholder="Temukan Tujuanmu"
                             className="p-3 bg-white rounded-xl w-full md:w-[350px]"
                         />
-                        <Button
-                            text={"Cari Destinasi"}
-                            className="bg-primary text-white"
-                        />
                     </div>
+                    {dataSearch.length > 0 && (
+                        <div
+                            id="scroll-search"
+                            className="flex flex-col gap-2 h-64 mb-5 w-full overflow-scroll pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px]"
+                        >
+                            {dataSearch.map((item) => {
+                                return (
+                                    <Link
+                                        key={item.uuid}
+                                        href={`/destinasi/${pisahkanStripSetiapKata(
+                                            item.nama
+                                        )}`}
+                                        className="flex flex-row items-center gap-2 p-3 bg-white rounded-xl w-full"
+                                    >
+                                        <h1 className="font-semibold text-sm">
+                                            {item.nama}
+                                        </h1>
+                                    </Link>
+                                );
+                            })}
+                        </div>
+                    )}
                 </div>
             </div>
             <div className="relative bottom-20">
@@ -153,10 +201,13 @@ export default function Home(props) {
                                 />
                             </div>
                             <div className="layout-pertama-button-group flex gap-3">
-                                <Button
-                                    text={"Eksplor Destinasi"}
-                                    className="bg-[#3258E8] text-white"
-                                />
+                                <Link href="/destinasi">
+                                    <Button
+                                        // onclick href to destinasi
+                                        text={"Eksplor Destinasi"}
+                                        className="bg-[#3258E8] text-white"
+                                    />
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -181,10 +232,12 @@ export default function Home(props) {
                                         className={"text-white"}
                                     />
                                 </div>
-                                <Button
-                                    text={"Lihat Selengkapnya"}
-                                    className={"text-[#466BF3] bg-white"}
-                                />
+                                <Link>
+                                    <Button
+                                        text={"Lihat Selengkapnya"}
+                                        className={"text-[#466BF3] bg-white"}
+                                    />
+                                </Link>
                             </div>
                             <div className="flex">
                                 <div className="mySlider overflow-x-hidden">
@@ -241,27 +294,25 @@ export default function Home(props) {
                         <div className="flex flex-col gap-[24px] ">
                             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
                                 <div>
-                                    <Heading>
-                                        <h1 className="leading-[140%] font-semibold text-[18px] text-[#FFBE58]">
-                                            Destinasi Air Terjun
-                                        </h1>
-                                        <Heading.Title
-                                            text={"Nikmati Segarnya Air Terjun"}
-                                            className={"text-white"}
-                                        />
-                                    </Heading>
-                                </div>
-                                <Link href="destinasi">
-                                    <Button
-                                        text={"Lihat Selengkapnya"}
-                                        className={"text-[#466BF3] bg-white"}
+                                    <Heading.Title
+                                        text={"Nikmati Segarnya Air Terjun"}
+                                        className={"text-white"}
                                     />
-                                </Link>
+                                    <Heading.Title
+                                        text={"Keramaian"}
+                                        className={"text-white"}
+                                    />
+                                </div>
+                                <Button
+                                    text={"Lihat Selengkapnya"}
+                                    className={"text-[#466BF3] bg-white"}
+                                />
                             </div>
-                            <div
-                                id="destinasi-gunung-container"
-                                className="flex gap-[36px] "
-                            ></div>
+                            <div className="flex">
+                                <div className="mySlider overflow-x-hidden">
+                                    {/* <SliderAirTerjun data={props.air_terjun} /> */}
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

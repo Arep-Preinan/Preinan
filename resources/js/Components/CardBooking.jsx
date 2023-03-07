@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import DetailKontak from "./DetailKontak";
 
 const CardBooking = (props) => {
-    console.log(props);
 
     let [isLoading, setLoading] = useState(false);
 
@@ -16,7 +15,6 @@ const CardBooking = (props) => {
         totalHarga: props.booking.destinasi.harga,
     });
 
-    console.log(props, "Halo");
     const destroyData = () => {
         setData("jumlahTiket", 1);
         setData("tanggal", "");
@@ -26,14 +24,12 @@ const CardBooking = (props) => {
 
     const submitBooking = async () => {
         setLoading(true);
-        console.log("submit");
         post(route("booking.store"), {
             preserveScroll: true,
             onSuccess: () => {
                 setLoading(false);
             },
             onError: () => {
-                console.log("error");
             },
         });
     };
@@ -73,7 +69,7 @@ const CardBooking = (props) => {
     return (
         /* section card */
         <div
-            className="card w-full xl:w-[511px] md:max-h-[493px] bg-base-100 p-6"
+            className="card w-full xl:w-[511px] md:max-h-[500px] bg-base-100 p-5"
             id="rekomendasi-detail-wisata"
         >
             <div className="flex flex-col gap-6">
@@ -111,7 +107,7 @@ const CardBooking = (props) => {
                 {/* end section detail pemesanan */}
 
                 {/* section hitung tiket */}
-                <div className="border rounded-xl border-[#EAEAEA] grid md:grid-cols-[auto_40%] gap-4 grid-cols-1 ">
+                <div className="border rounded-xl border-[#EAEAEA] grid md:grid-cols-[auto_40%] gap-4 grid-cols-1">
                     <div className="flex-1 justify-start">
                         <div className="flex items-center justify-between p-4 gap-5 ">
                             <button
@@ -152,11 +148,11 @@ const CardBooking = (props) => {
 
                 {/* section bayar */}
                 <div className="flex flex-col md:flex-row justify-between items-center">
-                    <select className="select select-ghost md:max-w-xs font-normal text-[16px] leading-[24px] text-[#6D6D6D]">
+                    <select defaultValue={""} className="select select-ghost md:max-w-xs font-normal text-[16px] leading-[24px] text-[#6D6D6D]">
                         <option disabled selected>
-                            <h1 className="flex-grow ">
+                            {/* <h1 className="flex-grow "> */}
                                 Pilih Metode Pembayaran
-                            </h1>
+                            {/* </h1> */}
                         </option>
                         <option>VA BCA</option>
                         <option>QRIS</option>

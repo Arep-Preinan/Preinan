@@ -1,5 +1,4 @@
 const DetailKontak = ({ data }) => {
-    console.log(data);
     return (
         <div className="border rounded-lg p-6 flex flex-col gap-[12px]">
             <div className="flex flex-rows-2 gap-4">

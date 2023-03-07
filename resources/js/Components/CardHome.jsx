@@ -1,12 +1,24 @@
 import pisahkanStripSetiapKata from "@/function/pisahkanStripSetiapKata";
 import Button from "./Button";
+import { Link, useForm } from "@inertiajs/react";
 
 const CardHome = ({
     kategori = "gunung",
     nama = "Mereum Sanctuary",
     lokasi = "Dusun Sukajadi",
     url = "/images/wisata/Gunung-Lanang-Mergolangu/1.jpg",
+    destinasi,
 }) => {
+
+    console.log(destinasi);
+    const { data, get } = useForm({
+        id_destinasi: destinasi.uuid,
+    });
+
+    const handleBooking = () => {
+        get(route("booking.create"));
+    };
+
     return (
         <div className="card lg:w-[384px] bg-[#ffff] p-6 flex gap-[36px] rounded-3xl cardhome-border">
             <div className="flex flex-col gap-4">
@@ -16,13 +28,16 @@ const CardHome = ({
             </div>
             <div className="flex flex-col  lg:flex-row ">
                 <Button
+                    onClick={() => handleBooking()}
                     text={"Pesan Tiket"}
                     className="bg-[#3258E8] text-white cardhome-button flex justify-center"
                 />
-                <Button
-                    text={"Detail"}
-                    className="text-[#3258E8] lg:w-[168px] flex justify-center"
-                />
+                <Link href={`/destinasi/${pisahkanStripSetiapKata(nama)}`}>
+                    <Button
+                        text={"Detail"}
+                        className="text-[#3258E8] lg:w-[168px] flex justify-center"
+                    />
+                </Link>
             </div>
         </div>
     );
