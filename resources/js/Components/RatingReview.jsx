@@ -60,7 +60,7 @@ const RatingReview = (props) => {
                     />
             </div>
             <div class="flex items-center">
-                <input type="text" value={data.komentar} class="py-2 px-4 border border-gray-300 rounded-lg mr-2" placeholder="Masukkan teks..." onChange={(e) =>  setData('komentar', e.target.value)} />
+                <input type="text" value={data.komentar} class="py-2 px-4 border border-gray-300 rounded-lg mr-2" placeholder="Masukkan teks..." onChange={(e) =>  setData('komentar', e.target.value)} disabled={isComment} />
                 {
                     !isComment && <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg" onClick={() => handleKomentar()}>Kirim</button> 
                 }
