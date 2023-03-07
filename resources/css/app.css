@@ -136,8 +136,14 @@ body{
 }
 .button-breadcumbs-breadcumbs{
     font-weight: 400;
-    font-size: 18px;
-    line-height: 27px;
     text-transform: capitalize;
     color: #9C9C9C;
+}
+/* card booking */
+.bg-cardbooking{
+    background: rgba(50, 88, 232, 0.05);;
+}
+.button-cardbooking{
+    background: #3252DF;
+box-shadow: 0px 8px 15px rgba(50, 82, 223, 0.3);
 }

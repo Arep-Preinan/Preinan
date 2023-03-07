@@ -11,16 +11,14 @@ const DestinasiCard = ({ destinasi }) => {
         get(route("booking.create"));
     };
 
-
-
     const ambilKataSebelumKoma = (string) => {
         let pisahkan = string.split(",");
         return pisahkan[0];
     };
 
     return (
-        <div className="card w-[295px] bg-base-100 flex justify-between gap-[12px] rounded-3xl">
-            <div className="flex flex-col gap-4 ">
+        <div className="card lg:w-[295px] bg-base-100 flex justify-between gap-[4px] rounded-3xl border-2 ">
+            <div className="flex flex-col">
                 <DestinasiCard.Image
                     url={`/images/wisata/${pisahkanStripSetiapKata(
                         destinasi.nama
@@ -63,7 +61,11 @@ const DestinasiCard = ({ destinasi }) => {
 const Image = ({ url }) => {
     return (
         <figure>
-            <img src={`${url}`} alt="Shoes" className="rounded-3xl h-[280px]" />
+            <img
+                src={`${url}`}
+                alt="Shoes"
+                className="rounded-3xl h-[280px] image-full "
+            />
         </figure>
     );
 };

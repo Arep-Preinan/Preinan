@@ -6,8 +6,8 @@ import OverviewData from "@/Components/OverviewData";
 import Button from "./../Components/Button";
 import Heading from "./../Components/Heading";
 import CardHome from "@/Components/CardHome";
-import { Splide, SplideSlide } from '@splidejs/react-splide';
-import {SliderDanau, SliderGunung} from "@/Components/Slider";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import { SliderDanau, SliderGunung } from "@/Components/Slider";
 
 export default function Home(props) {
     const [shoModal, setShowModal] = useState(false);
@@ -53,68 +53,6 @@ export default function Home(props) {
                         status={props.errors.status}
                     />
                 )} */}
-
-                {/* Kenapa memilih kami */}
-                <div className="bg-white pl-[60px] pr-[60px] pt-[40px] pb-[40px] flex gap-[140px] items-center">
-                    <div>
-                        <Heading>
-                            <Heading.Tagline text={"Layanan Kami"} />
-                            <Heading.Title text={"Pelayanan"} />
-                            <Heading.Title text={"Profesional"} />
-                        </Heading>
-                    </div>
-                    <div className="grid grid-cols-2 gap-[60px]">
-                        <div className="flex items-start gap-[30px]">
-                            <img src="./images/icons/Weather.svg" alt="" />
-                            <div>
-                                <h1 className="text-[#232631] font-semibold text-[20px] leading-[30px]">
-                                    Calculated Water
-                                </h1>
-                                <p className="text-[#7b7b7b] font-normal text-[16px] leading-[30px]">
-                                    A new way to travel by air the <br /> easy
-                                    and fast way.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="flex items-start gap-[30px]">
-                            <img src="./images/icons/Weather.svg" alt="" />
-                            <div>
-                                <h1 className="text-[#232631] font-semibold text-[20px] leading-[30px]">
-                                    Calculated Water
-                                </h1>
-                                <p className="text-[#7b7b7b] font-normal text-[16px] leading-[30px]">
-                                    A new way to travel by air the <br /> easy
-                                    and fast way.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="flex items-start gap-[30px]">
-                            <img src="./images/icons/Weather.svg" alt="" />
-                            <div>
-                                <h1 className="text-[#232631] font-semibold text-[20px] leading-[30px]">
-                                    Calculated Water
-                                </h1>
-                                <p className="text-[#7b7b7b] font-normal text-[16px] leading-[30px]">
-                                    A new way to travel by air the <br /> easy
-                                    and fast way.
-                                </p>
-                            </div>
-                        </div>
-                        <div className="flex items-start gap-[30px]">
-                            <img src="./images/icons/Weather.svg" alt="" />
-                            <div>
-                                <h1 className="text-[#232631] font-semibold text-[20px] leading-[30px]">
-                                    Calculated Water
-                                </h1>
-                                <p className="text-[#7b7b7b] font-normal text-[16px] leading-[30px]">
-                                    A new way to travel by air the <br /> easy
-                                    and fast way.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {/* end of Kenapa memilih kami */}
 
                 {/* Kumpulan Jenis Destinasi */}
                 <div className="flex flex-col lg:flex-row gap-[56px]">
@@ -189,9 +127,7 @@ export default function Home(props) {
                                 />
                             </Heading>
                         </div>
-                        <Link href="destinasi">
-                            View all
-                        </Link>
+                        <Link href="destinasi">View all</Link>
                     </div>
                     <div
                         id="destinasi-gunung-container"
@@ -204,8 +140,6 @@ export default function Home(props) {
                 </div>
                 {/* end Overview Destinasi Gunung */}
 
-                
-                
                 {/* Overview Destinasi Air Terjun */}
                 <div className="grid grid-cols-[434px_auto] gap-[56px] items-center overflow-x-hidden">
                     <div className="flex flex-col gap-[12px] ">
@@ -216,7 +150,7 @@ export default function Home(props) {
                         </div>
                     </div>
                     <div className="flex gap-[24px] ">
-                        <div className="mySlider overflow-x-hidden"> 
+                        <div className="mySlider overflow-x-hidden">
                             <SliderDanau data={props.danau} />
                         </div>
                     </div>

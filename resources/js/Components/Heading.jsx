@@ -3,7 +3,7 @@ const Heading = ({ children }) => {
 };
 const Title = ({ text }) => {
     return (
-        <h1 className="leading-[54px] font-bold text-[36px] capitalize">
+        <h1 className=" md:leading-[54px] font-bold text-[24px] md:text-[36px] capitalize">
             {text}
         </h1>
     );
