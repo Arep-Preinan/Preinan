@@ -213,10 +213,12 @@ export default function Home(props) {
                                 />
                             </div>
                             <div className="layout-pertama-button-group flex gap-3">
-                                <Button
-                                    text={"Eksplor Destinasi"}
-                                    className="bg-[#3258E8] text-white"
-                                />
+                                <Link href="/destinasi">
+                                    <Button
+                                        text={"Eksplor Destinasi"}
+                                        className="bg-[#3258E8] text-white"
+                                    />
+                                </Link>
                             </div>
                         </div>
                     </div>

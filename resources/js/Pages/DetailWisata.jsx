@@ -4,7 +4,7 @@ import Navbar from "./../Partials/Navbar";
 import BreadCumbs from "./../Components/BreadCumbs";
 import Button from "./../Components/Button";
 import pisahkanStripSetiapKata from "@/function/pisahkanStripSetiapKata";
-import { Link } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 
 const DetailWisata = (props) => {
     let destinasi = {
@@ -25,6 +25,7 @@ const DetailWisata = (props) => {
     return (
         <div className="bg-[#fafafa]">
             <Navbar user={props.auth.user} />
+            <Head title={props.tempat_wisata.nama} />
             {/* konten yang ada pada bawah foto */}
             <div className="container mx-auto pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col gap-[48px]">
                 <BreadCumbs nama={props.tempat_wisata.nama}/>

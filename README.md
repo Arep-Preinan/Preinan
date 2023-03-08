@@ -1,66 +1,86 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="http://preinan.xxuz.com/images/preinannotblack.svg" width="400" alt="Logo Preinan"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+# Preinan
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Preinan adalah sebuah website yang menawarkan platform pencarian destinasi liburan khususnya di kawasan indah Wonosobo. Website ini didesain untuk mempromosikan pariwisata lokal dan mendukung UMKM di Wonosobo. Preinan memiliki fitur yang sangat memudahkan pengguna untuk membeli tiket masuk ke tempat wisata yang ingin dikunjungi.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Satu lagi fitur hebat yang dimiliki oleh Preinan adalah e-tiket yang dilengkapi dengan barcode. Barcode ini digunakan untuk scanning saat akan memasuki area wisata, dan jika sudah ter-scan, e-tiket tersebut secara otomatis tidak valid dan tidak bisa digunakan lagi. Hal ini membantu memastikan keamanan dan kenyamanan para pengunjung.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Preinan juga menyediakan tiga kategori wisata yang menarik, yaitu danau, gunung, dan air terjun yang semuanya dapat ditemukan di Wonosobo. Dengan Preinan, pengunjung dapat menemukan informasi lengkap mengenai tempat wisata, mulai dari lokasi, harga tiket masuk, hingga informasi terkait akomodasi di sekitar area wisata.
 
-## Learning Laravel
+Dengan fitur-fiturnya yang lengkap dan mudah digunakan, Preinan adalah solusi terbaik bagi mereka yang ingin merencanakan liburan yang tak terlupakan di Wonosobo. Ayo kunjungi website Preinan dan temukan destinasi liburan impianmu!
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## "Cari Destinasi Liburan? Preinan Aja yang Bisa Bikin Hati Senang! Tiket Wisata Online Anti Galau ke Wonosobo!"
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+# Techstack 
+- Laravel
+- Vite Js
+- React Js
+- Tailwind
+- Mysql
 
-## Laravel Sponsors
+# Cara Setup Project 
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+## 1. Requirement
+Project ini setidak nya membutuhkan software sebagai berikut :
+- Node js version 18.5
+- Php version 8.2
+- Composer version 2.5.4
+- XAMMP (termasuk dengan php 8.2)
+- git
 
-### Premium Partners
+## 2. Download Project
+Setelah menyiapkan requirement maka selanjutnya adalah mendownload project ini dengan menggunakan bantuan tool git
+```
+git clone https://github.com/Arep-Preinan/Preinan.git
+```
+Atau bisa langsung mendownload nya
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+## 3. Instalasi
+Setelah mendownload maka tahap selanjutnya adalah instalasi 
+```
+composer install
+npm install
+```
 
-## Contributing
+## 4. Copy env
+Setelah install berikut nya adalah mengcopy file .env.example menjadi file  .env
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## 5. Setup database
+jika sudah maka ubah konfigurasi berikut pada file .env sesuai keinginan atau sesuai akun dari databasenya
+```
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=preinan
+DB_USERNAME=root
+DB_PASSWORD=
+```
+setelah merubah lalu tambahkan database dengan nama preinan
 
-## Code of Conduct
+## 6. Migrate database dan data
+Pada projek ini sudah di lengkapi dengan data buatan maka cara nya cukup simpel hanya dengan menjalankan perintah ini
+```
+php artisan migrate:fresh --seed
+```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## 7. Jalankan server
+Dikarenakan pada mode developer projek ini membutuhkan dua server yaitu server untuk laravel dan untuk react 
+Maka caranya buka 2 terminal lalu ketikan perintah ini
+Pada terminal 1
+```
+php artisan serve
+```
+Pada terminal 2
+```
+npm run deb
+```
+###### Ingat Jangan Tutup Terminal Tersebut (Ctrl+C)
 
-## Security Vulnerabilities
+# Help Desk
+Jika butuh bantuan silahkan jangan ragu-ragu menghubungi developer
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# Penasaran dengan website nya tanpa setup?
+[Klik link ini untuk melihat website nya](http://preinan.xxuz.com)

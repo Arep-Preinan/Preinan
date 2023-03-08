@@ -9,7 +9,6 @@ const CardHome = ({
     url = "/images/wisata/Gunung-Lanang-Mergolangu/1.jpg",
     destinasi,
 }) => {
-    console.log(destinasi);
     const { data, get } = useForm({
         id_destinasi: destinasi.uuid,
     });

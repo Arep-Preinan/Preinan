@@ -3,6 +3,7 @@ import DestinasiCard from "@/Components/DestinasiCard";
 import Navbar from "./../Partials/Navbar";
 import Heading from "@/Components/Heading";
 import BreadCumbs from "@/Components/BreadCumbs";
+import { Head } from "@inertiajs/react";
 
 const Destinasi = (props) => {
     const [gunung] = useState(props.gunung);
@@ -14,6 +15,11 @@ const Destinasi = (props) => {
         0: [],
         1: [],
         2: [],
+        3: [],
+        4: [],
+        5: [],
+        6: [],
+        7: [],
     });
 
     const [next, setNext] = useState(true);
@@ -23,7 +29,7 @@ const Destinasi = (props) => {
         const result = {};
 
         for (let i = 0; i < props.all.length; i++) {
-            const group = Math.floor(i / 8); // hitung kelompok mana yang saat ini diproses
+            const group = Math.floor(i / 4); // hitung kelompok mana yang saat ini diproses
             if (!result[group]) {
                 result[group] = []; // inisialisasi kelompok jika belum ada
             }
@@ -57,7 +63,8 @@ const Destinasi = (props) => {
 
     return (
         <div className="bg-[#FAFAFA]">
-            <Navbar user={props.auth.user} active="destinasi" />
+            <Head title="Destinasi" />
+            <Navbar user={props.auth.user} active={"destinasi"} />
             <div
                 id="destinasi"
                 className="mx-auto container pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col gap-[50px]"
