@@ -3,7 +3,7 @@ import Navbar from "@/Partials/Navbar";
 const HubungiKami = () => {
     return (
         <div className="bg-[#FAFAFA] h-screen">
-            <Navbar />
+            <Navbar active={"tentang-kami"} />
             <div className="mx-auto container pt-[48px] pb-[48px] pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col gap-[50px]">
                 <div className="flex justify-center flex-col items-center gap-4">
                     <p className="text-[18px] text-[#3258E8] font-medium leading-[140%] ">

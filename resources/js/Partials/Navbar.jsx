@@ -74,7 +74,7 @@ function Navbar(props) {
                                             ? "text-[#466BF3] font-medium"
                                             : "text-[#9C9C9C] font-normal  "
                                     } `}
-                                    href="#pablo"
+                                    href="/hubungi-kami"
                                 >
                                     Tentang Kami
                                 </Link>
@@ -135,7 +135,7 @@ function Navbar(props) {
                                             ? "text-[#466BF3] font-medium"
                                             : "text-[#9C9C9C] font-normal  "
                                     } `}
-                                    href="#pablo"
+                                    href="/hubungi-kami"
                                 >
                                     Tentang Kami
                                 </Link>
