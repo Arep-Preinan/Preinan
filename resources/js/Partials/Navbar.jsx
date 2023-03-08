@@ -97,23 +97,72 @@ function Navbar(props) {
                                 </Link>
                             </li>
                             <li>
-                                <Link
+                               {
+                                    props.user ? (
+                                    <div className="flex items-center text-[16px] leading-[24px] font-normal menu text-[#9C9C9C] ">
+                                        <li tabIndex={0}>
+                                            <a>
+                                                Hai, {props.user.name}
+                                                <svg
+                                                    className="fill-current"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    width="20"
+                                                    height="20"
+                                                    viewBox="0 0 24 24"
+                                                >
+                                                    <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                                                </svg>
+                                            </a>
+                                            <ul className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                                                <li><Link href={"/tiket-ku"}>Tiket ku</Link></li>
+                                                <li><Link method="post" href="logout" as="button">Logout</Link></li>
+                                            </ul>
+                                        </li>
+                                    </div>
+                                ) : (
+                                    <Link
                                     href={"/login"}
                                     className="btn h-[48px] "
                                     id="button-navbar"
                                 >
                                     Login
                                 </Link>
+                                )}
                             </li>
                         </ul>
                     </div>
+                    {props.user ? (
+                    <>
+                        <ul className="menu menu-horizontal px-1 hidden lg:flex">
+                            <li tabIndex={0}>
+                                <a>
+                                    Hai, {props.user.name}
+                                    <svg
+                                        className="fill-current"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 24 24"
+                                    >
+                                        <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                                    </svg>
+                                </a>
+                                <ul className="p-2 bg-base-100">
+                                    <li><Link href={"/tiket-ku"}>Tiket ku</Link></li>
+                                    <li><Link method="post" href="logout" as="button">Logout</Link></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </>
+                ) : (
                     <Link
                         href={"/login"}
-                        className="btn w-[143px] h-[48px] hidden lg:flex"
+                        className="btn w-[143px] h-[48px] hidden md:flex"
                         id="button-navbar"
                     >
                         Login
                     </Link>
+                )}
                 </div>
             </nav>
             {/* {

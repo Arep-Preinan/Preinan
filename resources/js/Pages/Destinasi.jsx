@@ -3,6 +3,7 @@ import DestinasiCard from "@/Components/DestinasiCard";
 import Navbar from "./../Partials/Navbar";
 import Heading from "@/Components/Heading";
 import BreadCumbs from "@/Components/BreadCumbs";
+import { Head } from "@inertiajs/react";
 
 const Destinasi = (props) => {
     const [gunung] = useState(props.gunung);
@@ -62,6 +63,7 @@ const Destinasi = (props) => {
 
     return (
         <div className="bg-[#FAFAFA]">
+            <Head title="Destinasi"/>
             <Navbar user={props.auth.user} />
             <div
                 id="destinasi"
