@@ -20,7 +20,7 @@ const DestinasiCard = ({ destinasi }) => {
         <div className="card min-w-[295px] md:min-w-[auto] md:w-full bg-base-100 flex justify-between gap-[4px] rounded-3xl border-2 ">
             <div className="flex flex-col">
                 <DestinasiCard.Image
-                    url={`/images/wisata/${pisahkanStripSetiapKata(
+                    url={`http://preinan.xxuz.com/images/wisata/${pisahkanStripSetiapKata(
                         destinasi.nama
                     )}/1.jpg`}
                 />
@@ -122,7 +122,7 @@ const NamaLokasi = ({ nama, lokasi }) => {
         <div>
             <h1 className="cardhome-nama">{nama}</h1>
             <div className="flex gap-2">
-                <img src="./images/icons/iconlokasi.svg" alt="" />
+                <img src="http://preinan.xxuz.com/images/icons/iconlokasi.svg" alt="" />
                 <p className="cardhome-lokasi">{lokasi}</p>
             </div>
         </div>
