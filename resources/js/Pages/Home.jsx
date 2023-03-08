@@ -53,7 +53,7 @@ export default function Home(props) {
             <Navbar user={props.auth.user} />
 
             <div className="grid text-center place-items-center h-[631px] w-full bg-[url(../images/headerHero.svg)] bg-no-repeat bg-cover bg-bottom bg">
-                <div className="flex flex-col justify-center gap-[40px]">
+                <div className="flex flex-col justify-center items-center gap-[40px]">
                     <div className="flex flex-col md:gap-[8px] lg:gap-[12px]">
                         <h1 className="font-semibold leading-[120%] text-2xl md:text-3xl lg:text-[42px] text-white">
                             Temukan Keindahan Tersembunyi
@@ -73,7 +73,7 @@ export default function Home(props) {
                     {dataSearch.length > 0 && (
                         <div
                             id="scroll-search"
-                            className="flex flex-col gap-2 h-64 mb-5 w-full overflow-scroll pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px]"
+                            className="flex flex-col gap-2 max-h-64 mb-5 w-full overflow-scroll md:w-[350px] bg-white justify-center rounded-xl border-2 border-[#dfdfdf] absolute top-[500px] z-20 "
                         >
                             {dataSearch.map((item) => {
                                 return (
@@ -82,11 +82,12 @@ export default function Home(props) {
                                         href={`/destinasi/${pisahkanStripSetiapKata(
                                             item.nama
                                         )}`}
-                                        className="flex flex-row items-center gap-2 p-3 bg-white rounded-xl w-full"
+                                        className="flex flex-col items-start gap-2 p-3 bg-white rounded-xl w-full"
                                     >
                                         <h1 className="font-semibold text-sm">
                                             {item.nama}
                                         </h1>
+                                        <div className="h-[1px] w-full bg-[#EAEAEA]"></div>
                                     </Link>
                                 );
                             })}
