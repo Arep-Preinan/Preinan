@@ -17,10 +17,13 @@ Dengan fitur-fiturnya yang lengkap dan mudah digunakan, Preinan adalah solusi te
 - 1. Home Page
 - 2. Destinasi
 - 3. Detail Destinasi
-- 4. Login & Register
-- 5. Booking
-- 6. Tiket ku
-- 7. E-tiket
+- 4. Login
+- 5. Register
+- 6. Booking
+- 7. Tiket ku
+- 8. E-tiket
+-
+-
 
 # Techstack 
 - Laravel
@@ -83,7 +86,7 @@ php artisan serve
 ```
 Pada terminal 2
 ```
-npm run deb
+npm run dev
 ```
 ###### Ingat Jangan Tutup Terminal Tersebut (Ctrl+C)
 
