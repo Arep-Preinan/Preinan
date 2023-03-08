@@ -6,7 +6,7 @@ const CardHome = ({
     kategori = "gunung",
     nama = "Mereum Sanctuary",
     lokasi = "Dusun Sukajadi",
-    url = "/images/wisata/Gunung-Lanang-Mergolangu/1.jpg",
+    url = "http://preinan.xxuz.com/images/wisata/Gunung-Lanang-Mergolangu/1.jpg",
     destinasi,
 }) => {
     const { data, get } = useForm({
