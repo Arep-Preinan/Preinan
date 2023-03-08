@@ -17,7 +17,7 @@ const Login = (props) => {
 
     const submit = (e) => {
         e.preventDefault();
-
+        setLoading(true);
         post(route("login"), {
             preserveScroll: true,
             onSuccess: () => {
