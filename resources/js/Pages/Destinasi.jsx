@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import DestinasiCard from "@/Components/DestinasiCard";
 import Navbar from "./../Partials/Navbar";
 import Heading from "@/Components/Heading";
@@ -36,19 +36,45 @@ const Destinasi = (props) => {
                         </Heading>
                     </div>
                     <div className="grid md:grid-cols-[auto_auto] lg:grid-cols-[auto_420px] md:gap-5 h-[540px]  ">
-                        <div className="flex p-[20px] hover:opacity-25 hover:cursor-pointer transition  justify-center items-end md:rounded-[24px] bg-[url(../images/telaga2.jpg)] bg-no-repeat bg-cover md:bg-top lg:bg-cover">
-                            <button className="btn btn-primary">
-                                Temukan Danau
-                            </button>
+                        <div className="flex hover:cursor-pointer transition  justify-center items-end md:rounded-[24px] bg-[url(../images/telaga2.jpg)] bg-no-repeat bg-cover md:bg-top lg:bg-cover">
+                            <h1
+                                className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50 bg-black bg-opacity-50 lg:hover:bg-gray-900 rounded-3xl transition duration-400"
+                                onClick={() => {
+                                    handleActive("danau");
+                                }}
+                            >
+                                Danau
+                            </h1>
                         </div>
                         <div className="grid grid-cols-2 md:grid-cols-1 md:gap-5">
-                            <div className=" bg-[url(../images/gunung2.jpg)] bg-no-repeat bg-cover md:bg-top lg:bg-center md:rounded-[24px]"></div>
-                            <div className="bg-[url(../images/curug.jpg)] bg-no-repeat bg-cover md:bg-top lg:bg-center md:rounded-[24px]"></div>
+                            <div className="hover:cursor-pointer bg-[url(../images/gunung2.jpg)] bg-no-repeat bg-cover md:bg-top lg:bg-center md:rounded-[24px]">
+                                <h1
+                                    className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50 bg-black bg-opacity-50 lg:hover:bg-gray-900 rounded-3xl transition duration-400"
+                                    onClick={() => {
+                                        handleActive("gunung");
+                                    }}
+                                >
+                                    Gunung
+                                </h1>
+                            </div>
+                            <div className="bg-[url(../images/curug.jpg)] bg-no-repeat bg-cover md:bg-top lg:bg-center md:rounded-[24px]">
+                                <h1
+                                    className=" hover:cursor-pointer md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50 bg-black bg-opacity-50 lg:hover:bg-gray-900 rounded-3xl transition duration-400"
+                                    onClick={() => {
+                                        handleActive("air terjun");
+                                    }}
+                                >
+                                    Air Terjun
+                                </h1>
+                            </div>
                         </div>
                     </div>
                 </div>
                 {/* end of Layout gambar diatas */}
-                <div className="flex flex-col my-auto items-center bgimg bg-cover">
+                <div
+                    className="flex flex-col my-auto items-center bgimg bg-cover"
+                    id="destinasi-section"
+                >
                     <div className="flex flex-col text-center gap-[8px]">
                         <Heading.Tagline text={"Temukan Hidden Gems"} />
                         <Heading.Title text={"Kota Wisata Wonosobo"} />

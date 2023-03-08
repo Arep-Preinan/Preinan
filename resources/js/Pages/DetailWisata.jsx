@@ -36,7 +36,7 @@ const DetailWisata = (props) => {
                                 1
                             )})`,
                         }}
-                        className={`bg-slate-300 rounded-3xl`}
+                        className={`bg-slate-300 rounded-3xl bg-no-repeat bg-cover`}
                     ></div>
                     <div className="grid  md:grid-cols-1 gap-5">
                         <div className="grid grid-cols-2 lg:grid-cols-[60%_auto] gap-5">
@@ -47,7 +47,7 @@ const DetailWisata = (props) => {
                                         2
                                     )})`,
                                 }}
-                                className="bg-slate-300 rounded-3xl"
+                                className="bg-slate-300 rounded-3xl bg-no-repeat bg-cover"
                             ></div>
                             <div
                                 style={{
@@ -56,7 +56,7 @@ const DetailWisata = (props) => {
                                         3
                                     )})`,
                                 }}
-                                className="bg-slate-300 rounded-3xl"
+                                className="bg-slate-300 rounded-3xl  bg-no-repeat bg-cover"
                             ></div>
                         </div>
                         <div className="hidden md:grid lg:grid-cols-[40%_auto]  gap-5">
@@ -67,7 +67,7 @@ const DetailWisata = (props) => {
                                         4
                                     )})`,
                                 }}
-                                className="bg-slate-300 rounded-3xl"
+                                className="bg-slate-300 rounded-3xl  bg-no-repeat bg-cover"
                             ></div>
                             <div
                                 style={{
@@ -76,7 +76,7 @@ const DetailWisata = (props) => {
                                         5
                                     )})`,
                                 }}
-                                className="bg-slate-300 rounded-3xl"
+                                className="bg-slate-300 rounded-3xl bg-no-repeat bg-cover"
                             ></div>
                         </div>
                     </div>

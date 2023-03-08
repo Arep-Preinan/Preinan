@@ -8,7 +8,7 @@ const SliderGunung = ({ data }) => {
         new Splide(".splide-gunung", {
             type: "slide",
             rewind: true,
-            perPage: 3,
+            perPage: 2,
             perMove: 1,
             gap: "32px", // ubah nilai gap menjadi lebih kecil
             pagination: false,

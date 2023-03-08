@@ -35,7 +35,11 @@ const DestinasiCard = ({ destinasi }) => {
                 </div>
             </div>
             <div className="flex flex-col pl-4 pr-4 pb-4 gap-3">
-                <p className="text-lg font-semibold text-red-600">
+                <p
+                    className={`text-lg font-semibold ${
+                        destinasi.harga == 0 ? "text-red-500" : "text-green-700"
+                    }`}
+                >
                     {destinasi.harga == 0 ? "Free" : `Rp. ${destinasi.harga}`}
                 </p>
                 <div className="grid grid-cols-2">

@@ -9,7 +9,6 @@ const CardHome = ({
     url = "/images/wisata/Gunung-Lanang-Mergolangu/1.jpg",
     destinasi,
 }) => {
-
     console.log(destinasi);
     const { data, get } = useForm({
         id_destinasi: destinasi.uuid,
@@ -20,7 +19,7 @@ const CardHome = ({
     };
 
     return (
-        <div className="card lg:w-[384px] bg-[#ffff] p-6 flex gap-[36px] rounded-3xl cardhome-border">
+        <div className="card w-[384px] bg-[#ffff] p-6 flex gap-[36px] rounded-3xl cardhome-border">
             <div className="flex flex-col gap-4">
                 <CardHome.Image url={pisahkanStripSetiapKata(nama)} />
                 <CardHome.KategoriRating kategori={kategori} />
@@ -35,7 +34,7 @@ const CardHome = ({
                 <Link href={`/destinasi/${pisahkanStripSetiapKata(nama)}`}>
                     <Button
                         text={"Detail"}
-                        className="text-[#3258E8] lg:w-[168px] flex justify-center"
+                        className="text-[#3258E8] lg:w-[168px] flex items-center justify-center w-full"
                     />
                 </Link>
             </div>

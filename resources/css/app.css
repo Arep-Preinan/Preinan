@@ -189,3 +189,9 @@ body{
 #scroll-search::-webkit-scrollbar {
     display: none;
 }
+
+@media screen and (min-width: 1440px) {
+    .splide__track .splide__list .splide__slide{
+        width: 384px !important;
+    }
+}
