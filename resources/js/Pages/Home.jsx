@@ -58,7 +58,7 @@ export default function Home(props) {
         <div className="bg-[#fafafa]">
             <Navbar user={props.auth.user} active={"home"} />
 
-            <div className="grid text-center place-items-center h-[631px] w-full bg-[url(../images/headerHero.svg)] bg-no-repeat bg-cover bg-bottom bg">
+            <div className="grid text-center place-items-center h-[631px] w-full bg-[url(http://preinan.xxuz.com/images/headerHero.svg)] bg-no-repeat bg-cover bg-bottom bg">
                 <div className="flex flex-col justify-center items-center gap-[40px]">
                     <div className="flex flex-col gap-2 md:gap-[8px] lg:gap-[12px]">
                         <h1 className="font-semibold leading-[120%] text-3xl md:text-3xl lg:text-[42px] text-white">
@@ -111,7 +111,7 @@ export default function Home(props) {
                     >
                         <div className="lg:w-[339px] flex flex-col xl:flex-row gap-8">
                             <img
-                                src="../images/icons/pesanMudah.svg"
+                                src="http://preinan.xxuz.com/images/icons/pesanMudah.svg"
                                 alt=""
                                 className="w-[64px] h-[64px]"
                             />
@@ -127,7 +127,7 @@ export default function Home(props) {
                         </div>
                         <div className="lg:w-[339px] flex flex-col xl:flex-row gap-8">
                             <img
-                                src="../images/icons/scantiket.svg"
+                                src="http://preinan.xxuz.com/images/icons/scantiket.svg"
                                 alt=""
                                 className="w-[64px] h-[64px]"
                             />
@@ -143,7 +143,7 @@ export default function Home(props) {
                         </div>
                         <div className="lg:w-[339px] flex flex-col xl:flex-row gap-8">
                             <img
-                                src="../images/icons/destinasiPilihan.svg"
+                                src="http://preinan.xxuz.com/images/icons/destinasiPilihan.svg"
                                 alt=""
                                 className="w-[64px] h-[64px]"
                             />
@@ -163,18 +163,18 @@ export default function Home(props) {
                     <div className="flex flex-col xl:flex-row gap-[48px] pb-[48px] pt-[48px]">
                         <div className="flex flex-col md:grid md:grid-cols-2 xl:flex lg:flex-row gap-[12px] md:gap-[30px] lg:h-[510px]">
                             <div className="grid md:grid-cols-1 lg:grid-cols-none gap-[12px] md:gap-[30px] max-md:h-[150px] max-lg:h-[310px]">
-                                <div className="grid w-full xl:w-[310px] shrink h-auto lg:hover:show-text rounded-3xl bg-[url(../images/fotodanauhome.jpg)] bg-cover">
+                                <div className="grid w-full xl:w-[310px] shrink h-auto lg:hover:show-text rounded-3xl bg-[url(http://preinan.xxuz.com/images/fotodanauhome.jpg)] bg-cover">
                                     <h1 className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50 bg-black bg-opacity-50 lg:hover:bg-gray-900 rounded-3xl transition duration-400">
                                         Danau
                                     </h1>
                                 </div>
-                                <div className="grid w-full xl:w-[310px] shrink h-auto rounded-3xl bg-[url(../images/surodipo.jpeg)] bg-cover ">
+                                <div className="grid w-full xl:w-[310px] shrink h-auto rounded-3xl bg-[http://preinan.xxuz.com/images/surodipo.jpeg)] bg-cover ">
                                     <h1 className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50  bg-black bg-opacity-50 lg:hover:bg-gray-900 rounded-3xl transition duration-400">
                                         Air Terjun
                                     </h1>
                                 </div>
                             </div>
-                            <div className="xl:w-[320px] max-md:h-[75px] max-lg:h-[320px] rounded-3xl bg-[url(../images/gununghome.jpeg)] bg-cover bg-top lg:bg-right-top ">
+                            <div className="xl:w-[320px] max-md:h-[75px] max-lg:h-[320px] rounded-3xl bg-[http://preinan.xxuz.com/images/gununghome.jpeg)] bg-cover bg-top lg:bg-right-top ">
                                 <h1 className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50  bg-black bg-opacity-50 lg:hover:bg-gray-900 rounded-3xl transition duration-400">
                                     Gunung
                                 </h1>
@@ -355,7 +355,10 @@ export default function Home(props) {
                 {/* review User */}
                 <div className="mx-auto container pt-[48px] pb-[48px] pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col lg:flex-row gap-[48px] items-center">
                     <div className=" ">
-                        <img src="../images/reviewuser.svg" alt="" />
+                        <img
+                            src="http://preinan.xxuz.com/images/reviewuser.svg"
+                            alt=""
+                        />
                     </div>
                     <div className="flex flex-col gap-[32px] md:items-start">
                         <Heading>
@@ -375,7 +378,7 @@ export default function Home(props) {
                                 id="user-review-home"
                                 className="flex items-center gap-3"
                             >
-                                <div className="h-[64px] w-[64px] rounded-full bg-[url(../images/userReview.png)] bg-cover"></div>
+                                <div className="h-[64px] w-[64px] rounded-full bg-[url(http://preinan.xxuz.com/images/userReview.png)] bg-cover"></div>
                                 <div>
                                     <div className="name-user-home flex gap-[8px]">
                                         <h1 className="text-[#232631] font-semibold text-lg">
@@ -433,7 +436,10 @@ export default function Home(props) {
             </div>
             <footer className="footer footer-center p-10 bg-[#3258E8] text-primary-content">
                 <div>
-                    <img src="../images/preinanFooter.svg" alt="" />
+                    <img
+                        src="http://preinan.xxuz.com/images/preinanFooter.svg"
+                        alt=""
+                    />
                     <p>Copyright © 2023 - All right reserved</p>
                 </div>
             </footer>

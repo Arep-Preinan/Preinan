@@ -67,7 +67,7 @@ const Tiket = (props) => {
                                               </div>
                                               <div class="flex items-center gap-2">
                                                   <img
-                                                      src="../images/icons/tiket.svg"
+                                                      src="http://preinan.xxuz.com/images/icons/tiket.svg"
                                                       alt="icon lokasi"
                                                   />
                                                   <p class="text-gray-500">
@@ -125,7 +125,7 @@ const Tiket = (props) => {
                                                   </div>
                                                   <div class="flex items-center gap-2">
                                                       <img
-                                                          src="../images/icons/tiket.svg"
+                                                          src="http://preinan.xxuz.com/images/icons/tiket.svg"
                                                           alt="icon lokasi"
                                                       />
                                                       <p class="text-gray-500">

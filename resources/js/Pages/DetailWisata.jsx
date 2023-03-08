@@ -28,7 +28,7 @@ const DetailWisata = (props) => {
             <Head title={props.tempat_wisata.nama} />
             {/* konten yang ada pada bawah foto */}
             <div className="container mx-auto pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col gap-[48px]">
-                <BreadCumbs nama={props.tempat_wisata.nama}/>
+                <BreadCumbs nama={props.tempat_wisata.nama} />
                 {/* Layout Foto Galeri */}
                 <div className="h-[612px] grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-5 overflow-hidden">
                     <div
@@ -135,7 +135,7 @@ const DetailWisata = (props) => {
                                                 <div className="flex gap-4">
                                                     <div className="avatar">
                                                         <div className="w-10 h-10 rounded-full">
-                                                            <img src="../images/wisata/Bukit-Sikunir/1.jpg" />
+                                                            <img src="http://preinan.xxuz.com/images/wisata/Bukit-Sikunir/1.jpg" />
                                                         </div>
                                                     </div>
                                                     <div>
@@ -172,7 +172,7 @@ const DetailWisata = (props) => {
                                 ) : (
                                     <div className="flex gap-2">
                                         <img
-                                            src="../images/icons/iconlokasi.svg"
+                                            src="http://preinan.xxuz.com/images/icons/iconlokasi.svg"
                                             alt=""
                                         />
                                         <p className="cardhome-lokasi text-sm">
@@ -199,21 +199,18 @@ const DetailWisata = (props) => {
                                                 "btn btn-primary btn-block"
                                             }
                                         >
-                                            <Button
-                                            
-                                            text="Login"
-                                        />
+                                            <Button text="Login" />
                                         </Link>
                                     </div>
                                     <div className="divider">OR</div>
                                     <div className="grid h-20 rounded-box place-items-center">
-                                       <Link className={
-                                                    "btn text-[#3258E8] btn-outline btn-block"
-                                                } href="/register">
-                                            <Button
-                                                
-                                                text="Register"
-                                            />
+                                        <Link
+                                            className={
+                                                "btn text-[#3258E8] btn-outline btn-block"
+                                            }
+                                            href="/register"
+                                        >
+                                            <Button text="Register" />
                                         </Link>
                                     </div>
                                 </div>
@@ -233,18 +230,19 @@ const DetailWisata = (props) => {
                                         key={item.id}
                                         className="flex flex-start flex-col md:flex-row gap-[16px]"
                                     >
-                                        <div 
+                                        <div
                                             style={{
                                                 backgroundImage: `url(${handleBackground(
                                                     item.nama,
                                                     1
                                                 )})`,
                                             }}
-                                        className={`w-full md:w-[350px] h-[200px] bg-slate-300 rounded-xl bg-cover`}></div>
+                                            className={`w-full md:w-[350px] h-[200px] bg-slate-300 rounded-xl bg-cover`}
+                                        ></div>
                                         <div className="flex flex-col justify-center gap-2">
                                             <div className="flex gap-2">
                                                 <img
-                                                    src="../images/icons/loveicons.svg"
+                                                    src="http://preinan.xxuz.com/images/icons/loveicons.svg"
                                                     alt=""
                                                 />
                                                 <p className="text-sm">
@@ -264,13 +262,17 @@ const DetailWisata = (props) => {
                                                 }}
                                             ></div>
                                             <div className="flex gap-2">
-                                                <Link href={`/destinasi/${pisahkanStripSetiapKata(item.nama)}`}>
+                                                <Link
+                                                    href={`/destinasi/${pisahkanStripSetiapKata(
+                                                        item.nama
+                                                    )}`}
+                                                >
                                                     <h1 className="leading-[21px] text-[14px] font-normal text-[#3258E8]">
                                                         Lihat Destinasi
                                                     </h1>
                                                 </Link>
                                                 <img
-                                                    src="../images/icons/vectorKanan.svg"
+                                                    src="http://preinan.xxuz.com/images/icons/vectorKanan.svg"
                                                     alt=""
                                                 />
                                             </div>

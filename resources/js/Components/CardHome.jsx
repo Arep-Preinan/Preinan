@@ -45,7 +45,7 @@ const Image = ({ url }) => {
     return (
         <figure>
             <img
-                src={`../../images/wisata/${url}/1.jpg`}
+                src={`http://preinan.xxuz.com/images/wisata/${url}/1.jpg`}
                 alt="Shoes"
                 className="rounded-3xl h-[280px]"
             />
@@ -104,7 +104,10 @@ const NamaLokasi = ({ nama, lokasi }) => {
         <div>
             <h1 className="cardhome-nama">{nama}</h1>
             <div className="flex gap-2">
-                <img src="./images/icons/iconlokasi.svg" alt="" />
+                <img
+                    src="http://preinan.xxuz.com/images/icons/iconlokasi.svg"
+                    alt=""
+                />
                 <p className="cardhome-lokasi">{lokasi}</p>
             </div>
         </div>
