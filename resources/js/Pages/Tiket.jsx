@@ -135,19 +135,6 @@ const Tiket = (props) => {
                                                   </div>
                                               </div>
                                           </div>
-                                          <div className="flex flex-row justify-between items-center">
-                                              <Link
-                                                  href={`e-tiket/${data.uuid}`}
-                                                  as="button"
-                                                  className="text-[#3258E8]"
-                                              >
-                                                  Detail Tiket
-                                              </Link>
-                                              <Button
-                                                  text={"Tiket Valid"}
-                                                  className="bg-[#24d12c] text-white A cardhome-button m-4"
-                                              />
-                                          </div>
                                           <RatingReview
                                               wisata={data}
                                               user={props.auth.user}

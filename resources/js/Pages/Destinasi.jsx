@@ -201,27 +201,32 @@ const Destinasi = (props) => {
                               );
                           })}
                 </div>
-                <div className="flex justify-center items-center">
-                    <div className="btn-group">
-                        {prev && (
-                            <button
-                                onClick={() => handlePage("prev")}
-                                className="btn btn-outline"
-                            >
-                                {"<<"}
-                            </button>
-                        )}
-                        <button className="btn btn-active">{page + 1}</button>
-                        {next && (
-                            <button
-                                onClick={() => handlePage("next")}
-                                className="btn btn-outline"
-                            >
-                                {">>"}
-                            </button>
-                        )}
-                    </div>
-                </div>
+                {
+                    isActived === "all" && (
+                        <div className="flex justify-center items-center">
+                            <div className="btn-group">
+                                {prev && (
+                                    <button
+                                        onClick={() => handlePage("prev")}
+                                        className="btn btn-outline"
+                                    >
+                                        {"<<"}
+                                    </button>
+                                )}
+                                <button className="btn btn-active">{page + 1}</button>
+                                {next && (
+                                    <button
+                                        onClick={() => handlePage("next")}
+                                        className="btn btn-outline"
+                                    >
+                                        {">>"}
+                                    </button>
+                                )}
+                            </div>
+                        </div>
+                    )
+                }
+                <br/>
             </div>
         </div>
     );

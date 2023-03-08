@@ -5,10 +5,12 @@ import Button from "./Button";
 const RatingReview = (props) => {
     let [isComment, setComment] = useState(false);
 
+    console.log(props);
+
     let { data, setData, post } = useForm({
         booking_id: props.wisata.id,
         user_id: props.user.id,
-        tempat_wisata_id: props.wisata.id,
+        tempat_wisata_id: props.wisata.tempat_wisata_id,
         rating: props.wisata.komentar ? props.wisata.komentar.rating : 0,
         komentar: props.wisata.komentar ? props.wisata.komentar.isi : "",
     });
