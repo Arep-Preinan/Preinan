@@ -14,7 +14,7 @@ class TempatWisataController extends Controller
     public function home(){
         $gunung = TempatWisata::where('kategori', 'gunung')->limit(6)->get();
         $danau = TempatWisata::where('kategori', 'danau')->limit(6)->get();
-        $air_terjun = TempatWisata::where('kategori', 'air terjun')->limit(3)->get();
+        $air_terjun = TempatWisata::where('kategori', 'air terjun')->limit(6)->get();
         $semua = TempatWisata::get();
 
         return Inertia::render('Home', [

@@ -73,7 +73,7 @@ export default function Home(props) {
                     {dataSearch.length > 0 && (
                         <div
                             id="scroll-search"
-                            className="flex flex-col gap-2 max-h-64 mb-5 w-full overflow-scroll md:w-[350px] bg-white justify-center rounded-xl border-2 border-[#dfdfdf] absolute top-[500px] z-20 "
+                            className="flex flex-col gap-2 max-h-64 mb-5 w-full overflow-scroll md:w-[350px] bg-white justify-center rounded-xl border-2 border-[#dfdfdf] absolute top-[420px] md:top-[500px] z-20 "
                         >
                             {dataSearch.map((item) => {
                                 return (
@@ -156,7 +156,7 @@ export default function Home(props) {
                     {/* Kumpulan Jenis Destinasi */}
                     <div className="flex flex-col xl:flex-row gap-[48px] pb-[48px] pt-[48px]">
                         <div className="flex flex-col md:grid md:grid-cols-2 xl:flex lg:flex-row gap-[12px] md:gap-[30px] lg:h-[510px]">
-                            <div className="grid md:grid-cols-2 lg:grid-cols-none gap-[12px] md:gap-[30px] max-md:h-[150px] max-lg:h-[310px]">
+                            <div className="grid md:grid-cols-1 lg:grid-cols-none gap-[12px] md:gap-[30px] max-md:h-[150px] max-lg:h-[310px]">
                                 <div className="grid w-full xl:w-[310px] shrink h-auto lg:hover:show-text rounded-3xl bg-[url(../images/fotodanauhome.jpg)] bg-cover">
                                     <h1 className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50 bg-black bg-opacity-50 lg:hover:bg-gray-900 rounded-3xl transition duration-400">
                                         Danau
@@ -215,9 +215,9 @@ export default function Home(props) {
                 </div>
                 {/* Overview Destinasi Danau */}
                 <div className="bg-[#3258E8]">
-                    <div className="mx-auto container pt-[48px] pb-[48px] lg:pl-[100px] lg:pr-[100px] flex flex-col gap-[120px] max-md:pr-[20px] max-md:pl-[20px] max-lg:pr-[50px] max-lg:pl-[50px] ">
+                    <div className="mx-auto container pt-[48px] pb-[48px] lg:pl-[100px] lg:pr-[100px] ">
                         <div className="grid grid-cols-1 lg:grid-cols-[434px_auto] gap-[56px] items-center overflow-x-hidden">
-                            <div className="flex items-start flex-col gap-[12px] md:gap-[36px] ">
+                            <div className="flex items-start flex-col gap-[12px] md:gap-6  max-md:pr-[20px] max-md:pl-[20px] max-lg:pr-[50px] max-lg:pl-[50px]">
                                 <Heading.Tagline
                                     text={"Destinasi Danau"}
                                     color="#FFBE58"
@@ -237,22 +237,13 @@ export default function Home(props) {
                                     className={"text-[#466BF3] bg-white"}
                                 />
                             </div>
-                            <div className="flex gap-[72px]">
-                                {props.danau.map((item) => {
-                                    return (
-                                        <div
-                                            key={item.uuid}
-                                            className="splide__slide"
-                                        >
-                                            <CardHome
-                                                destinasi={item}
-                                                id={item.uuid}
-                                                kategori={item.kategori}
-                                                nama={item.nama}
-                                            />
-                                        </div>
-                                    );
-                                })}
+                            <div
+                                id="destinasi-gunung-container"
+                                className="flex gap-[36px] "
+                            >
+                                <div className="mySlider overflow-x-hidden">
+                                    <SliderAirTerjun data={props.danau} />
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -321,23 +312,12 @@ export default function Home(props) {
                                     />
                                 </Link>
                             </div>
-                            <div id="destinasi-gunung-container">
-                                <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 xl:flex justify-between">
-                                    {props.air_terjun.map((item) => {
-                                        return (
-                                            <div
-                                                key={item.uuid}
-                                                className="splide__slide"
-                                            >
-                                                <CardHome
-                                                    destinasi={item}
-                                                    id={item.uuid}
-                                                    kategori={item.kategori}
-                                                    nama={item.nama}
-                                                />
-                                            </div>
-                                        );
-                                    })}
+                            <div
+                                id="destinasi-gunung-container"
+                                className="flex gap-[36px] "
+                            >
+                                <div className="mySlider overflow-x-hidden">
+                                    <SliderAirTerjun data={props.air_terjun} />
                                 </div>
                             </div>
                         </div>

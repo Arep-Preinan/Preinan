@@ -2,7 +2,6 @@ import Heading from "@/Components/Heading";
 import { Link } from "@inertiajs/react";
 
 const BreadCumbs = ({ nama }) => {
-    console.log(nama);
     return (
         <>
             <div className="flex flex-col gap-[32px] mt-[48px]">
@@ -11,21 +10,23 @@ const BreadCumbs = ({ nama }) => {
                         Destinasi
                     </p>
                     <p className="button-breadcumbs-breadcumbs text-[14px] md:leading-[27px] md:text-[18px] ">
-                        <Link
-                            href="/destinasi"
-                            className={`hover:text-[#3258E8]`}
-                        >
+                        <Link href="/" className={`hover:text-[#3258E8]`}>
                             Halaman Utama
-                        </Link>{" "} {">"}{" "}
+                        </Link>{" "}
+                        {">"}{" "}
                         <Link
                             href="/destinasi"
-                            className={`${!nama && "text-[#3258E8]"} hover:text-[#3258E8]`}
+                            className={`${
+                                !nama && "text-[#3258E8]"
+                            } hover:text-[#3258E8]`}
                         >
                             Destinasi
                         </Link>{" "}
-                        {
-                            nama && <span className="text-[#3258E8]">{">"} {nama}</span>
-                        }
+                        {nama && (
+                            <span className="text-[#3258E8]">
+                                {">"} {nama}
+                            </span>
+                        )}
                     </p>
                 </div>
             </div>
