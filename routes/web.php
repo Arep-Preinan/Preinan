@@ -27,18 +27,20 @@ Route::get('/', [TempatWisataController::class, "home"])->name('home');
 Route::get('/destinasi' , [TempatWisataController::class, "index"])->name('destinasi');
 
 Route::get('/destinasi/{slug}' , [TempatWisataController::class, "detailWisata"])->name('destinasi.detail');
-Route::post('/destinasi/{kategori}' , [TempatWisataController::class, "data"])->name('destinasi');
+Route::post('/destinasi/{kategori}' , [TempatWisataController::class, "data"])->name('destinasi.kategori');
 
 Route::get('/login', function () {
     return Inertia::render('Login');
 })->name('login');
 
 Route::post('/login', [AuthController::class, "login"])->name('login.auth');
-Route::post('/logout', [AuthController::class, "logout"])->name('logout');
+Route::get('/logout', [AuthController::class, "logout"])->name('logout');
 
 Route::get('/register', function () {
     return Inertia::render('Register');
 })->name('register');
+
+Route::post('/register', [AuthController::class, "register"])->name('register.auth');
 
 Route::middleware('auth')->group(function () {
     

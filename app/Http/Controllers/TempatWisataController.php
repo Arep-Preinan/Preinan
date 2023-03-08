@@ -20,7 +20,9 @@ class TempatWisataController extends Controller
         return Inertia::render('Home', [
             'title' => 'Beranda',
             'gunung' => $gunung,
-            'danau' => $danau
+            'danau' => $danau,
+            // 'air_terjun' => $air_terjun,
+            'semua' => $semua
         ]);
     
     }

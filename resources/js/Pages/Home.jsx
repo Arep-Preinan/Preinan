@@ -3,8 +3,8 @@ import { Head, Link } from "@inertiajs/react";
 import Navbar from "../Partials/Navbar";
 import { useEffect, useState } from "react";
 import OverviewData from "@/Components/OverviewData";
-import Button from "./../Components/Button";
-import Heading from "./../Components/Heading";
+import Button from "../Components/Button";
+import Heading from "../Components/Heading";
 import CardHome from "@/Components/CardHome";
 import { Splide, SplideSlide } from "@splidejs/react-splide";
 import {
