@@ -58,7 +58,7 @@ Route::middleware('auth')->group(function () {
 
 
 // slug
-Route::get('/{kode}/{uuid}', [TiketController::class, "scan"])->name('tiket.show');
+Route::get('/{kode}/{uuid}', [TiketController::class, "scan"])->name('tiket.scan');
 
 
 require __DIR__.'/auth.php';

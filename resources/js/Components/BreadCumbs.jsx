@@ -2,7 +2,6 @@ import Heading from "@/Components/Heading";
 import { Link } from "@inertiajs/react";
 
 const BreadCumbs = ({ nama }) => {
-    console.log(nama);
     return (
         <>
             <div className="flex flex-col gap-[32px] mt-[48px]">

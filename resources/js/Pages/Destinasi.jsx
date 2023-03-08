@@ -1,18 +1,58 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import DestinasiCard from "@/Components/DestinasiCard";
 import Navbar from "./../Partials/Navbar";
 import Heading from "@/Components/Heading";
 import BreadCumbs from "@/Components/BreadCumbs";
 
 const Destinasi = (props) => {
-    const [all] = useState(props.all);
     const [gunung] = useState(props.gunung);
     const [airTerjun] = useState(props.air_terjun);
     const [danau] = useState(props.danau);
     const [isActived, setIsActived] = useState("all");
+    let [page, setPage] = useState(0);
+    const [all, setAll] = useState({
+        0: [],
+        1: [],
+        2: [],
+    });
+
+    const [next, setNext] = useState(true);
+    const [prev, setPrev] = useState(false);
+
+    useEffect(() => {
+        const result = {};
+
+        for (let i = 0; i < props.all.length; i++) {
+          const group = Math.floor(i / 8); // hitung kelompok mana yang saat ini diproses
+          if (!result[group]) {
+            result[group] = []; // inisialisasi kelompok jika belum ada
+          }
+          result[group].push(props.all[i]); // tambahkan item ke kelompok saat ini
+        }
+        
+        setAll(result);
+    }, [props.all]);
 
     const handleActive = (kategori) => {
         setIsActived(kategori);
+    };
+
+    const handlePage = (ket) => {
+        if(ket === "next"){
+            setPage(++page);
+            setPrev(true);
+            console.log("next",page);
+        }else{
+            setPage(--page);
+            setNext(true);
+            console.log(page);
+        }
+
+        if(page === 0){
+            setPrev(false);
+        }else if(page === 2){
+            setNext(false);
+        }
     };
 
     return (
@@ -121,7 +161,7 @@ const Destinasi = (props) => {
                     className=" grid gap-[16px] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:gap-[20px] lg:flex-row lg:flex-wrap lg:items-stretch items-center  mt-10"
                 >
                     {isActived === "all"
-                        ? all.map((destinasi) => {
+                        ? all[page].map((destinasi) => {
                               return (
                                   <DestinasiCard
                                       key={destinasi.id}
@@ -156,6 +196,13 @@ const Destinasi = (props) => {
                               );
                           })}
                 </div>
+                    <div className="flex justify-center items-center">
+                        <div className="btn-group">
+                            {prev &&  <button onClick={() => handlePage("prev")} className="btn btn-outline">{"<<"}</button>}
+                            <button className="btn btn-active">{page+1}</button>
+                            {next && <button onClick={() => handlePage("next")} className="btn btn-outline">{">>"}</button>}
+                        </div>
+                    </div>
             </div>
         </div>
     );
