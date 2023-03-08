@@ -204,10 +204,14 @@ export default function Home(props) {
                                 />
                             </div>
                             <div className="layout-pertama-button-group flex gap-3">
+                                <Link
+                                    href="/destinasi"
+                                >   
                                 <Button
                                     text={"Eksplor Destinasi"}
                                     className="bg-[#3258E8] text-white"
                                 />
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -241,8 +245,11 @@ export default function Home(props) {
                                 id="destinasi-gunung-container"
                                 className="flex gap-[36px] "
                             >
-                                <div className="mySlider overflow-x-hidden">
-                                    <SliderAirTerjun data={props.danau} />
+                                <div className="mySlider">
+                                {
+                                    console.log(props.danau)
+                                }
+                                    <SliderDanau data={props.danau} />
                                 </div>
                             </div>
                         </div>

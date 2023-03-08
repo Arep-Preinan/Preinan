@@ -50,7 +50,11 @@ const Tiket = (props) => {
                                               <p className="button-breadcumbs-destinasi hidden md:flex">
                                                   {data.tempat_wisata.kategori}
                                               </p>
-                                              <p>Rabu, 26 Januari 2023</p>
+                                              <p>
+                                                    {formatTanggal(
+                                                        data.tanggal
+                                                    )}
+                                              </p>
                                           </div>
                                           <div className="flex flex-col gap-6 mt-6">
                                               <div className="flex items-center h-100 gap-4">

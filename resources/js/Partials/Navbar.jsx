@@ -8,7 +8,9 @@ function Navbar(props) {
             <nav className="relative flex-wrap items-center justify-between mx-auto container pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col pt-8 pb-8">
                 <div className="container flex items-center justify-between">
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-                        <img src="../images/preinannotblack.svg" alt="" />
+                        <Link href="/">
+                            <img src="../images/preinannotblack.svg" alt="" />
+                        </Link>
                         <button
                             className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
                             type="button"
