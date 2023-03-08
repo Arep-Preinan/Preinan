@@ -13,6 +13,15 @@ import {
     SliderAirTerjun,
 } from "@/Components/Slider";
 import pisahkanStripSetiapKata from "@/function/pisahkanStripSetiapKata";
+// Import Swiper React components
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/effect-cards";
+
+// import required modules
+import { EffectCards } from "swiper";
 
 export default function Home(props) {
     const [shoModal, setShowModal] = useState(false);
@@ -71,7 +80,7 @@ export default function Home(props) {
                     {dataSearch.length > 0 && (
                         <div
                             id="scroll-search"
-                            className="flex flex-col gap-2 max-h-64 mb-5 w-full overflow-scroll md:w-[350px] bg-white justify-center rounded-xl border-2 border-[#dfdfdf] absolute top-[420px] md:top-[500px] z-20 "
+                            className="flex flex-col gap-2 max-h-64 mb-5 w-full overflow-scroll md:w-[350px] bg-white justify-center rounded-xl border-2 border-[#dfdfdf] absolute top-[550px] md:top-[500px] z-20 "
                         >
                             {dataSearch.map((item) => {
                                 return (
@@ -202,13 +211,11 @@ export default function Home(props) {
                                 />
                             </div>
                             <div className="layout-pertama-button-group flex gap-3">
-                                <Link
-                                    href="/destinasi"
-                                >   
-                                <Button
-                                    text={"Eksplor Destinasi"}
-                                    className="bg-[#3258E8] text-white"
-                                />
+                                <Link href="/destinasi">
+                                    <Button
+                                        text={"Eksplor Destinasi"}
+                                        className="bg-[#3258E8] text-white"
+                                    />
                                 </Link>
                             </div>
                         </div>
@@ -217,9 +224,9 @@ export default function Home(props) {
                 </div>
                 {/* Overview Destinasi Danau */}
                 <div className="bg-[#3258E8]">
-                    <div className="mx-auto container pt-[48px] pb-[48px] lg:pl-[100px] lg:pr-[100px] ">
-                        <div className="grid grid-cols-1 lg:grid-cols-[434px_auto] gap-[56px] items-center overflow-x-hidden">
-                            <div className="flex items-start flex-col gap-[12px] md:gap-6  max-md:pr-[20px] max-md:pl-[20px] max-lg:pr-[50px] max-lg:pl-[50px]">
+                    <div className="mx-auto container pt-[48px] pb-[48px] lg:pl-[100px] lg:pr-[100px]  ">
+                        <div className="grid grid-cols-1 lg:grid-cols-[434px_auto] gap-[56px] items-center max-md:overflow-hidden">
+                            <div className="flex items-start flex-col gap-[12px] md:gap-6 max-md:pr-[20px] max-md:pl-[20px] max-lg:pr-[50px] max-lg:pl-[50px]">
                                 <Heading.Tagline
                                     text={"Destinasi Danau"}
                                     color="#FFBE58"
@@ -237,7 +244,6 @@ export default function Home(props) {
                                 <Link href="/destinasi">
                                     <Button
                                         text={"Lihat Selengkapnya"}
-                                        className={"text-[#466BF3] bg-white"}
                                     />
                                 </Link>
                             </div>
@@ -277,7 +283,9 @@ export default function Home(props) {
                             >
                                 <Button
                                     text={"Lihat Selengkapnya"}
-                                    className={"border-2 border-[#3258E8]"}
+                                    className={
+                                        "border-2 border-[#3258E8] text-[14px] lg:text-[16px]"
+                                    }
                                 />
                             </Link>
                         </div>
@@ -312,17 +320,14 @@ export default function Home(props) {
                                 <Link href="/destinasi">
                                     <Button
                                         text={"Lihat Selengkapnya"}
-                                        className={"text-[#466BF3] bg-white"}
+                                        className={
+                                            "text-[#466BF3] bg-white text-[14px] lg:text-[16px]"
+                                        }
                                     />
                                 </Link>
                             </div>
-                            <div
-                                id="destinasi-gunung-container"
-                                className="flex gap-[36px] "
-                            >
-                                <div className="mySlider overflow-x-hidden">
-                                    <SliderAirTerjun data={props.air_terjun} />
-                                </div>
+                            <div className="mySlider overflow-x-hidden">
+                                <SliderAirTerjun data={props.air_terjun} />
                             </div>
                         </div>
                     </div>
@@ -408,9 +413,9 @@ export default function Home(props) {
                 </div>
                 {/* end of review user */}
             </div>
-            <footer className="footer footer-center p-10 bg-primary text-primary-content">
+            <footer className="footer footer-center p-10 bg-[#3258E8] text-primary-content">
                 <div>
-                    <img src="../images/logohitam.svg" alt="" />
+                    <img src="../images/preinanFooter.svg" alt="" />
                     <p>Copyright © 2023 - All right reserved</p>
                 </div>
             </footer>

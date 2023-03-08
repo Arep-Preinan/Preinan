@@ -29,13 +29,13 @@ const Destinasi = (props) => {
         const result = {};
 
         for (let i = 0; i < props.all.length; i++) {
-          const group = Math.floor(i / 4); // hitung kelompok mana yang saat ini diproses
-          if (!result[group]) {
-            result[group] = []; // inisialisasi kelompok jika belum ada
-          }
-          result[group].push(props.all[i]); // tambahkan item ke kelompok saat ini
+            const group = Math.floor(i / 4); // hitung kelompok mana yang saat ini diproses
+            if (!result[group]) {
+                result[group] = []; // inisialisasi kelompok jika belum ada
+            }
+            result[group].push(props.all[i]); // tambahkan item ke kelompok saat ini
         }
-        
+
         setAll(result);
     }, [props.all]);
 
@@ -44,7 +44,7 @@ const Destinasi = (props) => {
     };
 
     const handlePage = (ket) => {
-        if(ket === "next"){
+        if (ket === "next") {
             setPage(++page);
             setPrev(true);
         }else{
@@ -52,17 +52,17 @@ const Destinasi = (props) => {
             setNext(true);
         }
 
-        if(page === 0){
+        if (page === 0) {
             setPrev(false);
-        }else if(page === 2){
+        } else if (page === 2) {
             setNext(false);
         }
     };
 
     return (
         <div className="bg-[#FAFAFA]">
-            <Head title="Destinasi"/>
-            <Navbar user={props.auth.user} />
+            <Head title="Destinasi" />
+            <Navbar user={props.auth.user} active={"destinasi"} />
             <div
                 id="destinasi"
                 className="mx-auto container pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col gap-[50px]"
@@ -201,13 +201,27 @@ const Destinasi = (props) => {
                               );
                           })}
                 </div>
-                    <div className="flex justify-center items-center">
-                        <div className="btn-group">
-                            {prev &&  <button onClick={() => handlePage("prev")} className="btn btn-outline">{"<<"}</button>}
-                            <button className="btn btn-active">{page+1}</button>
-                            {next && <button onClick={() => handlePage("next")} className="btn btn-outline">{">>"}</button>}
-                        </div>
+                <div className="flex justify-center items-center">
+                    <div className="btn-group">
+                        {prev && (
+                            <button
+                                onClick={() => handlePage("prev")}
+                                className="btn btn-outline"
+                            >
+                                {"<<"}
+                            </button>
+                        )}
+                        <button className="btn btn-active">{page + 1}</button>
+                        {next && (
+                            <button
+                                onClick={() => handlePage("next")}
+                                className="btn btn-outline"
+                            >
+                                {">>"}
+                            </button>
+                        )}
                     </div>
+                </div>
             </div>
         </div>
     );
