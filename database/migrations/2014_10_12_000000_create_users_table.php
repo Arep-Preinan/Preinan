@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string("password");
             $table->string("fullname");
             $table->bigInteger("nik");
-            $table->integer("nomor_telepon");
+            $table->bigInteger("nomor_telepon");
             $table->timestamps();
         });
     }

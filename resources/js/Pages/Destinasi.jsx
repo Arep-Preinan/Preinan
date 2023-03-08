@@ -47,11 +47,9 @@ const Destinasi = (props) => {
         if (ket === "next") {
             setPage(++page);
             setPrev(true);
-            console.log("next", page);
-        } else {
+        }else{
             setPage(--page);
             setNext(true);
-            console.log(page);
         }
 
         if (page === 0) {

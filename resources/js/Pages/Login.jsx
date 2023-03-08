@@ -1,9 +1,10 @@
 import ButtonLoginRegister from "@/Components/ButtonLoginRegister";
 import Label from "@/Components/Label";
 import Input from "./../Components/Input";
-import { Link, useForm } from "@inertiajs/react";
+import { Head, Link, useForm } from "@inertiajs/react";
 import Navbar from "@/Partials/Navbar";
 import { useEffect, useState } from "react";
+import ButtonLoading from "@/Components/ButtonLoading";
 
 const Login = (props) => {
     const { data, setData, post } = useForm({
@@ -12,11 +13,19 @@ const Login = (props) => {
     });
 
     const [IsMobile, setIsMobile] = useState(false);
+    let [isLoading, setLoading] = useState(false);
 
     const submit = (e) => {
         e.preventDefault();
 
-        post(route("login"));
+        post(route("login"), {
+            preserveScroll: true,
+            onSuccess: () => {
+                setLoading(false);
+            },
+            onError: () => {
+            },
+        });
     };
 
     useEffect(() => {
@@ -29,7 +38,7 @@ const Login = (props) => {
 
     return (
         <form onSubmit={submit}>
-            
+            <Head title="Login" />
             {
                 IsMobile && <Navbar />
             }
@@ -82,15 +91,21 @@ const Login = (props) => {
                                     </a>
                                 </div>
                             </div>
-                            <ButtonLoginRegister
-                                text={"Login"}
-                                // disabled={
-                                //     data.email &&
-                                //     data.length
-                                //         ? false
-                                //         : true
-                                // }
-                            />
+                            {
+                                isLoading ? (
+                                    <ButtonLoading/>
+                                ) : (
+                                    <ButtonLoginRegister
+                                        text={"Login"}
+                                        disabled={
+                                            data.email &&
+                                            data.password
+                                                ? false
+                                                : true
+                                        }
+                                    />
+                                )
+                            }
                             <Link href="/register" className="text-center text-[#868B90]">
                                 <p className="underline underline-offset-1 text-[12px] md:text-[16px]">
                                     Create New Account

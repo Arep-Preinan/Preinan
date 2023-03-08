@@ -17,6 +17,7 @@ class TiketController extends Controller
     {
         // get tiket berdasarkan tanggal
         $tiket_valid = Booking::where('user_id', Auth::user()->id)
+                ->where('valid', 1)
                 ->orderBy('tanggal', 'ASC')
                 ->get();
 

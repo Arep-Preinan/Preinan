@@ -1,4 +1,4 @@
-import { Link } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 import formatTanggal from "@/function/formatTanggal";
 import Button from "@/Components/Button";
 import Navbar from "@/Partials/Navbar";
@@ -11,11 +11,11 @@ const Tiket = (props) => {
     const handleTabActive = (tab) => {
         setTabActive(tab);
     };
-
+    console.log(props);
     return (
         <div className="bg-[#FAFAFA] h-full">
-            <Navbar user={props.user} />
-
+            <Navbar user={props.auth.user} />
+            <Head title="Tiket" />
             <div className="mx-auto mt-20 container pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col items-center  ">
                 <div
                     className="bg-white rounded-xl p-6 flex flex-col gap-6 w-full xl:w-[1000px] justify-center "
