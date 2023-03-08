@@ -1,7 +1,7 @@
 import { Link } from "@inertiajs/react";
 import { useState, useEffect } from "react";
 
-function Navbar(props) {
+function Navbar({ props, active = "home" }) {
     const [navbarOpen, setNavbarOpen] = useState(false);
     return (
         <div className="bg-white z-30 w-full">
@@ -26,14 +26,22 @@ function Navbar(props) {
                             <li className="nav-item">
                                 <Link
                                     href={"/"}
-                                    className=" flex items-center text-[16px] leading-[24px] font-medium  text-[#466BF3] "
+                                    className={`flex items-center text-[16px] leading-[24px]  ${
+                                        active == "home"
+                                            ? "text-[#466BF3] font-medium"
+                                            : "text-[#9C9C9C] font-normal  "
+                                    } `}
                                 >
                                     Halaman Utama
                                 </Link>
                             </li>
                             <li className="nav-item">
                                 <Link
-                                    className=" flex items-center text-[16px] leading-[24px] font-normal  text-[#9C9C9C] "
+                                    className={`flex items-center text-[16px] leading-[24px]  ${
+                                        active == "destinasi"
+                                            ? "text-[#466BF3] font-medium"
+                                            : "text-[#9C9C9C] font-normal  "
+                                    } `}
                                     href="/destinasi"
                                 >
                                     Destinasi
@@ -41,7 +49,11 @@ function Navbar(props) {
                             </li>
                             <li className="nav-item">
                                 <Link
-                                    className=" flex items-center text-[16px] leading-[24px] font-normal  text-[#9C9C9C] "
+                                    className={`flex items-center text-[16px] leading-[24px]  ${
+                                        active == "tentang-kami"
+                                            ? "text-[#466BF3] font-medium"
+                                            : "text-[#9C9C9C] font-normal  "
+                                    } `}
                                     href="#pablo"
                                 >
                                     Tentang Kami
@@ -75,14 +87,22 @@ function Navbar(props) {
                             <li>
                                 <Link
                                     href={"/"}
-                                    className=" flex items-center text-[16px] leading-[24px] font-medium  text-[#466BF3] "
+                                    className={`flex items-center text-[16px] leading-[24px]  ${
+                                        active == "home"
+                                            ? "text-[#466BF3] font-medium"
+                                            : "text-[#9C9C9C] font-normal  "
+                                    } `}
                                 >
                                     Halaman Utama
                                 </Link>
                             </li>
                             <li>
                                 <Link
-                                    className=" flex items-center text-[16px] leading-[24px] font-normal  text-[#9C9C9C] "
+                                    className={`flex items-center text-[16px] leading-[24px]  ${
+                                        active == "destinasi"
+                                            ? "text-[#466BF3] font-medium"
+                                            : "text-[#9C9C9C] font-normal  "
+                                    } `}
                                     href="/destinasi"
                                 >
                                     Destinasi
@@ -90,7 +110,11 @@ function Navbar(props) {
                             </li>
                             <li>
                                 <Link
-                                    className=" flex items-center text-[16px] leading-[24px] font-normal  text-[#9C9C9C] "
+                                    className={`flex items-center text-[16px] leading-[24px]  ${
+                                        active == "tentang-kami"
+                                            ? "text-[#466BF3] font-medium"
+                                            : "text-[#9C9C9C] font-normal  "
+                                    } `}
                                     href="#pablo"
                                 >
                                     Tentang Kami
