@@ -54,7 +54,6 @@ export default function Home(props) {
         }
     };
 
-
     return (
         <div className="bg-[#fafafa]">
             <Navbar user={props.auth.user} active={"home"} />
@@ -188,7 +187,7 @@ export default function Home(props) {
                                     Jelajahi Tiga Jenis Destinasi dalam Satu
                                     Perjalanan
                                 </h1>
-                                <p className="layout-pertama-description">
+                                <p className="layout-pertama-description text-base md:text-[18px]">
                                     buat perjalanan anda kali ini menyenangkan.
                                     Kota wonosobo memiliki 3 jenis destinasi
                                     alam yang wajib anda kunjungi. Ciptakan
@@ -225,7 +224,7 @@ export default function Home(props) {
                 {/* Overview Destinasi Danau */}
                 <div className="bg-[#3258E8]">
                     <div className="mx-auto container pt-[48px] pb-[48px] lg:pl-[100px] lg:pr-[100px]  ">
-                        <div className="grid grid-cols-1 lg:grid-cols-[434px_auto] gap-[56px] items-center max-md:overflow-hidden">
+                        <div className="grid grid-cols-1 lg:flex  justify-center lg:gap-[120px] gap-[56px] items-center max-md:overflow-hidden">
                             <div className="flex items-start flex-col gap-[12px] md:gap-6 max-md:pr-[20px] max-md:pl-[20px] max-lg:pr-[50px] max-lg:pl-[50px]">
                                 <Heading.Tagline
                                     text={"Destinasi Danau"}
@@ -244,16 +243,35 @@ export default function Home(props) {
                                 <Link href="/destinasi">
                                     <Button
                                         text={"Lihat Selengkapnya"}
+                                        className={
+                                            "text-[#466BF3] bg-white text-[14px] lg:text-[16px] hover:bg-[#466BF3] hover:text-[white] hover:border-white transition duration-150 "
+                                        }
                                     />
                                 </Link>
                             </div>
-                            <div
-                                id="destinasi-gunung-container"
-                                className="flex gap-[36px] "
-                            >
-                                <div className="mySlider">
-                                    <SliderDanau data={props.danau} />
-                                </div>
+                            <div>
+                                <Swiper
+                                    effect={"cards"}
+                                    grabCursor={true}
+                                    modules={[EffectCards]}
+                                    className="mySwiper"
+                                >
+                                    {props.gunung.map((item) => {
+                                        return (
+                                            <SwiperSlide
+                                                key={item.uuid}
+                                                className="splide__slide"
+                                            >
+                                                <CardHome
+                                                    destinasi={item}
+                                                    id={item.uuid}
+                                                    kategori={item.kategori}
+                                                    nama={item.nama}
+                                                />
+                                            </SwiperSlide>
+                                        );
+                                    })}
+                                </Swiper>
                             </div>
                         </div>
                     </div>
@@ -284,7 +302,7 @@ export default function Home(props) {
                                 <Button
                                     text={"Lihat Selengkapnya"}
                                     className={
-                                        "border-2 border-[#3258E8] text-[14px] lg:text-[16px]"
+                                        "border-2 border-[#3258E8] text-[14px] lg:text-[16px] hover:bg-[#466BF3] hover:text-[white] hover:border-white transition duration-150"
                                     }
                                 />
                             </Link>
@@ -303,7 +321,7 @@ export default function Home(props) {
 
                 {/* overvew destinasi Air Terjun */}
                 <div className="bg-[#3258E8]">
-                    <div className="mx-auto container pt-[48px] pb-[48px]  lg:pl-[100px] lg:pr-[100px]  flex flex-col">
+                    <div className="mx-auto container pt-[48px] pb-[48px]  lg:pl-[100px] lg:pr-[100px] flex flex-col">
                         <div className="flex flex-col gap-[24px] ">
                             <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 max-md:pr-[20px] max-md:pl-[20px] max-lg:pr-[50px] max-lg:pl-[50px]">
                                 <div>
@@ -317,11 +335,11 @@ export default function Home(props) {
                                         />
                                     </Heading>
                                 </div>
-                                <Link href="/destinasi">
+                                <Link href="destinasi">
                                     <Button
                                         text={"Lihat Selengkapnya"}
                                         className={
-                                            "text-[#466BF3] bg-white text-[14px] lg:text-[16px]"
+                                            "text-[#466BF3] bg-white text-[14px] lg:text-[16px] hover:bg-[#466BF3] hover:text-[white] hover:border-white transition duration-150"
                                         }
                                     />
                                 </Link>
@@ -404,9 +422,9 @@ export default function Home(props) {
                             </div>
                         </div>
                         <Link href="/destinasi">
-                            <Button     
+                            <Button
                                 text={"Eksplor Destinasi"}
-                                className="bg-[#3258E8] text-white mt-[24px]"
+                                className="bg-[#3258E8] text-white mt-[24px] "
                             />
                         </Link>
                     </div>
