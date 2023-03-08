@@ -40,6 +40,10 @@ Route::get('/register', function () {
     return Inertia::render('Register');
 })->name('register');
 
+Route::get('/hubung-kami', function () {
+    return Inertia::render('HubungKami');
+})->name('hubung-kami');
+
 Route::post('/register', [AuthController::class, "register"])->name('register.auth');
 
 Route::middleware('auth')->group(function () {
