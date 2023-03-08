@@ -193,21 +193,28 @@ const DetailWisata = (props) => {
                                         Login / Register Sebelum Melanjutkan
                                     </h1>
                                     <div className="grid h-20 card w-full rounded-box place-items-center">
-                                        <Button
+                                        <Link
+                                            href="/login"
                                             className={
                                                 "btn btn-primary btn-block"
                                             }
+                                        >
+                                            <Button
+                                            
                                             text="Login"
                                         />
+                                        </Link>
                                     </div>
                                     <div className="divider">OR</div>
                                     <div className="grid h-20 rounded-box place-items-center">
-                                        <Button
-                                            className={
-                                                "btn text-[#3258E8] btn-outline btn-block"
-                                            }
-                                            text="Register"
-                                        />
+                                       <Link className={
+                                                    "btn text-[#3258E8] btn-outline btn-block"
+                                                } href="/register">
+                                            <Button
+                                                
+                                                text="Register"
+                                            />
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
