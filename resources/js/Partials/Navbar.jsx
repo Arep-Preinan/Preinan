@@ -172,7 +172,7 @@ function Navbar(props) {
                                                 <li>
                                                     <Link
                                                         method="post"
-                                                        href="logout"
+                                                        href="/logout"
                                                         as="button"
                                                     >
                                                         Logout
@@ -252,7 +252,7 @@ function Navbar(props) {
                                         <li>
                                             <Link
                                                 method="post"
-                                                href="logout"
+                                                href="/logout"
                                                 as="button"
                                             >
                                                 Logout
