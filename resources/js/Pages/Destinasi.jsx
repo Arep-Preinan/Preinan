@@ -14,6 +14,11 @@ const Destinasi = (props) => {
         0: [],
         1: [],
         2: [],
+        3: [],
+        4: [],
+        5: [],
+        6: [],
+        7: [],
     });
 
     const [next, setNext] = useState(true);
@@ -23,7 +28,7 @@ const Destinasi = (props) => {
         const result = {};
 
         for (let i = 0; i < props.all.length; i++) {
-          const group = Math.floor(i / 8); // hitung kelompok mana yang saat ini diproses
+          const group = Math.floor(i / 4); // hitung kelompok mana yang saat ini diproses
           if (!result[group]) {
             result[group] = []; // inisialisasi kelompok jika belum ada
           }
