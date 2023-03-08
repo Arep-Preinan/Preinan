@@ -1,7 +1,9 @@
 import ButtonLoginRegister from "@/Components/ButtonLoginRegister";
 import Label from "@/Components/Label";
 import Input from "./../Components/Input";
-import { useForm } from "@inertiajs/react";
+import { Link, useForm } from "@inertiajs/react";
+import Navbar from "@/Partials/Navbar";
+import { useEffect, useState } from "react";
 
 const Login = (props) => {
     const { data, setData, post } = useForm({
@@ -9,14 +11,30 @@ const Login = (props) => {
         password: "",
     });
 
+    const [IsMobile, setIsMobile] = useState(false);
+
     const submit = (e) => {
         e.preventDefault();
 
         post(route("login"));
     };
 
+    useEffect(() => {
+        if (window.innerWidth <= 768) {
+            setIsMobile(true);
+        } else {
+            setIsMobile(false);
+        }
+    }, []);
+
     return (
         <form onSubmit={submit}>
+            
+            {
+                IsMobile && <Navbar />
+            }
+
+
             <div className="grid lg:grid-cols-2">
                 <div className="grid place-items-center h-screen">
                     <div className="card bg-base-100 max-w-lg w-full">
@@ -73,11 +91,11 @@ const Login = (props) => {
                                 //         : true
                                 // }
                             />
-                            <a href="" className="text-center text-[#868B90]">
+                            <Link href="/register" className="text-center text-[#868B90]">
                                 <p className="underline underline-offset-1 text-[12px] md:text-[16px]">
                                     Create New Account
                                 </p>
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -85,7 +103,6 @@ const Login = (props) => {
                     className="h-full w-full bg-blue-600 hidden lg:flex shrink"
                     id="login-onboarding"
                 >
-                    Halo
                 </div>
             </div>
         </form>

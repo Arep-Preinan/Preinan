@@ -21,7 +21,8 @@ class TempatWisataController extends Controller
             'title' => 'Beranda',
             'gunung' => $gunung,
             'danau' => $danau,
-            'air_terjun' => $air_terjun
+            'air_terjun' => $air_terjun,
+            'semua' => $semua
         ]);
     
     }
