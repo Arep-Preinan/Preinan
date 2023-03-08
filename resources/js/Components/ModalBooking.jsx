@@ -40,12 +40,10 @@ const ModalBooking = (props) => {
         post(route('booking.store'), {
             preserveScroll: true,
             onSuccess: () => {
-                console.log("success")
                 setLoading(false)
                 setPage(2)
             },
             onError: () => {
-                console.log("error")
                 setLoading(false)
             }
         })

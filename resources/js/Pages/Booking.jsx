@@ -1,6 +1,6 @@
 import ButtonLoading from "@/Components/ButtonLoading";
 import CardBooking from "@/Components/CardBooking";
-import { useForm, Link } from "@inertiajs/react";
+import { useForm, Link, Head } from "@inertiajs/react";
 import { useEffect, useState } from "react";
 import Button from "./../Components/Button";
 
@@ -13,6 +13,7 @@ const Booking = (props) => {
 
     return (
         <>
+        <Head title="Booking" />
             {
                 /* section pertama */
                 <div className="bg-[#FAFAFA]">

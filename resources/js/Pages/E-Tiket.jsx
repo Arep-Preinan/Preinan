@@ -1,5 +1,6 @@
 import DetailKontak from "@/Components/DetailKontak"
 import formatTanggal from "@/function/formatTanggal"
+import { Head } from "@inertiajs/react";
 import QRCode from 'qrcode.react';
 
 
@@ -8,6 +9,7 @@ const E_Tiket = (props) => {
 
     return (
         <div className="flex items-center justify-center h-screen">
+            <Head title="E-Tiket" />
             <div className="card w-auto bg-base-100 border border-black shadow-md m-5">
                 <div className="card-body">
                     <img src="../../images/icons/logo.svg" className="w-28" alt="" />

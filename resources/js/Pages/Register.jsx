@@ -1,13 +1,15 @@
 import ButtonLoginRegister from "@/Components/ButtonLoginRegister";
 import Input from "@/Components/Input";
 import Label from "@/Components/Label";
-import { useForm, Link } from "@inertiajs/react";
+import { useForm, Link, Head } from "@inertiajs/react";
 import { useState, useEffect } from "react";
 import Navbar from "@/Partials/Navbar";
+import ButtonLoading from "@/Components/ButtonLoading";
 
 const Register = () => {
     let [passwordSame, setPasswordSame] = useState(false);
     const [IsMobile, setIsMobile] = useState(false);
+    let [isLoading, setLoading] = useState(false);
 
     const { data, setData, post } = useForm({
         fullname: "",
@@ -20,10 +22,8 @@ const Register = () => {
     const handlePassword = (e) => {
         if (e.target.value === data.password) {
             setPasswordSame(true);
-            console.log("passwordSame");
         } else {
             setPasswordSame(false);
-            console.log("passwordNotSame");
         }
     };
 
@@ -47,7 +47,15 @@ const Register = () => {
 
     const handleRegister = (e) => {
         e.preventDefault();
-        post(route("register"));
+        setLoading(true);
+        post(route("register"), {
+            preserveScroll: true,
+            onSuccess: () => {
+                setLoading(false);
+            },
+            onError: () => {
+            },
+        });
     };
 
     useEffect(() => {
@@ -61,7 +69,7 @@ const Register = () => {
     return (
         <div className="grid lg:grid-cols-2">
             {IsMobile && <Navbar />}
-
+            <Head title="Register" />
             <div
                 className="h-full w-full bg-blue-600 hidden lg:flex shrink"
                 id="login-onboarding"
@@ -105,6 +113,14 @@ const Register = () => {
                                 />
                             </div>
                             <div className="flex flex-col gap-3">
+                                <Label text={"Konfirmasi Password"} />
+                                <Input
+                                    type="password"
+                                    name="confirm_password"
+                                    onChange={(e) => handlePassword(e)}
+                                />
+                            </div>
+                            <div className="flex flex-col gap-3">
                                 <Label text={"NIK"} />
                                 <Input
                                     type="number"
@@ -113,14 +129,6 @@ const Register = () => {
                                     onChange={(e) =>
                                         setData("nik", e.target.value)
                                     }
-                                />
-                            </div>
-                            <div className="flex flex-col gap-3">
-                                <Label text={"Konfirmasi Password"} />
-                                <Input
-                                    type="password"
-                                    name="confirm_password"
-                                    onChange={(e) => handlePassword(e)}
                                 />
                             </div>
                             <div className="flex flex-col gap-3">
@@ -135,11 +143,16 @@ const Register = () => {
                                 />
                             </div>
                         </div>
-                        <ButtonLoginRegister
-                            text={"Register"}
-                            onClick={(e) => handleRegister(e)}
-                            disabled={buttonCheckComplete()}
-                        />
+                        {
+                            isLoading ? (
+                                <ButtonLoading/>
+                            ) : (
+                            <ButtonLoginRegister
+                                text={"Register"}
+                                onClick={(e) => handleRegister(e)}
+                                disabled={buttonCheckComplete()}
+                            />)
+                        }
 
                         <p className="text-[12px] md:text-[16px]">
                             Sudah Punya Akun?{" "}

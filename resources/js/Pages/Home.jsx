@@ -33,7 +33,6 @@ export default function Home(props) {
     const handleSearchWisata = (e) => {
         e.preventDefault();
         const data = props.semua;
-        console.log(data);
         const search = e.target.value;
         if (search === "") {
             setDataSearch([]);
@@ -46,7 +45,6 @@ export default function Home(props) {
         }
     };
 
-    console.log(props.air_terjun);
 
     return (
         <div className="bg-[#fafafa]">
@@ -236,19 +234,18 @@ export default function Home(props) {
                                         className={"text-white"}
                                     />
                                 </div>
-                                <Button
-                                    text={"Lihat Selengkapnya"}
-                                    className={"text-[#466BF3] bg-white"}
-                                />
+                                <Link href="/destinasi">
+                                    <Button
+                                        text={"Lihat Selengkapnya"}
+                                        className={"text-[#466BF3] bg-white"}
+                                    />
+                                </Link>
                             </div>
                             <div
                                 id="destinasi-gunung-container"
                                 className="flex gap-[36px] "
                             >
                                 <div className="mySlider">
-                                {
-                                    console.log(props.danau)
-                                }
                                     <SliderDanau data={props.danau} />
                                 </div>
                             </div>
@@ -312,7 +309,7 @@ export default function Home(props) {
                                         />
                                     </Heading>
                                 </div>
-                                <Link href="destinasi">
+                                <Link href="/destinasi">
                                     <Button
                                         text={"Lihat Selengkapnya"}
                                         className={"text-[#466BF3] bg-white"}
@@ -401,10 +398,12 @@ export default function Home(props) {
                                 </div>
                             </div>
                         </div>
-                        <Button
-                            text={"Eksplor Destinasi"}
-                            className="bg-[#3258E8] text-white mt-[24px]"
-                        />
+                        <Link href="/destinasi">
+                            <Button     
+                                text={"Eksplor Destinasi"}
+                                className="bg-[#3258E8] text-white mt-[24px]"
+                            />
+                        </Link>
                     </div>
                 </div>
                 {/* end of review user */}

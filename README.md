@@ -13,6 +13,14 @@ Dengan fitur-fiturnya yang lengkap dan mudah digunakan, Preinan adalah solusi te
 
 ## "Cari Destinasi Liburan? Preinan Aja yang Bisa Bikin Hati Senang! Tiket Wisata Online Anti Galau ke Wonosobo!"
 
+# Page Esensial
+- 1. Home Page
+- 2. Destinasi
+- 3. Detail Destinasi
+- 4. Login & Register
+- 5. Booking
+- 6. Tiket ku
+- 7. E-tiket
 
 # Techstack 
 - Laravel

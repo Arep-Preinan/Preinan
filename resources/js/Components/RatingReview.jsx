@@ -13,7 +13,6 @@ const RatingReview = (props) => {
     })
 
     useEffect(() => {
-        // console.log(props.wisata.komentar);
         if(props.wisata.komentar) {
             setComment(true);            
         }
@@ -30,7 +29,6 @@ const RatingReview = (props) => {
                 setComment(true);
             },
             onError: () => {
-                console.log('gagal');
             }
         })
     }

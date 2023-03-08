@@ -1,7 +1,6 @@
 import { Head } from "@inertiajs/react"
 
 const Scan = (props) => {
-    console.log(props)
     return(
         <div class="flex justify-center items-center h-screen">
             <Head title="Scan Tiket" />
