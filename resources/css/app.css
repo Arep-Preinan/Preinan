@@ -134,6 +134,15 @@ body{
     text-transform: capitalize;
     color: #3258E8;
 }
+.button-breadcumbs-mobile{
+    padding: 12.5px 24px;
+    background: rgba(50, 88, 232, 0.05);
+    border-radius: 8px;
+    font-weight: 600;
+    line-height: 27px;
+    text-transform: capitalize;
+    color: #3258E8;
+}
 .button-breadcumbs-breadcumbs{
     font-weight: 400;
     text-transform: capitalize;

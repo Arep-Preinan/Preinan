@@ -59,15 +59,15 @@ export default function Home(props) {
 
     return (
         <div className="bg-[#fafafa]">
-            <Navbar user={props.auth.user} />
+            <Navbar user={props.auth.user} active={"home"} />
 
             <div className="grid text-center place-items-center h-[631px] w-full bg-[url(../images/headerHero.svg)] bg-no-repeat bg-cover bg-bottom bg">
                 <div className="flex flex-col justify-center items-center gap-[40px]">
-                    <div className="flex flex-col md:gap-[8px] lg:gap-[12px]">
-                        <h1 className="font-semibold leading-[120%] text-2xl md:text-3xl lg:text-[42px] text-white">
+                    <div className="flex flex-col gap-2 md:gap-[8px] lg:gap-[12px]">
+                        <h1 className="font-semibold leading-[120%] text-3xl md:text-3xl lg:text-[42px] text-white">
                             Temukan Keindahan Tersembunyi
                         </h1>
-                        <h1 className="font-semibold leading-[120%] text-2xl md:text-3xl lg:text-[42px] text-white">
+                        <h1 className="font-semibold leading-[120%] text-2xl md:text-3xl lg:text-[42px] text-white ">
                             Kota Wonosobo
                         </h1>
                     </div>
@@ -82,7 +82,7 @@ export default function Home(props) {
                     {dataSearch.length > 0 && (
                         <div
                             id="scroll-search"
-                            className="flex flex-col gap-2 max-h-64 mb-5 w-full overflow-scroll md:w-[350px] bg-white justify-center rounded-xl border-2 border-[#dfdfdf] absolute top-[550px] md:top-[500px] z-20 "
+                            className="flex flex-col gap-2 max-h-64 mb-5 w-full overflow-scroll md:w-[350px] bg-white justify-center rounded-xl border-2 border-[#dfdfdf] absolute top-[550px] md:top-[500px] lg:top-[550px] z-20 "
                         >
                             {dataSearch.map((item) => {
                                 return (
@@ -280,12 +280,12 @@ export default function Home(props) {
                 {/* end of Overview Destinasi Danau */}
 
                 {/* Overview Destinasi Gunung */}
-                <div className="mx-auto container pt-[48px] pb-[48px] pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col gap-[120px]">
+                <div className="mx-auto container pt-[48px] pb-[48px] lg:pl-[100px] lg:pr-[100px] ">
                     <div
                         id="destinasi-gunung"
                         className="flex flex-col gap-[24px] "
                     >
-                        <div className="flex justify-between lg:items-center flex-col lg:flex-row gap-6">
+                        <div className="flex justify-between lg:items-center flex-col lg:flex-row gap-6 md:gap-6 max-md:pr-[20px] max-md:pl-[20px] max-lg:pr-[50px] max-lg:pl-[50px] ">
                             <div>
                                 <Heading>
                                     <Heading.Tagline
@@ -322,9 +322,9 @@ export default function Home(props) {
 
                 {/* overvew destinasi Air Terjun */}
                 <div className="bg-[#3258E8]">
-                    <div className="mx-auto container pt-[48px] pb-[48px] pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col">
+                    <div className="mx-auto container pt-[48px] pb-[48px]  lg:pl-[100px] lg:pr-[100px]  flex flex-col">
                         <div className="flex flex-col gap-[24px] ">
-                            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
+                            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 max-md:pr-[20px] max-md:pl-[20px] max-lg:pr-[50px] max-lg:pl-[50px]">
                                 <div>
                                     <Heading>
                                         <h1 className="leading-[140%] font-semibold text-[18px] text-[#FFBE58]">
