@@ -11,7 +11,7 @@ Preinan juga menyediakan tiga kategori wisata yang menarik, yaitu danau, gunung,
 
 Dengan fitur-fiturnya yang lengkap dan mudah digunakan, Preinan adalah solusi terbaik bagi mereka yang ingin merencanakan liburan yang tak terlupakan di Wonosobo. Ayo kunjungi website Preinan dan temukan destinasi liburan impianmu!
 
-###### "Cari Destinasi Liburan? Preinan Aja yang Bisa Bikin Hati Senang! Tiket Wisata Online Anti Galau ke Wonosobo!"
+## "Cari Destinasi Liburan? Preinan Aja yang Bisa Bikin Hati Senang! Tiket Wisata Online Anti Galau ke Wonosobo!"
 
 
 # Techstack 
@@ -49,7 +49,7 @@ npm install
 Setelah install berikut nya adalah mengcopy file .env.example menjadi file  .env
 
 ## 5. Setup database
-jika sudah maka ubah konfigurasi berikut sesuai keinginan dan sesuai akun dari databasenya
+jika sudah maka ubah konfigurasi berikut pada file .env sesuai keinginan atau sesuai akun dari databasenya
 ```
 DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
@@ -81,3 +81,6 @@ npm run deb
 
 # Help Desk
 Jika butuh bantuan silahkan jangan ragu-ragu menghubungi developer
+
+# Penasaran dengan website nya tanpa setup?
+[Klik link ini untuk melihat website nya](http://preinan.xxuz.com)
