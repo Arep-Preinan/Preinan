@@ -6,56 +6,35 @@ import BreadCumbs from "@/Components/BreadCumbs";
 import { Head } from "@inertiajs/react";
 
 const Destinasi = (props) => {
-    const [gunung] = useState(props.gunung);
-    const [airTerjun] = useState(props.air_terjun);
-    const [danau] = useState(props.danau);
-    const [isActived, setIsActived] = useState("all");
-    let [page, setPage] = useState(0);
-    const [all, setAll] = useState({
-        0: [],
-        1: [],
-        2: [],
-        3: [],
-        4: [],
-        5: [],
-        6: [],
-        7: [],
-    });
 
+    const [isActived, setIsActived] = useState("all");
+    let [pageAll, setPageAll] = useState(0);
+    let [pageGunung, setPageGunung] = useState(0);
+    let [pageAirTerjun, setPageAirTerjun] = useState(0);
+    let [pageDanau, setPageDanau] = useState(0);
+
+    const [all, setAll] = useState(props.all);
+    const [gunung, setGunung] = useState(props.gunung);
+    const [airTerjun, setAirTerjun] = useState(props.air_terjun);
+    const [danau, setDanau] = useState(props.danau);
+    
     const [next, setNext] = useState(true);
     const [prev, setPrev] = useState(false);
-
-    useEffect(() => {
-        const result = {};
-
-        for (let i = 0; i < props.all.length; i++) {
-            const group = Math.floor(i / 4); // hitung kelompok mana yang saat ini diproses
-            if (!result[group]) {
-                result[group] = []; // inisialisasi kelompok jika belum ada
-            }
-            result[group].push(props.all[i]); // tambahkan item ke kelompok saat ini
-        }
-
-        setAll(result);
-    }, [props.all]);
 
     const handleActive = (kategori) => {
         setIsActived(kategori);
     };
 
-    const handlePage = (ket) => {
-        if (ket === "next") {
-            setPage(++page);
-            setPrev(true);
-        } else {
-            setPage(--page);
-            setNext(true);
+    const handlePage = (page, kategori) => {
+        if (kategori === "all") {
+            setPageAll(page);
+        } else if (kategori === "gunung") {
+            setPageGunung(page);
+        } else if (kategori === "air terjun") {
+            setPageAirTerjun(page);
         }
-
-        if (page === 0) {
-            setPrev(false);
-        } else if (page === 2) {
-            setNext(false);
+        else if (kategori === "danau") {
+            setPageDanau(page);
         }
     };
 
@@ -166,7 +145,7 @@ const Destinasi = (props) => {
                     className=" grid gap-[16px] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:gap-[20px] lg:flex-row lg:flex-wrap lg:items-stretch items-center  mt-10"
                 >
                     {isActived === "all"
-                        ? all[page].map((destinasi) => {
+                        ? all[pageAll].map((destinasi) => {
                               return (
                                   <DestinasiCard
                                       key={destinasi.id}
@@ -175,7 +154,7 @@ const Destinasi = (props) => {
                               );
                           })
                         : isActived === "gunung"
-                        ? gunung.map((destinasi) => {
+                        ? gunung[pageGunung].map((destinasi) => {
                               return (
                                   <DestinasiCard
                                       key={destinasi.uuid}
@@ -184,7 +163,7 @@ const Destinasi = (props) => {
                               );
                           })
                         : isActived === "danau"
-                        ? danau.map((destinasi) => {
+                        ? danau[pageDanau].map((destinasi) => {
                               return (
                                   <DestinasiCard
                                       key={destinasi.uuid}
@@ -192,7 +171,7 @@ const Destinasi = (props) => {
                                   />
                               );
                           })
-                        : airTerjun.map((destinasi) => {
+                        : airTerjun[pageAirTerjun].map((destinasi) => {
                               return (
                                   <DestinasiCard
                                       key={destinasi.uuid}
@@ -204,28 +183,69 @@ const Destinasi = (props) => {
                 {isActived === "all" && (
                     <div className="flex justify-center items-center">
                         <div className="btn-group">
-                            {prev && (
-                                <button
-                                    onClick={() => handlePage("prev")}
-                                    className="btn btn-outline"
-                                >
-                                    {"<<"}
-                                </button>
-                            )}
-                            <button className="btn btn-active">
-                                {page + 1}
+                        {all.map((group, i) => (
+                            <button
+                            key={i}
+                            className={`btn ${pageAll === i && 'btn-active'}`}
+                            onClick={() => handlePage(i, "all")}
+                            >
+                            {i + 1}
                             </button>
-                            {next && (
-                                <button
-                                    onClick={() => handlePage("next")}
-                                    className="btn btn-outline"
-                                >
-                                    {">>"}
-                                </button>
-                            )}
+                        ))}
                         </div>
                     </div>
                 )}
+                {
+                    isActived === "gunung" && (
+                        <div className="flex justify-center items-center">
+                            <div className="btn-group">
+                            {gunung.map((group, i) => (
+                                <button
+                                key={i}
+                                className={`btn ${pageGunung === i && 'btn-active'}`}
+                                onClick={() => handlePage(i, "gunung")}
+                                >
+                                {i + 1}
+                                </button>
+                            ))}
+                            </div>
+                        </div>
+                    )
+                }
+                {
+                    isActived === "danau" && (
+                        <div className="flex justify-center items-center">
+                            <div className="btn-group">
+                            {danau.map((group, i) => (
+                                <button
+                                key={i}
+                                className={`btn ${pageDanau === i && 'btn-active'}`}
+                                onClick={() => handlePage(i, "danau")}
+                                >
+                                {i + 1}
+                                </button>
+                            ))}
+                            </div>
+                        </div>
+                    )
+                }
+                {
+                    isActived === "air terjun" && (
+                        <div className="flex justify-center items-center">
+                            <div className="btn-group">
+                            {airTerjun.map((group, i) => (
+                                <button
+                                key={i}
+                                className={`btn ${pageAirTerjun === i && 'btn-active'}`}
+                                onClick={() => handlePage(i, "air terjun")}
+                                >
+                                {i + 1}
+                                </button>
+                            ))}
+                            </div>
+                        </div>
+                    )
+                }
                 <br />
             </div>
         </div>
