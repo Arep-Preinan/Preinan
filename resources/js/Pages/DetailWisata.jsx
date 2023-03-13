@@ -21,16 +21,15 @@ const DetailWisata = (props) => {
     const handleBackground = (nama, item) => {
         return `../images/wisata/${pisahkanStripSetiapKata(nama)}/${item}.jpg`;
     };
-
     return (
         <div className="bg-[#fafafa]">
             <Navbar user={props.auth.user} />
             <Head title={props.tempat_wisata.nama} />
             {/* konten yang ada pada bawah foto */}
             <div className="container mx-auto pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col gap-[48px]">
-                <BreadCumbs nama={props.tempat_wisata.nama} />
+                <BreadCumbs nama={props.tempat_wisata.nama} active={"detail"} />
                 {/* Layout Foto Galeri */}
-                <div className="h-[612px] grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-5 overflow-hidden">
+                <div className="h-[300px] md:h-[612px] grid grid-cols-1 md:grid-cols-[1fr_1fr] gap-5 overflow-hidden">
                     <div
                         style={{
                             backgroundImage: `url(${handleBackground(
@@ -40,7 +39,7 @@ const DetailWisata = (props) => {
                         }}
                         className={`bg-slate-300 rounded-3xl bg-no-repeat bg-cover`}
                     ></div>
-                    <div className="grid  md:grid-cols-1 gap-5">
+                    <div className="hidden md:grid  md:grid-cols-1 gap-5">
                         <div className="grid grid-cols-2 lg:grid-cols-[60%_auto] gap-5">
                             <div
                                 style={{
@@ -90,14 +89,22 @@ const DetailWisata = (props) => {
                 >
                     <div className="flex flex-col gap-[32px]">
                         <div className="flex flex-col gap-[12px]">
-                            <div className="heading-and-rating-detail-wisata flex ">
+                            <div className="heading-and-rating-detail-wisata flex flex-col md:flex-row justify-between md:items-center ">
                                 <h1 className="text-[26px] md:text-[40px] leading-[120%] font-bold">
                                     {props.tempat_wisata.nama}
                                 </h1>
+                                <div className="flex md:flex-col md:justify-center md:items-end gap-1">
+                                    <h1 className="text-gray-500">
+                                        Harga Tiket
+                                    </h1>
+                                    <h1 className="text-2xl text-[#E10000] font-medium leading-[120%]">
+                                        Rp. {props.tempat_wisata.harga}
+                                    </h1>
+                                </div>
                             </div>
                         </div>
                         <div
-                            className="font-normal text-base text-justify leading-[150%] "
+                            className="font-normal text-base text-gray-500 text-justify leading-[150%] "
                             dangerouslySetInnerHTML={{
                                 __html: props.tempat_wisata.deskripsi,
                             }}
@@ -284,6 +291,56 @@ const DetailWisata = (props) => {
                     </div>
                 </div>
                 {/* akhir konten yang ada pada bawah foto */}
+            </div>
+            <div className="btm-nav max-md:flex md:hidden">
+                <button>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"
+                        />
+                    </svg>
+                </button>
+                <button className="active">
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                        />
+                    </svg>
+                </button>
+                <button>
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        className="h-5 w-5"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke="currentColor"
+                    >
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth="2"
+                            d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                        />
+                    </svg>
+                </button>
             </div>
         </div>
     );

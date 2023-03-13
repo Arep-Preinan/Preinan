@@ -52,6 +52,7 @@ const DestinasiCard = ({ destinasi }) => {
                         href={`/destinasi/${pisahkanStripSetiapKata(
                             destinasi.nama
                         )}`}
+                        className={"flex justify-center items-center"}
                     >
                         <Button text={"Details"} className="text-[#3258E8] " />
                     </Link>
@@ -122,7 +123,10 @@ const NamaLokasi = ({ nama, lokasi }) => {
         <div>
             <h1 className="cardhome-nama">{nama}</h1>
             <div className="flex gap-2">
-                <img src="http://preinan.xxuz.com/images/icons/iconlokasi.svg" alt="" />
+                <img
+                    src="http://preinan.xxuz.com/images/icons/iconlokasi.svg"
+                    alt=""
+                />
                 <p className="cardhome-lokasi">{lokasi}</p>
             </div>
         </div>

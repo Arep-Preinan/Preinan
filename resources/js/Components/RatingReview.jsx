@@ -36,7 +36,7 @@ const RatingReview = (props) => {
     };
 
     return (
-        <div className="flex flex-col gap-4 pb-6">
+        <div className="flex flex-col gap-4 pt-6 pb-6">
             <div className="rating">
                 <input
                     type="radio"

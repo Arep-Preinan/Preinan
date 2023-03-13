@@ -193,9 +193,9 @@ body{
     background: #3252DF;
     color: #FFFFFF;
 }
-#scroll-search::-webkit-scrollbar {
+/* #scroll-search::-webkit-scrollbar {
     display: none;
-}
+} */
 
 @media screen and (min-width: 1440px) {
     .splide__track .splide__list .splide__slide{

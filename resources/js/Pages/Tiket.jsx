@@ -13,7 +13,7 @@ const Tiket = (props) => {
     };
     console.log(props);
     return (
-        <div className="bg-[#FAFAFA] h-full">
+        <div className="bg-[#FAFAFA] h-screen">
             <Navbar user={props.auth.user} />
             <Head title="Tiket" />
             <div className="mx-auto mt-20 container pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col items-center  ">
@@ -23,7 +23,7 @@ const Tiket = (props) => {
                 >
                     <div className="tabs tabs-boxed bg-white">
                         <a
-                            className={`tab tab-lg ${
+                            className={`tab md:tab-lg ${
                                 tabActive === "aktif"
                                     ? "tab-active bg-[#3258E8_!important]"
                                     : ""
@@ -33,7 +33,7 @@ const Tiket = (props) => {
                             Tiket Aktif
                         </a>
                         <a
-                            className={`tab tab-lg ${
+                            className={`tab md:tab-lg ${
                                 tabActive === "riwayat"
                                     ? "tab-active bg-[#3258E8_!important]"
                                     : ""
