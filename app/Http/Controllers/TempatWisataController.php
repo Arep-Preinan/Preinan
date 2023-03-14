@@ -37,7 +37,7 @@ class TempatWisataController extends Controller
         $gunung = array_chunk(TempatWisata::where('kategori', 'gunung')->inRandomOrder()->get()->toArray(), 4);
         $air_terjun = array_chunk(TempatWisata::where('kategori', 'air terjun')->inRandomOrder()->get()->toArray(), 4);
         $danau = array_chunk(TempatWisata::where('kategori', 'danau')->inRandomOrder()->get()->toArray(), 4);
-        $all = array_chunk(TempatWisata::inRandomOrder()->get()->toArray(), 4);
+        $all = array_chunk(TempatWisata::inRandomOrder()->get()->toArray(), 8);
         return Inertia::render('Destinasi', [
             'title' => 'Destinasi',
             'gunung' => $gunung,

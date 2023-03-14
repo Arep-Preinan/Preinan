@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import Navbar from "@/Partials/Navbar";
 import ButtonLoading from "@/Components/ButtonLoading";
 
-const Register = () => {
+const Register = ({handleMode}) => {
     let [passwordSame, setPasswordSame] = useState(false);
     const [IsMobile, setIsMobile] = useState(false);
     let [isLoading, setLoading] = useState(false);
@@ -67,7 +67,6 @@ const Register = () => {
 
     return (
         <div className="bg-[#fafafa]">
-            <Navbar />
             <div className="grid lg:grid-cols-2">
                 <Head title="Register" />
                 <div
@@ -159,12 +158,12 @@ const Register = () => {
                             )}
                             <p className="text-[12px] md:text-[16px]">
                                 Sudah Punya Akun?{" "}
-                                <Link
-                                    href="/login"
-                                    className="text-center underline underline-offset-1  text-[#868B90]"
+                                <span
+                                    onClick={() => handleMode("login")}
+                                    className="text-center underline underline-offset-1  text-[#868B90] hover:cursor-pointer"
                                 >
                                     Login
-                                </Link>
+                                </span>
                             </p>
                         </div>
                     </div>

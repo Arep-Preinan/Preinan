@@ -4,6 +4,7 @@ import Button from "@/Components/Button";
 import Navbar from "@/Partials/Navbar";
 import RatingReview from "@/Components/RatingReview";
 import { useState } from "react";
+import E_Tiket from "@/Components/E-Tiket";
 
 const Tiket = (props) => {
     const [tabActive, setTabActive] = useState("aktif");
@@ -11,7 +12,6 @@ const Tiket = (props) => {
     const handleTabActive = (tab) => {
         setTabActive(tab);
     };
-    console.log(props);
     return (
         <div className="bg-[#FAFAFA] h-screen">
             <Navbar user={props.auth.user} />
@@ -77,19 +77,19 @@ const Tiket = (props) => {
                                           </div>
                                       </div>
                                       <div className="flex flex-row justify-between pb-6">
-                                          <Link
-                                              href={`e-tiket/${data.uuid}`}
-                                              as="button"
-                                              className="text-[#3258E8]"
-                                          >
-                                              Detail Tiket
-                                          </Link>
+                                          <label htmlFor={`my-modal-${index}`} className="mt-2 text-[#3258E8]">Detail Tiket</label>
                                           <Button
                                               text={"Tiket Valid"}
                                               className="bg-[#24d12c] text-white text-[14px] p-0 "
                                           />
                                       </div>
                                       <div className="h-[1px] w-full bg-[#EAEAEA]"></div>
+                                      <input type="checkbox" id={`my-modal-${index}`} className="modal-toggle" />
+                                        <div className="modal">
+                                        <div className="">
+                                            <E_Tiket tiket={data} auth={props.auth} index={index} />
+                                        </div>
+                                        </div>
                                   </div>
                               );
                           })
@@ -153,12 +153,3 @@ const Tiket = (props) => {
 };
 
 export default Tiket;
-
-{
-    /* <h2 className="card-title">{data.tempat_wisata.nama}</h2>
-<p>{formatTanggal(data.tanggal)}</p>
-<p>{data.jumlah_tiket} Tiket</p>
-<div className="card-actions justify-end">
-<Link href={`e-tiket/${data.uuid}`} className="btn">Show</Link>
-</div> */
-}

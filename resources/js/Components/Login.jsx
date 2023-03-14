@@ -1,17 +1,18 @@
 import ButtonLoginRegister from "@/Components/ButtonLoginRegister";
 import Label from "@/Components/Label";
-import Input from "./../Components/Input";
+import Input from "./Input";
 import { Head, Link, useForm } from "@inertiajs/react";
 import Navbar from "@/Partials/Navbar";
 import { useEffect, useState } from "react";
 import ButtonLoading from "@/Components/ButtonLoading";
+import { Button } from "@material-tailwind/react";
 
-const Login = (props) => {
+const Login = ({props, handleMode}) => {
     const { data, setData, post } = useForm({
         email: "",
         password: "",
     });
-
+    console.log(props);
     const [IsMobile, setIsMobile] = useState(false);
     let [isLoading, setLoading] = useState(false);
 
@@ -37,7 +38,6 @@ const Login = (props) => {
 
     return (
         <div className="bg-[#fafafa]">
-            <Navbar />
             <form onSubmit={submit}>
                 <Head title="Login" />
                 {IsMobile && <Navbar />}
@@ -102,14 +102,17 @@ const Login = (props) => {
                                         }
                                     />
                                 )}
-                                <Link
-                                    href="/register"
-                                    className="text-center text-[#868B90]"
+                                <div
+                                    
+                                    onClick={
+                                        () => handleMode('register')
+                                    }
+                                    className="text-center text-[#868B90] hover:cursor-pointer"
                                 >
                                     <p className="underline underline-offset-1 text-[12px] md:text-[16px]">
                                         Create New Account
                                     </p>
-                                </Link>
+                                </div>
                             </div>
                         </div>
                     </div>

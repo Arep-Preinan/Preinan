@@ -15,7 +15,7 @@ const DestinasiCard = ({ destinasi }) => {
         let pisahkan = string.split(",");
         return pisahkan[0];
     };
-
+    // console.log("nama",destinasi)
     return (
         <div className="card min-w-[295px] md:min-w-[auto] md:w-full bg-base-100 flex justify-between gap-[4px] rounded-3xl border-2 ">
             <div className="flex flex-col">

@@ -5,10 +5,7 @@ import QRCode from "qrcode.react";
 
 const E_Tiket = (props) => {
     let url = window.location.origin;
-
     return (
-        <div className="flex items-center justify-center h-screen">
-            <Head title="E-Tiket" />
             <div className="card w-auto bg-base-100 border border-black shadow-md m-5">
                 <div className="card-body">
                     <img
@@ -53,9 +50,9 @@ const E_Tiket = (props) => {
                             value={`${url}/${props.tiket.kode}/${props.tiket.uuid}`}
                         />
                     </div>
+                    <label htmlFor={`my-modal-${props.index}`} className="btn">Yay!</label>
                 </div>
             </div>
-        </div>
     );
 };
 

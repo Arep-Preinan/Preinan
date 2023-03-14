@@ -14,6 +14,10 @@ use function Pest\Laravel\get;
 class AuthController extends Controller
 {
     
+    public function index(){
+        return Inertia::render('Auth');
+    }
+
     public function login(Request $request){
         $user = User::where('email', $request->email)->first();
         

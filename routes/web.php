@@ -33,6 +33,8 @@ Route::get('/login', function () {
     return Inertia::render('Login');
 })->name('login');
 
+Route::get('/auth', [AuthController::class, "index"])->name('auth');
+
 Route::post('/login', [AuthController::class, "login"])->name('login.auth');
 Route::post('/logout', [AuthController::class, "logout"])->name('logout');
 
