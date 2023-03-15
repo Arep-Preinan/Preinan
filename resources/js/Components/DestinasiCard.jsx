@@ -26,6 +26,7 @@ const DestinasiCard = ({ destinasi }) => {
                 />
                 <div className="p-4 flex flex-col gap-[12px]">
                     <DestinasiCard.KategoriRating
+                        rating={destinasi.rating}
                         kategori={destinasi.kategori}
                     />
                     <DestinasiCard.NamaLokasi
@@ -54,7 +55,7 @@ const DestinasiCard = ({ destinasi }) => {
                         )}`}
                         className={"flex justify-center items-center"}
                     >
-                        <Button text={"Details"} className="text-[#3258E8] " />
+                        <Button text={"Detail"} className="text-[#3258E8] " />
                     </Link>
                 </div>
             </div>
@@ -72,7 +73,7 @@ const Image = ({ url }) => {
     );
 };
 
-const KategoriRating = ({ kategori }) => {
+const KategoriRating = ({ kategori, rating }) => {
     return (
         <div className="flex gap-[12px] items-center">
             <div className="card-category-and-stars">
@@ -81,35 +82,12 @@ const KategoriRating = ({ kategori }) => {
                 </p>
             </div>
             <div className="flex">
-                <div className="rating">
+                <div className="rating flex items-center gap-2">
+                    <p className="text-base text-gray-600">{rating}</p>
                     <input
                         type="radio"
                         name="rating-1"
                         className="mask mask-star bg-orange-400"
-                        disabled
-                    />
-                    <input
-                        type="radio"
-                        name="rating-1"
-                        className="mask mask-star  bg-orange-400"
-                        disabled
-                    />
-                    <input
-                        type="radio"
-                        name="rating-1"
-                        disabled
-                        className="mask mask-star  bg-orange-400"
-                    />
-                    <input
-                        type="radio"
-                        name="rating-1"
-                        className="mask mask-star  bg-orange-400"
-                        disabled
-                    />
-                    <input
-                        type="radio"
-                        name="rating-1"
-                        className="mask mask-star  bg-orange-400"
                         disabled
                     />
                 </div>

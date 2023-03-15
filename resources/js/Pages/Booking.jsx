@@ -13,7 +13,7 @@ const Booking = (props) => {
 
     return (
         <>
-        <Head title="Booking" />
+            <Head title="Booking" />
             {
                 /* section pertama */
                 <div className="bg-[#FAFAFA]">
@@ -22,7 +22,7 @@ const Booking = (props) => {
                             {/* section judul */}
                             <div className="text-center">
                                 <h1 className="text-[22px] md:text-[36px] font-semibold text-[#152C5B]">
-                                    Lengkapi Data & Pembayaran
+                                    Lengkapi Pembayaran
                                 </h1>
                                 <p className="leading-[27px] text-[#B0B0B0] font-light text-[16px] md:text-[18px]">
                                     Silahkan selesaikan pembayaran <br /> untuk
@@ -34,12 +34,39 @@ const Booking = (props) => {
                                 booking={props}
                                 onPindahHalaman={pindahHalaman}
                             />
-                            <Link href="destinasi">
+                            {/* The button to open modal */}
+                            <a href="#my-modal-2">
                                 <Button
-                                    className={"btn btn-error text-white"}
+                                    className={
+                                        "btn bg-red-500 border-none text-white"
+                                    }
                                     text={"Cancel"}
                                 />
-                            </Link>
+                            </a>
+                            <div className="modal" id="my-modal-2">
+                                <div className="modal-box">
+                                    <h3 className="font-bold text-lg">
+                                        Batalkan Pemesanan
+                                    </h3>
+                                    <p className="py-4">
+                                        Apakah anda yakin ingin membatalkan
+                                        pesanan anda?
+                                    </p>
+                                    <div className="modal-action">
+                                        <Link href="destinasi">
+                                            <Button
+                                                className={
+                                                    "btn bg-red-500 border-none text-white"
+                                                }
+                                                text={"Batal"}
+                                            />
+                                        </Link>
+                                        <a href="#" className="btn btn-primary">
+                                            Lanjutkan
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

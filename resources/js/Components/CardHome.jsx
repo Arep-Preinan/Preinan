@@ -8,6 +8,7 @@ const CardHome = ({
     lokasi = "Dusun Sukajadi",
     url = "http://preinan.xxuz.com/images/wisata/Gunung-Lanang-Mergolangu/1.jpg",
     destinasi,
+    rating,
 }) => {
     const { data, get } = useForm({
         id_destinasi: destinasi.uuid,
@@ -18,10 +19,15 @@ const CardHome = ({
     };
 
     return (
-        <div className="card w-[384px] bg-[#ffff] p-6 flex gap-[36px] rounded-3xl cardhome-border">
-            <div className="flex flex-col gap-4">
-                <CardHome.Image url={pisahkanStripSetiapKata(nama)} />
-                <CardHome.KategoriRating kategori={kategori} />
+        <div className="card w-[384px] bg-[#ffff] p-6 flex gap-[32px] rounded-3xl cardhome-border">
+            <div className="flex flex-col gap-3">
+                <div className="flex flex-col gap-6">
+                    <CardHome.Image url={pisahkanStripSetiapKata(nama)} />
+                    <CardHome.KategoriRating
+                        kategori={kategori}
+                        rating={rating}
+                    />
+                </div>
                 <CardHome.NamaLokasi nama={nama} lokasi={lokasi} />
             </div>
             <div className="flex flex-col  lg:flex-row ">
@@ -53,47 +59,22 @@ const Image = ({ url }) => {
     );
 };
 
-const KategoriRating = ({ kategori }) => {
+const KategoriRating = ({ kategori, rating }) => {
     return (
-        <div className="flex gap-[12px] items-center">
+        <div className="flex gap-[12px] items-center ">
             <div className="card-category-and-stars">
                 <p className="w-auto" id="cardhome-category">
                     {kategori}
                 </p>
             </div>
-            <div>
-                <div className="rating">
-                    <input
-                        type="radio"
-                        name="rating-1"
-                        className="mask mask-star bg-orange-400"
-                        disabled
-                    />
-                    <input
-                        type="radio"
-                        name="rating-1"
-                        className="mask mask-star  bg-orange-400"
-                        disabled
-                    />
-                    <input
-                        type="radio"
-                        name="rating-1"
-                        disabled
-                        className="mask mask-star  bg-orange-400"
-                    />
-                    <input
-                        type="radio"
-                        name="rating-1"
-                        className="mask mask-star  bg-orange-400"
-                        disabled
-                    />
-                    <input
-                        type="radio"
-                        name="rating-1"
-                        className="mask mask-star  bg-orange-400"
-                        disabled
-                    />
-                </div>
+            <div className="rating flex items-center gap-2">
+                <p className="text-base text-gray-600">{rating}</p>
+                <input
+                    type="radio"
+                    name="rating-1"
+                    className="mask mask-star bg-orange-400"
+                    disabled
+                />
             </div>
         </div>
     );

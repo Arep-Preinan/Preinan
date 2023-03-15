@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 import ButtonLoading from "@/Components/ButtonLoading";
 import { Button } from "@material-tailwind/react";
 
-const Login = ({props, handleMode}) => {
+const Login = ({ props, handleMode }) => {
     const { data, setData, post } = useForm({
         email: "",
         password: "",
@@ -40,14 +40,24 @@ const Login = ({props, handleMode}) => {
         <div className="bg-[#fafafa]">
             <form onSubmit={submit}>
                 <Head title="Login" />
-                {IsMobile && <Navbar />}
-                <div className="grid lg:grid-cols-2">
+                {/* {IsMobile && <Navbar />} */}
+                <div className="grid lg:grid-cols-2 ">
                     <div className="grid place-items-center h-screen">
                         <div className="card bg-base-100 max-w-lg w-full">
-                            <div className="card-body p-[50px] flex flex-col gap-[20px]">
-                                <h1 className="text-[32px] font-semibold">
+                            <div className="card-body md:p-[50px] flex flex-col gap-[20px] md:border-2 rounded-3xl">
+                                <div className="flex justify-center">
+                                    <img
+                                        src="../images/preinannotblack.svg"
+                                        alt=""
+                                        className="w-[300px]"
+                                    />
+                                </div>
+                                <h1 className="text-[24px] text-[#2F3F4D] font-semibold">
                                     Login
                                 </h1>
+                                <p className="text-[16px]">
+                                    Masuk ke akun anda untuk memulai transaksi
+                                </p>
                                 {props.errors.status && (
                                     <div className="alert alert-error">
                                         {props.errors.status}
@@ -56,6 +66,7 @@ const Login = ({props, handleMode}) => {
                                 <div className="email flex flex-col gap-[12px]">
                                     <Label text={"Alamat Email"} />
                                     <Input
+                                        text={"e.g. johnsmilga@gmail.com"}
                                         type="email"
                                         name="email"
                                         value={data.email}
@@ -67,7 +78,14 @@ const Login = ({props, handleMode}) => {
                                 <div>
                                     <div className="password">
                                         <div className="flex flex-col gap-[12px]">
-                                            <Label text={"Password"} />
+                                            <div className="flex">
+                                                <Label text={"Kata Sandi"} />
+                                                <a href="">
+                                                    <p className="text-[#868B90] underline underline-offset-1 text-[12px] md:text-[14px]">
+                                                        Lupa Kata Sandi?
+                                                    </p>
+                                                </a>
+                                            </div>
                                             <Input
                                                 name="password"
                                                 type="password"
@@ -81,13 +99,18 @@ const Login = ({props, handleMode}) => {
                                             />
                                         </div>
                                     </div>
-                                    <div className="flex justify-end">
-                                        {" "}
-                                        <a href="">
-                                            <p className="text-[#868B90] underline underline-offset-1 text-[12px] md:text-[16px] mt-3">
-                                                Forgot my password
-                                            </p>
-                                        </a>
+                                    <div className="flex justify-between">
+                                        <div className="form-control">
+                                            <label className="label cursor-pointer flex gap-3">
+                                                <input
+                                                    type="checkbox"
+                                                    className="checkbox checkbox-sm"
+                                                />
+                                                <span className="label-text text-[#868B90] text-[12px] md:text-[14px]">
+                                                    ingat saya
+                                                </span>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                                 {isLoading ? (
@@ -102,22 +125,27 @@ const Login = ({props, handleMode}) => {
                                         }
                                     />
                                 )}
+                                <div className="divider">
+                                    <p className="text-gray-600 text-sm">
+                                        atau
+                                    </p>
+                                </div>
                                 <div
-                                    
-                                    onClick={
-                                        () => handleMode('register')
-                                    }
+                                    onClick={() => handleMode("register")}
                                     className="text-center text-[#868B90] hover:cursor-pointer"
                                 >
-                                    <p className="underline underline-offset-1 text-[12px] md:text-[16px]">
-                                        Create New Account
+                                    <p className=" text-[12px] md:text-[16px]">
+                                        Belum Punya Akun?
+                                        <span className="underline underline-offset-1">
+                                            Buat Akun
+                                        </span>
                                     </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div
-                        className="h-full w-full bg-blue-600 hidden lg:flex shrink"
+                        className=" bg-blue-600 hidden lg:flex justify-start items-start"
                         id="login-onboarding"
                     ></div>
                 </div>

@@ -4,7 +4,7 @@ const Heading = ({ children }) => {
 const Title = ({ text, className }) => {
     return (
         <h1
-            className={`md:leading-[54px] font-bold text-[24px] md:text-[36px] capitalize ${className}`}
+            className={`md:leading-[54px] font-bold text-[24px] md:text-[28px] lg:text-[36px] capitalize ${className}`}
         >
             {text}
         </h1>
@@ -13,7 +13,7 @@ const Title = ({ text, className }) => {
 const Tagline = ({ text, color = "#3258E8" }) => {
     return (
         <p
-            className={`leading-[140%] font-semibold text-[18px] text-[${color}] `}
+            className={`leading-[140%] font-semibold text-[16px] lg:text-[18px] text-[${color}] `}
         >
             {text}
         </p>

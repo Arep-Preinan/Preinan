@@ -4,7 +4,6 @@ import { useEffect, useState } from "react";
 import DetailKontak from "./DetailKontak";
 
 const CardBooking = (props) => {
-
     let [isLoading, setLoading] = useState(false);
 
     let { data, setData, post } = useForm({
@@ -29,8 +28,7 @@ const CardBooking = (props) => {
             onSuccess: () => {
                 setLoading(false);
             },
-            onError: () => {
-            },
+            onError: () => {},
         });
     };
 
@@ -69,7 +67,7 @@ const CardBooking = (props) => {
     return (
         /* section card */
         <div
-            className="card w-full xl:w-[511px] md:max-h-[500px] bg-base-100 p-5"
+            className="card w-full xl:w-[550px] md:max-h-[500px] bg-base-100 p-5"
             id="rekomendasi-detail-wisata"
         >
             <div className="flex flex-col gap-6">
@@ -90,11 +88,24 @@ const CardBooking = (props) => {
                                 </p>
                             </div>
                         </div>
-                        <input
-                            type="date"
-                            className="border-1 border-[#EAEAEA] p-2 rounded-lg"
-                            onChange={(e) => setData("tanggal", e.target.value)}
-                        />
+                        <div className="flex flex-col justify-end items-start">
+                            <p
+                                className={`text-xs absolute top-[113px] ${
+                                    data.tanggal == ""
+                                        ? "text-red-600"
+                                        : "text-gray-600"
+                                } `}
+                            >
+                                {data.tanggal == "" ? "* Pilih tanggal" : null}
+                            </p>
+                            <input
+                                type="date"
+                                className="border-1 border-[#EAEAEA] p-2 rounded-lg"
+                                onChange={(e) =>
+                                    setData("tanggal", e.target.value)
+                                }
+                            />
+                        </div>
                     </div>
                 </CardBooking.Structure>
 
@@ -148,10 +159,13 @@ const CardBooking = (props) => {
 
                 {/* section bayar */}
                 <div className="flex flex-col md:flex-row justify-between items-center">
-                    <select defaultValue={""} className="select select-ghost md:max-w-xs font-normal text-[16px] leading-[24px] text-[#6D6D6D]">
+                    <select
+                        defaultValue={""}
+                        className="select select-ghost md:max-w-xs font-normal text-[16px] leading-[24px] text-[#6D6D6D]"
+                    >
                         <option disabled selected>
                             {/* <h1 className="flex-grow "> */}
-                                Pilih Metode Pembayaran
+                            Pilih Metode Pembayaran
                             {/* </h1> */}
                         </option>
                         <option>VA BCA</option>

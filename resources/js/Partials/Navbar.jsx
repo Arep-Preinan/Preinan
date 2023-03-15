@@ -5,7 +5,7 @@ function Navbar(props) {
     const [navbarOpen, setNavbarOpen] = useState(false);
     return (
         <div className="bg-white z-30 w-full">
-            <nav className="relative flex-wrap items-center justify-between mx-auto container pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col pt-4 pb-4 md:pt-8 md:pb-8">
+            <nav className="relative flex-wrap items-center justify-between mx-auto container pr-[20px] pl-[20px] md:pr-[50px] xl:pl-[100px] xl:pr-[100px]md:pl-[50px] flex flex-col pt-4 pb-4 md:pt-8 md:pb-8">
                 <div className="container flex items-center justify-between">
                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
                         <Link href="/">

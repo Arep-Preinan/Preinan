@@ -11,9 +11,9 @@ const SliderGunung = ({ data }) => {
             perPage: 2,
             perMove: 1,
             gap: "32px", // ubah nilai gap menjadi lebih kecil
-            pagination: false,
+            pagination: true,
             focus: "center",
-            arrows: false,
+            arrows: true,
             breakpoints: {
                 640: {
                     perPage: 1,
@@ -33,7 +33,6 @@ const SliderGunung = ({ data }) => {
             },
         }).mount();
     }, []);
-
     return (
         <div className="splide splide-gunung">
             <div className="splide__track">
@@ -46,6 +45,7 @@ const SliderGunung = ({ data }) => {
                                     id={item.uuid}
                                     kategori={item.kategori}
                                     nama={item.nama}
+                                    rating={item.rating}
                                 />
                             </div>
                         );
@@ -99,6 +99,7 @@ const SliderDanau = ({ data }) => {
                                     id={item.uuid}
                                     kategori={item.kategori}
                                     nama={item.nama}
+                                    rating={item.rating}
                                 />
                             </div>
                         );
@@ -117,9 +118,9 @@ const SliderAirTerjun = ({ data }) => {
             perPage: 2,
             perMove: 1,
             gap: "32px", // ubah nilai gap menjadi lebih kecil
-            pagination: false,
-            focus: "center",
-            arrows: false,
+            pagination: true,
+            focus: "start",
+            arrows: true,
             breakpoints: {
                 640: {
                     perPage: 1,
@@ -152,6 +153,7 @@ const SliderAirTerjun = ({ data }) => {
                                     id={item.uuid}
                                     kategori={item.kategori}
                                     nama={item.nama}
+                                    rating={item.rating}
                                 />
                             </div>
                         );

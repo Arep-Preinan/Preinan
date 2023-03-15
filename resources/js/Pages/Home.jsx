@@ -68,7 +68,7 @@ export default function Home(props) {
         <div className="bg-[#fafafa]">
             <Navbar user={props.auth.user} active={"home"} />
 
-            <div className="grid text-center place-items-center h-[631px] w-full bg-[url(http://preinan.xxuz.com/images/headerHero.svg)] bg-no-repeat bg-cover bg-bottom bg">
+            <div className="grid text-center place-items-center h-[631px] w-full bg-[url(../images/backgroundHero3.svg)] bg-no-repeat bg-cover   ">
                 <div className="flex flex-col justify-center items-center gap-[40px]">
                     <div className="flex flex-col gap-2 md:gap-[8px] lg:gap-[12px]">
                         <h1 className="font-semibold leading-[120%] text-3xl md:text-3xl lg:text-[42px] text-white">
@@ -78,7 +78,7 @@ export default function Home(props) {
                             Kota Wonosobo
                         </h1>
                     </div>
-                    <div className="flex flex-col md:flex-row justify-center gap-[12px] w-full pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px]">
+                    <div className="flex flex-col md:flex-row justify-center gap-[12px] w-full pr-[20px] pl-[20px] xl:pl-[100px] xl:pr-[100px]">
                         <input
                             onChange={handleSearchWisata}
                             type="text"
@@ -167,7 +167,7 @@ export default function Home(props) {
                 </div>
             </div>
             <div className="relative bottom-20">
-                <div className="mx-auto container pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col  ">
+                <div className="mx-auto container pr-[20px] pl-[20px]  xl:pl-[100px] xl:pr-[100px] flex flex-col  ">
                     <Head title="Home" />
                     {/* feature Preinan */}
                     <div
@@ -184,7 +184,7 @@ export default function Home(props) {
                                 <h1 className="text-[20px] leading-[30px] font-semibold text-[#4B4B4B]">
                                     Pesan Mudah
                                 </h1>
-                                <p className="font-normal tetx-[16px] text-[#848484] leading-[30px]">
+                                <p className="font-normal text-[16px] text-[#848484] leading-[30px]">
                                     Pesan tiket mudah, nikmati pengalaman tak
                                     terlupakan
                                 </p>
@@ -228,18 +228,36 @@ export default function Home(props) {
                     <div className="flex flex-col xl:flex-row gap-[48px] pb-[48px] pt-[48px]">
                         <div className="flex flex-col md:grid md:grid-cols-2 xl:flex lg:flex-row gap-[12px] md:gap-[30px] lg:h-[510px]">
                             <div className="grid md:grid-cols-1 lg:grid-cols-none gap-[12px] md:gap-[30px] max-md:h-[150px] max-lg:h-[310px]">
-                                <div className="grid w-full xl:w-[310px] shrink h-auto lg:hover:show-text rounded-3xl bg-[url(http://preinan.xxuz.com/images/fotodanauhome.jpg)] bg-cover">
+                                <div
+                                    className="grid w-full xl:w-[310px] shrink h-auto lg:hover:show-text rounded-3xl bg-cover"
+                                    style={{
+                                        backgroundImage:
+                                            'url("http://preinan.xxuz.com/images/fotodanauhome.jpg")',
+                                    }}
+                                >
                                     <h1 className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50 bg-black bg-opacity-50 lg:hover:bg-gray-900 rounded-3xl transition duration-400">
                                         Danau
                                     </h1>
                                 </div>
-                                <div className="grid w-full xl:w-[310px] shrink h-auto rounded-3xl bg-[http://preinan.xxuz.com/images/surodipo.jpeg)] bg-cover ">
+                                <div
+                                    className="grid w-full xl:w-[310px] shrink h-auto rounded-3xl bg-cover "
+                                    style={{
+                                        backgroundImage:
+                                            'url("http://preinan.xxuz.com/images/surodipo.jpeg")',
+                                    }}
+                                >
                                     <h1 className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50  bg-black bg-opacity-50 lg:hover:bg-gray-900 rounded-3xl transition duration-400">
                                         Air Terjun
                                     </h1>
                                 </div>
                             </div>
-                            <div className="xl:w-[320px] max-md:h-[75px] max-lg:h-[320px] rounded-3xl bg-[http://preinan.xxuz.com/images/gununghome.jpeg)] bg-cover bg-top lg:bg-right-top ">
+                            <div
+                                className="xl:w-[320px] max-md:h-[75px] max-lg:h-[320px] rounded-3xl bg-cover bg-top lg:bg-right-top "
+                                style={{
+                                    backgroundImage:
+                                        'url("http://preinan.xxuz.com/images/gununghome.jpeg")',
+                                }}
+                            >
                                 <h1 className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50  bg-black bg-opacity-50 lg:hover:bg-gray-900 rounded-3xl transition duration-400">
                                     Gunung
                                 </h1>
@@ -288,9 +306,9 @@ export default function Home(props) {
                 </div>
                 {/* Overview Destinasi Danau */}
                 <div className="bg-[#3258E8]">
-                    <div className="mx-auto container pt-[48px] pb-[48px] lg:pl-[100px] lg:pr-[100px]  ">
+                    <div className="mx-auto container pt-[48px] pb-[48px] xl:pl-[100px] xl:pr-[100px]  ">
                         <div className="grid grid-cols-1 lg:flex  justify-center lg:gap-[120px] gap-[56px] items-center max-md:overflow-hidden">
-                            <div className="flex items-start flex-col gap-[12px] md:gap-6 max-md:pr-[20px] max-md:pl-[20px] max-lg:pr-[50px] max-lg:pl-[50px]">
+                            <div className="flex items-start flex-col gap-[12px] lg:gap-6 max-md:pr-[20px] max-md:pl-[20px] max-lg:pl-[50px]">
                                 <Heading.Tagline
                                     text={"Destinasi Danau"}
                                     color="#FFBE58"
@@ -332,6 +350,7 @@ export default function Home(props) {
                                                     id={item.uuid}
                                                     kategori={item.kategori}
                                                     nama={item.nama}
+                                                    rating={item.rating}
                                                 />
                                             </SwiperSlide>
                                         );
@@ -344,12 +363,12 @@ export default function Home(props) {
                 {/* end of Overview Destinasi Danau */}
 
                 {/* Overview Destinasi Gunung */}
-                <div className="mx-auto container pt-[48px] pb-[48px] lg:pl-[100px] lg:pr-[100px] ">
+                <div className="mx-auto container pt-[48px] pb-[48px] xl:pl-[100px] xl:pr-[100px] ">
                     <div
                         id="destinasi-gunung"
-                        className="flex flex-col gap-[24px] "
+                        className="flex flex-col gap-[32px] "
                     >
-                        <div className="flex justify-between lg:items-center flex-col lg:flex-row gap-6 md:gap-6 max-md:pr-[20px] max-md:pl-[20px] max-lg:pr-[50px] max-lg:pl-[50px] ">
+                        <div className="flex justify-between lg:items-center flex-col lg:flex-row gap-6 md:gap-6 max-md:pr-[20px] max-md:pl-[20px] ">
                             <div>
                                 <Heading>
                                     <Heading.Tagline
@@ -386,9 +405,9 @@ export default function Home(props) {
 
                 {/* overvew destinasi Air Terjun */}
                 <div className="bg-[#3258E8]">
-                    <div className="mx-auto container pt-[48px] pb-[48px]  lg:pl-[100px] lg:pr-[100px] flex flex-col">
-                        <div className="flex flex-col gap-[24px] ">
-                            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 max-md:pr-[20px] max-md:pl-[20px] max-lg:pr-[50px] max-lg:pl-[50px]">
+                    <div className="mx-auto container pt-[48px] pb-[48px]  xl:pl-[100px] xl:pr-[100px] flex flex-col">
+                        <div className="flex flex-col gap-[32px] ">
+                            <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 max-md:pr-[20px] max-md:pl-[20px] max-lg:pl-[50px]">
                                 <div>
                                     <Heading>
                                         <h1 className="leading-[140%] font-semibold text-[18px] text-[#FFBE58]">
@@ -418,7 +437,7 @@ export default function Home(props) {
                 {/* end of overvew destinasi Air Terjun  */}
 
                 {/* review User */}
-                <div className="mx-auto container pt-[48px] pb-[48px] pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col lg:flex-row gap-[48px] items-center">
+                <div className="mx-auto container pt-[48px] pb-[48px] pr-[20px] pl-[20px] xl:pl-[100px] xl:pr-[100px] flex flex-col lg:flex-row gap-[48px] items-center">
                     <div className=" ">
                         <img
                             src="http://preinan.xxuz.com/images/reviewuser.svg"
