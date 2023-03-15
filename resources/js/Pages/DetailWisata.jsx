@@ -244,7 +244,7 @@ const DetailWisata = (props) => {
                                         <div className="flex flex-col justify-center gap-2">
                                             <div className="flex gap-2">
                                                 <img
-                                                    src="http://preinan.xxuz.com/images/icons/loveicons.svg"
+                                                    src="/images/icons/loveicons.svg"
                                                     alt=""
                                                 />
                                                 <p className="text-sm">
@@ -274,7 +274,7 @@ const DetailWisata = (props) => {
                                                     </h1>
                                                 </Link>
                                                 <img
-                                                    src="http://preinan.xxuz.com/images/icons/vectorKanan.svg"
+                                                    src="/images/icons/vectorKanan.svg"
                                                     alt=""
                                                 />
                                             </div>

@@ -76,7 +76,7 @@ const CardBooking = (props) => {
                     <div className="flex flex-col md:flex-row justify-between gap-3 md:gap-0">
                         <div className="flex flex-rows-2 gap-4">
                             <img
-                                src="http://preinan.xxuz.com/images/icons/destinasi.svg"
+                                src="/images/icons/destinasi.svg"
                                 alt=""
                             />
                             <div className="flex flex-col">
