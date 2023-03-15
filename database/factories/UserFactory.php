@@ -23,6 +23,7 @@ class UserFactory extends Factory
             "password" => bcrypt("test"),
             "fullname" => fake()->name(),
             "nik" => fake()->randomNumber(9),
+            'profile' => fake()->imageUrl(640, 480, 'people'),
             "nomor_telepon" => fake()->randomNumber(9),
         ];
     }

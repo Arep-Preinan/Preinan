@@ -17,7 +17,7 @@ return new class extends Migration
             $table->uuid('uuid')->default(DB::raw('uuid()'));
             $table->string("nama");
             $table->string("alamat");
-            $table->string("gmaps");
+            $table->longText("gmaps");
             $table->longText("deskripsi");
             $table->string("kategori");
             $table->float("rating");

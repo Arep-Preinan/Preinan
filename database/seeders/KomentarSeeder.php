@@ -21,7 +21,7 @@ class KomentarSeeder extends Seeder
           $user = User::all();
           $booking = Booking::all();
           
-          for ($i = 0; $i < 200; $i++) {
+          for ($i = 0; $i < 25; $i++) {
               $komentar = new Komentar;
               $komentar->user_id = $user->random()->id;
           

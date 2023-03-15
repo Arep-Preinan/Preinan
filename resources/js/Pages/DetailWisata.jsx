@@ -136,13 +136,14 @@ const DetailWisata = (props) => {
                                 id="rekomendasi-detail-wisata"
                             >
                                 {activeTab === "komentar" ? (
-                                    props.komentar.map((item) => {
+                                    props.komentar.map((item, index) => {
+                                        console.log(item);
                                         return (
                                             <div key={item.id}>
                                                 <div className="flex gap-4">
-                                                    <div className="avatar">
+                                                    <div id={`profile-${index}`} className="avatar">
                                                         <div className="w-10 h-10 rounded-full">
-                                                            <img src="http://preinan.xxuz.com/images/wisata/Bukit-Sikunir/1.jpg" />
+                                                        <img src={item.user.profile} />
                                                         </div>
                                                     </div>
                                                     <div>
@@ -178,13 +179,7 @@ const DetailWisata = (props) => {
                                     })
                                 ) : (
                                     <div className="flex gap-2">
-                                        <img
-                                            src="http://preinan.xxuz.com/images/icons/iconlokasi.svg"
-                                            alt=""
-                                        />
-                                        <p className="cardhome-lokasi text-sm">
-                                            {props.tempat_wisata.alamat}
-                                        </p>
+                                        <iframe src={props.tempat_wisata.gmaps} width="600" height="450" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                                     </div>
                                 )}
                             </div>

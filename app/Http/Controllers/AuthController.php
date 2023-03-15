@@ -25,9 +25,7 @@ class AuthController extends Controller
             Auth::login($user);
             return redirect()->intended("/");
         }else{
-            return redirect()->route('login')->withErrors([
-                'status' => 'Email atau password salah.',
-            ]);             
+            return redirect()->back()->withErrors(['status' => 'Email atau password salah']);
         }
     }
 
@@ -44,6 +42,7 @@ class AuthController extends Controller
         $user->email = $request->email;
         $user->password = Hash::make($request->password);
         $user->fullname = $request->fullname;
+        $user->profile = "/images/profiles/default.jpg";
         $user->nik = $request->nik;
         $user->nomor_telepon = $request->nomor_telepon;
         $user->save();

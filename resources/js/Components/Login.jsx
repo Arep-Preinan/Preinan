@@ -19,12 +19,14 @@ const Login = ({ props, handleMode }) => {
     const submit = (e) => {
         e.preventDefault();
         setLoading(true);
-        post(route("login"), {
+        post(route("login.auth"), {
             preserveScroll: true,
             onSuccess: () => {
                 setLoading(false);
             },
-            onError: () => {},
+            onError: () => {
+                setLoading(false);
+            },
         });
     };
 
@@ -38,7 +40,7 @@ const Login = ({ props, handleMode }) => {
 
     return (
         <div className="bg-[#fafafa]">
-            <form onSubmit={submit}>
+            <form>
                 <Head title="Login" />
                 {/* {IsMobile && <Navbar />} */}
                 <div className="grid lg:grid-cols-2 ">
@@ -118,6 +120,7 @@ const Login = ({ props, handleMode }) => {
                                 ) : (
                                     <ButtonLoginRegister
                                         text={"Login"}
+                                        onClick={(e) => submit(e)}
                                         disabled={
                                             data.email && data.password
                                                 ? false

@@ -1,8 +1,11 @@
 import { Link, useForm } from "@inertiajs/react";
 import Button from "./Button";
 import pisahkanStripSetiapKata from "@/function/pisahkanStripSetiapKata";
+import ModalWarning from "./ModalWarning";
 
-const DestinasiCard = ({ destinasi }) => {
+const DestinasiCard = (props) => {
+    const { destinasi, auth } = props;
+    console.log(props)
     const { data, get } = useForm({
         id_destinasi: destinasi.uuid,
     });
@@ -44,11 +47,22 @@ const DestinasiCard = ({ destinasi }) => {
                     {destinasi.harga == 0 ? "Free" : `Rp. ${destinasi.harga}`}
                 </p>
                 <div className="grid grid-cols-2">
-                    <Button
-                        onClick={() => handleBooking()}
-                        text={"Pesan"}
-                        className="bg-[#3258E8] text-white cardhome-button "
-                    />
+                    {
+                        auth ? (
+                            <label>
+                                <Button
+                                onClick={() => handleBooking()}
+                                text={"Pesan"}
+                                className="bg-[#3258E8] text-white cardhome-button "
+                                /> 
+                            </label>
+                            ) :
+                            <>
+                            <label  className="btn hover:bg-[#3258E8] text-white cardhome-button  bg-[#3258E8] cardhome-button " htmlFor="my-modal">
+                                Pesan
+                            </label>
+                            <ModalWarning title="Batalkan Pemesanan" message="Apakah anda yakin ingin membatalkan pesanan anda?" link="destinasi" merah="Batal" biru="Lanjutkan" /></>
+                    }
                     <Link
                         href={`/destinasi/${pisahkanStripSetiapKata(
                             destinasi.nama

@@ -104,6 +104,7 @@ const CardBooking = (props) => {
                                 onChange={(e) =>
                                     setData("tanggal", e.target.value)
                                 }
+                                min={new Date().toISOString().split('T')[0]}
                             />
                         </div>
                     </div>

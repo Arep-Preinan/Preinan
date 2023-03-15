@@ -1,5 +1,6 @@
 import ButtonLoading from "@/Components/ButtonLoading";
 import CardBooking from "@/Components/CardBooking";
+import ModalWarning from "@/Components/ModalWarning";
 import { useForm, Link, Head } from "@inertiajs/react";
 import { useEffect, useState } from "react";
 import Button from "./../Components/Button";
@@ -35,38 +36,8 @@ const Booking = (props) => {
                                 onPindahHalaman={pindahHalaman}
                             />
                             {/* The button to open modal */}
-                            <a href="#my-modal-2">
-                                <Button
-                                    className={
-                                        "btn bg-red-500 border-none text-white"
-                                    }
-                                    text={"Cancel"}
-                                />
-                            </a>
-                            <div className="modal" id="my-modal-2">
-                                <div className="modal-box">
-                                    <h3 className="font-bold text-lg">
-                                        Batalkan Pemesanan
-                                    </h3>
-                                    <p className="py-4">
-                                        Apakah anda yakin ingin membatalkan
-                                        pesanan anda?
-                                    </p>
-                                    <div className="modal-action">
-                                        <Link href="destinasi">
-                                            <Button
-                                                className={
-                                                    "btn bg-red-500 border-none text-white"
-                                                }
-                                                text={"Batal"}
-                                            />
-                                        </Link>
-                                        <a href="#" className="btn btn-primary">
-                                            Lanjutkan
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                            <label htmlFor="my-modal" className="btn bg-red-500 border-none text-white">Cancel</label>
+                            <ModalWarning title="Batalkan Pemesanan" message="Apakah anda yakin ingin membatalkan pesanan anda?" link="destinasi" merah="Batal" biru="Lanjutkan" />
                         </div>
                     </div>
                 </div>
