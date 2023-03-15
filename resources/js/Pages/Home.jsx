@@ -55,7 +55,6 @@ export default function Home(props) {
             const dataSearch = data.filter((item) => {
                 return item.nama.toLowerCase().includes(search.toLowerCase());
             });
-            // jika kosong maka hapus data search
             setDataSearch(dataSearch);
         }
     };

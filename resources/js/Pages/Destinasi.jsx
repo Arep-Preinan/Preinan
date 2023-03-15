@@ -1,9 +1,10 @@
 import { useState, useRef, useEffect } from "react";
 import DestinasiCard from "@/Components/DestinasiCard";
-import Navbar from "./../Partials/Navbar";
+import Navbar from "../Partials/Navbar";
 import Heading from "@/Components/Heading";
 import BreadCumbs from "@/Components/BreadCumbs";
 import { Head } from "@inertiajs/react";
+import { sortHighPrice, sortLowPrice, sortName } from "@/function/sortingBy";
 
 const Destinasi = (props) => {
 
@@ -13,7 +14,6 @@ const Destinasi = (props) => {
     let [pageAirTerjun, setPageAirTerjun] = useState(0);
     let [pageDanau, setPageDanau] = useState(0);
 
-    let [isSort, setIsSort] = useState(false);
     let [urutkan, setUrutkan] = useState("Urutkan");
 
     const [all, setAll] = useState(props.all);
@@ -23,8 +23,6 @@ const Destinasi = (props) => {
     const [resultSearch, setResultSearch] = useState([]);
     
     const [search, setSearch] = useState(false);
-    const [next, setNext] = useState(true);
-    const [prev, setPrev] = useState(false);
 
     const handleActive = (kategori) => {
         setIsActived(kategori);
@@ -43,22 +41,54 @@ const Destinasi = (props) => {
         }
     };
 
+
     const handleUrutkan = (urutkan) => {
         setUrutkan(urutkan);
+        let data = [];
         if (urutkan == "Abjad A-Z") {
             if (isActived === "all") {
-                setAll(all.sort((a, b) => a.nama.localeCompare(b.nama)));
+                data = all
+                setAll(sortName(data, 8));
             } else if (isActived === "gunung") {
-                setGunung(gunung.sort((a, b) => a.nama.localeCompare(b.nama)));
+                data = gunung
+                setGunung(sortName(data, 4));
             } else if (isActived === "air terjun") {
-                setAirTerjun(airTerjun.sort((a, b) => a.nama.localeCompare(b.nama)));
+                data = airTerjun
+                setAirTerjun(sortName(data, 4));
             }
             else if (isActived === "danau") {
-                setDanau(danau.sort((a, b) => a.nama.localeCompare(b.nama)));
+                data = danau
+                setDanau(sortName(data, 4));
             }
+
+
         } else if ( urutkan == "Harga Terendah" ){
             if(isActived == "all"){
-                
+                data = all
+                setAll(sortLowPrice(data, 8));
+            } else if (isActived === "gunung") {
+                data = gunung
+                setGunung(sortLowPrice(data, 4));
+            } else if (isActived === "air terjun") {
+                data = airTerjun
+                setAirTerjun(sortLowPrice(data, 4));
+            } else if (isActived === "danau") {
+                data = danau
+                setDanau(sortLowPrice(data, 4));
+            }
+        }else if ( urutkan == "Harga Tertinggi" ){
+            if(isActived == "all"){
+                data = all
+                setAll(sortHighPrice(data, 8));
+            } else if (isActived === "gunung") {
+                data = gunung
+                setGunung(sortHighPrice(data, 4));
+            } else if (isActived === "air terjun") {
+                data = airTerjun
+                setAirTerjun(sortHighPrice(data, 4));
+            } else if (isActived === "danau") {
+                data = danau
+                setDanau(sortHighPrice(data, 4));
             }
         }
 
@@ -66,19 +96,20 @@ const Destinasi = (props) => {
     };
 
     const searchDestinasi = (searchValue) => {
-        searchValue && searchValue.length > 0 ? setSearch(true) : setSearch(false);
-        let result = [];
-        for (let key in all) {
-            for (let key2 in all[key]) {
-                if (all[key][key2].nama.toLowerCase().includes(searchValue.toLowerCase())) {
-                    result.push(all[key][key2])
-                } else if (all[key][key2].kategori.toLowerCase().includes(searchValue.toLowerCase())) {
-                    result.push(all[key][key2])
+        setTimeout(() => {
+            searchValue && searchValue.length > 0 ? setSearch(true) : setSearch(false);
+            let result = [];
+            for (let key in all) {
+                for (let key2 in all[key]) {
+                    if (all[key][key2].nama.toLowerCase().includes(searchValue.toLowerCase())) {
+                        result.push(all[key][key2])
+                    } else if (all[key][key2].kategori.toLowerCase().includes(searchValue.toLowerCase())) {
+                        result.push(all[key][key2])
+                    }
                 }
             }
-        }
-        setResultSearch(result)
-        console.log(resultSearch)
+            setResultSearch(result)}
+        , 500);
     }
 
     return (
@@ -218,7 +249,8 @@ const Destinasi = (props) => {
                         }}
                         ><a>Harga Tertinggi</a></li>
                     </ul>
-                    </div>
+                </div>
+                
                 <div
                     id="kumpulan-destinasi"
                     className=" grid gap-[16px] md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:gap-[20px] lg:flex-row lg:flex-wrap lg:items-stretch items-center  mt-10"
