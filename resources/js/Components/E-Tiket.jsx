@@ -9,7 +9,7 @@ const E_Tiket = (props) => {
             <div className="card w-auto bg-base-100 border border-black shadow-md m-5">
                 <div className="card-body">
                     <img
-                        src="http://preinan.xxuz.com/images/icons/logo.svg"
+                        src="/images/icons/logo.svg"
                         className="w-28"
                         alt=""
                     />

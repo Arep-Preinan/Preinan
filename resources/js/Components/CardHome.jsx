@@ -6,7 +6,7 @@ const CardHome = ({
     kategori = "gunung",
     nama = "Mereum Sanctuary",
     lokasi = "Dusun Sukajadi",
-    url = "http://preinan.xxuz.com/images/wisata/Gunung-Lanang-Mergolangu/1.jpg",
+    url = "/images/wisata/Gunung-Lanang-Mergolangu/1.jpg",
     destinasi,
     rating,
 }) => {
@@ -51,7 +51,7 @@ const Image = ({ url }) => {
     return (
         <figure>
             <img
-                src={`http://preinan.xxuz.com/images/wisata/${url}/1.jpg`}
+                src={`/images/wisata/${url}/1.jpg`}
                 alt="Shoes"
                 className="rounded-3xl h-[280px]"
             />
@@ -86,7 +86,7 @@ const NamaLokasi = ({ nama, lokasi }) => {
             <h1 className="cardhome-nama">{nama}</h1>
             <div className="flex gap-2">
                 <img
-                    src="http://preinan.xxuz.com/images/icons/iconlokasi.svg"
+                    src="/images/icons/iconlokasi.svg"
                     alt=""
                 />
                 <p className="cardhome-lokasi">{lokasi}</p>

@@ -175,7 +175,7 @@ export default function Home(props) {
                     >
                         <div className="lg:w-[339px] flex flex-col xl:flex-row gap-8">
                             <img
-                                src="http://preinan.xxuz.com/images/icons/pesanMudah.svg"
+                                src="/images/icons/pesanMudah.svg"
                                 alt=""
                                 className="w-[64px] h-[64px]"
                             />
@@ -191,7 +191,7 @@ export default function Home(props) {
                         </div>
                         <div className="lg:w-[339px] flex flex-col xl:flex-row gap-8">
                             <img
-                                src="http://preinan.xxuz.com/images/icons/scantiket.svg"
+                                src="/images/icons/scantiket.svg"
                                 alt=""
                                 className="w-[64px] h-[64px]"
                             />
@@ -207,7 +207,7 @@ export default function Home(props) {
                         </div>
                         <div className="lg:w-[339px] flex flex-col xl:flex-row gap-8">
                             <img
-                                src="http://preinan.xxuz.com/images/icons/destinasiPilihan.svg"
+                                src="/images/icons/destinasiPilihan.svg"
                                 alt=""
                                 className="w-[64px] h-[64px]"
                             />
@@ -231,7 +231,7 @@ export default function Home(props) {
                                     className="grid w-full xl:w-[310px] shrink h-auto lg:hover:show-text rounded-3xl bg-cover"
                                     style={{
                                         backgroundImage:
-                                            'url("http://preinan.xxuz.com/images/fotodanauhome.jpg")',
+                                            'url("/images/fotodanauhome.jpg")',
                                     }}
                                 >
                                     <h1 className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50 bg-black bg-opacity-50 lg:hover:bg-gray-900 rounded-3xl transition duration-400">
@@ -242,7 +242,7 @@ export default function Home(props) {
                                     className="grid w-full xl:w-[310px] shrink h-auto rounded-3xl bg-cover "
                                     style={{
                                         backgroundImage:
-                                            'url("http://preinan.xxuz.com/images/surodipo.jpeg")',
+                                            'url("/images/surodipo.jpeg")',
                                     }}
                                 >
                                     <h1 className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50  bg-black bg-opacity-50 lg:hover:bg-gray-900 rounded-3xl transition duration-400">
@@ -254,7 +254,7 @@ export default function Home(props) {
                                 className="xl:w-[320px] max-md:h-[75px] max-lg:h-[320px] rounded-3xl bg-cover bg-top lg:bg-right-top "
                                 style={{
                                     backgroundImage:
-                                        'url("http://preinan.xxuz.com/images/gununghome.jpeg")',
+                                        'url("/images/gununghome.jpeg")',
                                 }}
                             >
                                 <h1 className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50  bg-black bg-opacity-50 lg:hover:bg-gray-900 rounded-3xl transition duration-400">
@@ -439,7 +439,7 @@ export default function Home(props) {
                 <div className="mx-auto container pt-[48px] pb-[48px] pr-[20px] pl-[20px] xl:pl-[100px] xl:pr-[100px] flex flex-col lg:flex-row gap-[48px] items-center">
                     <div className=" ">
                         <img
-                            src="http://preinan.xxuz.com/images/reviewuser.svg"
+                            src="/images/reviewuser.svg"
                             alt=""
                         />
                     </div>
@@ -461,7 +461,7 @@ export default function Home(props) {
                                 id="user-review-home"
                                 className="flex items-center gap-3"
                             >
-                                <div className="h-[64px] w-[64px] rounded-full bg-[url(http://preinan.xxuz.com/images/userReview.png)] bg-cover"></div>
+                                <div className="h-[64px] w-[64px] rounded-full bg-[url(/images/userReview.png)] bg-cover"></div>
                                 <div>
                                     <div className="name-user-home flex gap-[8px]">
                                         <h1 className="text-[#232631] font-semibold text-lg">
@@ -520,7 +520,7 @@ export default function Home(props) {
             <footer className="footer footer-center p-10 bg-[#3258E8] text-primary-content">
                 <div>
                     <img
-                        src="http://preinan.xxuz.com/images/preinanFooter.svg"
+                        src="/images/preinanFooter.svg"
                         alt=""
                     />
                     <p>Copyright © 2023 - All right reserved</p>
