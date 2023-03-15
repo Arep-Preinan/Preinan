@@ -1,6 +1,6 @@
 import CardBooking from "@/Components/CardBooking";
 import { useState } from "react";
-import Navbar from "./../Partials/Navbar";
+import Navbar from "../Partials/Navbar";
 import BreadCumbs from "./../Components/BreadCumbs";
 import Button from "./../Components/Button";
 import pisahkanStripSetiapKata from "@/function/pisahkanStripSetiapKata";

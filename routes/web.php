@@ -61,7 +61,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/komentar', [KomentarController::class, "store"])->name('komentar.store');
 });
 
-
+Route::get('/tes', function () {
+    return Inertia::render('Tes');
+});
 
 // slug
 Route::get('/{kode}/{uuid}', [TiketController::class, "scan"])->name('tiket.scan');
