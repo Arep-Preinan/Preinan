@@ -5,7 +5,7 @@ import ModalWarning from "./ModalWarning";
 
 const DestinasiCard = (props) => {
     const { destinasi, auth } = props;
-    console.log(props)
+    console.log(props);
     const { data, get } = useForm({
         id_destinasi: destinasi.uuid,
     });
@@ -47,22 +47,31 @@ const DestinasiCard = (props) => {
                     {destinasi.harga == 0 ? "Free" : `Rp. ${destinasi.harga}`}
                 </p>
                 <div className="grid grid-cols-2">
-                    {
-                        auth ? (
-                            <label>
-                                <Button
+                    {auth ? (
+                        <label>
+                            <Button
                                 onClick={() => handleBooking()}
                                 text={"Pesan"}
-                                className="bg-[#3258E8] text-white cardhome-button "
-                                /> 
-                            </label>
-                            ) :
-                            <>
-                            <label  className="btn hover:bg-[#3258E8] text-white cardhome-button  bg-[#3258E8] cardhome-button " htmlFor="my-modal">
+                                className="bg-[#3258E8] w-full text-white cardhome-button "
+                            />
+                        </label>
+                    ) : (
+                        <>
+                            <label
+                                className="btn hover:bg-[#3258E8] text-white cardhome-button  bg-[#3258E8] cardhome-button "
+                                htmlFor="my-modal"
+                            >
                                 Pesan
                             </label>
-                            <ModalWarning title="Batalkan Pemesanan" message="Apakah anda yakin ingin membatalkan pesanan anda?" link="destinasi" merah="Batal" biru="Lanjutkan" /></>
-                    }
+                            <ModalWarning
+                                title="Batalkan Pemesanan"
+                                message="Apakah anda yakin ingin membatalkan pesanan anda?"
+                                link="destinasi"
+                                merah="Batal"
+                                biru="Lanjutkan"
+                            />
+                        </>
+                    )}
                     <Link
                         href={`/destinasi/${pisahkanStripSetiapKata(
                             destinasi.nama

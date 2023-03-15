@@ -217,4 +217,7 @@ body{
     font-weight: bold;
     color: #fff;
 }
-
+/* icons */
+.active-icons{
+    fill: #0D6EFD;
+}
