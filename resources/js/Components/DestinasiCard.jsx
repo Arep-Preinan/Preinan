@@ -19,7 +19,6 @@ const DestinasiCard = (props) => {
         let pisahkan = string.split(",");
         return pisahkan[0];
     };
-    console.log(auth)
     // console.log("nama",destinasi)
     return (
         <div className="card min-w-[295px] md:min-w-[auto] md:w-full bg-base-100 flex justify-between gap-[4px] rounded-3xl border-2 ">
@@ -54,13 +53,13 @@ const DestinasiCard = (props) => {
                             <Button
                                 onClick={() => handleBooking()}
                                 text={"Pesan"}
-                                className="bg-[#3258E8] w-full text-white cardhome-button "
+                                className="bg-[#3258E8] w-full text-white cardhome-button rounded-xl "
                             />
                         </label>
                     ) : (
                         <>
                             <label
-                                className="btn hover:bg-[#3258E8] text-white cardhome-button  bg-[#3258E8] cardhome-button "
+                                className="btn hover:bg-[#3258E8] text-white cardhome-button  bg-[#3258E8] border-none rounded-xl"
                                 htmlFor="my-modal"
                             >
                                 Pesan

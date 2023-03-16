@@ -52,7 +52,6 @@ const Image = ({ url }) => {
         <figure>
             <img
                 src={`/images/wisata/${url}/1.jpg`}
-                alt="Shoes"
                 className="rounded-3xl h-[280px]"
             />
         </figure>

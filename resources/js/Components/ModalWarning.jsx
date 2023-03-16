@@ -10,32 +10,41 @@ const ModalWarning = (props) => {
                     <h3 className="font-bold text-lg">{props.title}</h3>
                     <p className="py-4">{props.message}</p>
                     <div className="modal-action">
-                        {
-                            props.konteks === "login" ? (
-                                <>
-                                <label htmlFor="my-modal" className="btn bg-red-500">
+                        {props.konteks === "login" ? (
+                            <>
+                                <label
+                                    htmlFor="my-modal"
+                                    className="btn bg-red-500 border-none rounded-xl"
+                                >
                                     {props.merah}
                                 </label>
                                 <Link href={props.link}>
                                     <Button
                                         className={
-                                            "btn btn-primary  border-none text-white"
+                                            "btn btn-primary border-none text-white rounded-xl"
                                         }
                                         text={props.biru}
                                     />
                                 </Link>
-                                </>
-                            ) : (
-                                <><Link href={props.link}>
-                                        <Button
-                                            className={"btn bg-red-500 border-none text-white"}
-                                            text={props.merah} />
-                                    </Link><label htmlFor="my-modal" className="btn btn-primary">
-                                            {props.biru}
-                                        </label>
-                                </>
-                            )
-                        }
+                            </>
+                        ) : (
+                            <>
+                                <Link href={props.link}>
+                                    <Button
+                                        className={
+                                            "btn bg-red-500 border-none text-white"
+                                        }
+                                        text={props.merah}
+                                    />
+                                </Link>
+                                <label
+                                    htmlFor="my-modal"
+                                    className="btn btn-primary"
+                                >
+                                    {props.biru}
+                                </label>
+                            </>
+                        )}
                     </div>
                 </div>
             </div>
