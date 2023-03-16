@@ -68,7 +68,7 @@ const CardBooking = (props) => {
                 <CardBooking.Structure text={"Destinasi"}>
                     <div className="flex flex-col md:flex-row justify-between gap-3 md:gap-0">
                         <div className="flex flex-rows-2 gap-4">
-                            <img src="/images/icons/destinasi.svg" alt="" />
+                            <img src="http://preinan.xxuz.com/images/icons/destinasi.svg" alt="" />
                             <div className="flex flex-col">
                                 <h3 className="text-[#232631] text-[18px]">
                                     {props.booking.destinasi.nama}

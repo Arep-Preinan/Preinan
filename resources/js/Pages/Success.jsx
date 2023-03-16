@@ -7,7 +7,7 @@ const Success = () => {
             <div className="text-center flex flex-col gap-8">
                 <h1 className="font-semibold text-4xl">Terimakasih</h1>
                 <img
-                    src="/images/icons/transaction-success.svg"
+                    src="http://preinan.xxuz.com/images/icons/transaction-success.svg"
                     alt=""
                 />
                 <p className="font-light text-gray-400 text-[18px]">

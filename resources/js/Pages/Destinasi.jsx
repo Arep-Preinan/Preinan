@@ -141,7 +141,7 @@ const Destinasi = (props) => {
                                 href="#kumpulan-destinasi"
                                 className="flex hover:cursor-pointer transition  justify-center items-end md:rounded-[24px] bg-no-repeat bg-cover md:bg-top lg:bg-cover"
                                 style={{
-                                    backgroundImage: `url(../images/telaga2.jpg)`,
+                                    backgroundImage: `url(http://preinan.xxuz.com/images/telaga2.jpg)`,
                                 }}
                             >
                                 <h1
@@ -158,7 +158,7 @@ const Destinasi = (props) => {
                                     href="#kumpulan-destinasi"
                                     className="hover:cursor-pointer bg-no-repeat bg-cover md:bg-top lg:bg-center md:rounded-[24px]"
                                     style={{
-                                        backgroundImage: `url(../images/gunung2.jpg)`,
+                                        backgroundImage: `url(http://preinan.xxuz.com/images/gunung2.jpg)`,
                                     }}
                                 >
                                     <h1
@@ -174,7 +174,7 @@ const Destinasi = (props) => {
                                     href="#kumpulan-destinasi"
                                     className="bg-no-repeat bg-cover md:bg-top lg:bg-center md:rounded-[24px]"
                                     style={{
-                                        backgroundImage: `url(../images/curug.jpg)`,
+                                        backgroundImage: `url(http://preinan.xxuz.com/images/curug.jpg)`,
                                     }}
                                 >
                                     <h1

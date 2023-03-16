@@ -79,7 +79,7 @@ const Register = ({ handleMode }) => {
                             <Link href="/">
                                 <div className="flex justify-center">
                                     <img
-                                        src="../images/preinannotblack.svg"
+                                        src="http://preinan.xxuz.com/images/preinannotblack.svg"
                                         alt=""
                                         className="w-[300px]"
                                     />

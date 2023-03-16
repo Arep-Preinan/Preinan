@@ -19,7 +19,7 @@ const DetailWisata = (props) => {
     };
 
     const handleBackground = (nama, item) => {
-        return `../images/wisata/${pisahkanStripSetiapKata(nama)}/${item}.jpg`;
+        return `http://preinan.xxuz.com/images/wisata/${pisahkanStripSetiapKata(nama)}/${item}.jpg`;
     };
     return (
         <div className="bg-[#fafafa]">
@@ -268,7 +268,7 @@ const DetailWisata = (props) => {
                                             <div className="flex flex-col justify-center gap-2">
                                                 <div className="flex gap-2">
                                                     <img
-                                                        src="/images/icons/loveicons.svg"
+                                                        src="http://preinan.xxuz.com/images/icons/loveicons.svg"
                                                         alt=""
                                                     />
                                                     <p className="text-sm">
@@ -301,7 +301,7 @@ const DetailWisata = (props) => {
                                                         </h1>
                                                     </Link>
                                                     <img
-                                                        src="/images/icons/vectorKanan.svg"
+                                                        src="http://preinan.xxuz.com/images/icons/vectorKanan.svg"
                                                         alt=""
                                                     />
                                                 </div>

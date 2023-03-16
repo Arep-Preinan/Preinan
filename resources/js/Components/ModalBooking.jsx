@@ -71,7 +71,7 @@ const ModalBooking = (props) => {
                             <p className="py-4">{props.data.alamat}</p>
                             <img
                                 className="w-96"
-                                src={`/images/wisata/${props.data.gambar}`}
+                                src={`http://preinan.xxuz.com/images/wisata/${props.data.gambar}`}
                                 alt={props.data.nama}
                             />
                             <p className="py-4">Tanggal</p>

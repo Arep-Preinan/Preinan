@@ -11,7 +11,7 @@ const E_Tiket = (props) => {
                 <div className="flex flex-col gap-4">
                     <div className="flex justify-between">
                         <img
-                            src="/images/preinannotblack.svg"
+                            src="http://preinan.xxuz.com/images/preinannotblack.svg"
                             className="w-[200px] relative right-6"
                             alt=""
                         />
