@@ -143,20 +143,32 @@ function Navbar({ children, ...props }) {
                                                             <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                                                         </svg>
                                                     </a>
-                                                    <ul className="p-4 bg-base-100">
-                                                        <li
-                                                            className={`nav-item`}
-                                                        >
+                                                    <ul className=" bg-base-100">
+                                                        <li>
                                                             <Link
-                                                                className={`flex items-center text-[16px] leading-[24px]  ${
+                                                                href={
+                                                                    "/tiket-ku"
+                                                                }
+                                                                className={`w-full flex gap-3  ${
                                                                     props.active ==
                                                                     "tiketku"
-                                                                        ? "text-[#466BF3] font-medium"
+                                                                        ? "text-white bg-[#3258E8]  font-medium"
                                                                         : "text-[#9C9C9C] font-normal  "
                                                                 } `}
-                                                                href="/tiket-ku"
                                                             >
-                                                                Tiketku
+                                                                {props.active ==
+                                                                "tiketku" ? (
+                                                                    <img
+                                                                        src="../images/icons/ticket-active.svg"
+                                                                        alt=""
+                                                                    />
+                                                                ) : (
+                                                                    <img
+                                                                        src="../images/icons/ticket-no-active.svg"
+                                                                        alt=""
+                                                                    />
+                                                                )}
+                                                                Tiket ku
                                                             </Link>
                                                         </li>
                                                         <li>
@@ -164,7 +176,12 @@ function Navbar({ children, ...props }) {
                                                                 method="post"
                                                                 href="/logout"
                                                                 as="button"
+                                                                className="text-red-500"
                                                             >
+                                                                <img
+                                                                    src="../images/icons/logout-no-active.svg"
+                                                                    alt=""
+                                                                />
                                                                 Logout
                                                             </Link>
                                                         </li>
@@ -214,16 +231,6 @@ function Navbar({ children, ...props }) {
                         className="drawer-overlay"
                     ></label>
                     <ul className="menu p-4 w-80 bg-base-100 flex flex-col gap-3 pt-20">
-                        {/* <button
-                            className="flex justify-end"
-                            htmlFor="my-drawer-3"
-                        >
-                            <img
-                                src="../images/icons/close-icons.svg"
-                                alt=""
-                                className="w-[36px]"
-                            />
-                        </button> */}
                         {/* <!-- Sidebar content here --> */}
                         <li
                             className={`nav-item rounded-xl  ${

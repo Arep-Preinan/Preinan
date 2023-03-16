@@ -82,7 +82,7 @@ export default function Home(props) {
                                 {/* The button to open modal */}
                                 <label
                                     htmlFor="my-modal-5"
-                                    className="cursor-pointer p-3  bg-white rounded-xl w-full md:w-[588px] flex justify-start items-center text-[#9c9c9c] gap-3"
+                                    className="cursor-pointer p-3  bg-white rounded-xl w-full lg:w-[588px] flex justify-start items-center text-[#9c9c9c] gap-3"
                                 >
                                     <img
                                         src="../images/icons/searchIcons.svg"
@@ -124,9 +124,9 @@ export default function Home(props) {
                                                 </div>
                                                 {dataSearch.length > 0 && (
                                                     <p className="text-[#252525] text-[14px]">
-                                                        Hasil Pencarian
-                                                        Destinasi :{" "}
-                                                        {dataSearch.length}
+                                                        Hasil Pencarian :{" "}
+                                                        {dataSearch.length}{" "}
+                                                        Destinasi
                                                     </p>
                                                 )}
                                             </div>

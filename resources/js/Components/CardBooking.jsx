@@ -67,18 +67,15 @@ const CardBooking = (props) => {
     return (
         /* section card */
         <div
-            className="card w-full xl:w-[550px] md:max-h-[500px] bg-base-100 p-5"
+            className="card w-full max-w-[550px] md:max-h-[500px] bg-base-100 p-5"
             id="rekomendasi-detail-wisata"
         >
-            <div className="flex flex-col gap-6">
+            <div className="flex flex-col gap-3 md:gap-6">
                 {/* section tujuan */}
                 <CardBooking.Structure text={"Destinasi"}>
                     <div className="flex flex-col md:flex-row justify-between gap-3 md:gap-0">
                         <div className="flex flex-rows-2 gap-4">
-                            <img
-                                src="/images/icons/destinasi.svg"
-                                alt=""
-                            />
+                            <img src="/images/icons/destinasi.svg" alt="" />
                             <div className="flex flex-col">
                                 <h3 className="text-[#232631] text-[18px]">
                                     {props.booking.destinasi.nama}
@@ -88,9 +85,9 @@ const CardBooking = (props) => {
                                 </p>
                             </div>
                         </div>
-                        <div className="flex flex-col justify-end items-start">
+                        <div className="flex flex-row-reverse items-center md:flex-col justify-end md:items-start">
                             <p
-                                className={`text-xs absolute top-[113px] ${
+                                className={`text-xs md:absolute md:top-[113px] ${
                                     data.tanggal == ""
                                         ? "text-red-600"
                                         : "text-gray-600"
@@ -104,7 +101,7 @@ const CardBooking = (props) => {
                                 onChange={(e) =>
                                     setData("tanggal", e.target.value)
                                 }
-                                min={new Date().toISOString().split('T')[0]}
+                                min={new Date().toISOString().split("T")[0]}
                             />
                         </div>
                     </div>

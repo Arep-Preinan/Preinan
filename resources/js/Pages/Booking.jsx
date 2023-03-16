@@ -18,7 +18,7 @@ const Booking = (props) => {
             {
                 /* section pertama */
                 <div className="bg-[#FAFAFA]">
-                    <div className="w-full grid  md:grid place-items-center md:grid-cols-1 h-screen  mx-auto container pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] gap-[120px] ">
+                    <div className="w-full grid grid-cols-1 place-items-center h-screen  mx-auto container pr-[20px] pl-[20px] lg:pl-[100px] lg:pr-[100px]  gap-[120px] ">
                         <div className="flex flex-col justify-center items-center gap-[32px]">
                             {/* section judul */}
                             <div className="text-center">
@@ -36,8 +36,19 @@ const Booking = (props) => {
                                 onPindahHalaman={pindahHalaman}
                             />
                             {/* The button to open modal */}
-                            <label htmlFor="my-modal" className="btn bg-red-500 border-none text-white">Cancel</label>
-                            <ModalWarning title="Batalkan Pemesanan" message="Apakah anda yakin ingin membatalkan pesanan anda?" link="destinasi" merah="Batal" biru="Lanjutkan" />
+                            <label
+                                htmlFor="my-modal"
+                                className="btn bg-red-500 border-none text-white"
+                            >
+                                Cancel
+                            </label>
+                            <ModalWarning
+                                title="Batalkan Pemesanan"
+                                message="Apakah anda yakin ingin membatalkan pesanan anda?"
+                                link="destinasi"
+                                merah="Lanjut pesan"
+                                biru="batal pesan"
+                            />
                         </div>
                     </div>
                 </div>
