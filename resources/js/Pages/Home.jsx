@@ -41,11 +41,6 @@ export default function Home(props) {
         setLoadingPage(false);
     }, []);
 
-    const Modal = (item) => {
-        setData(item);
-        setShowModal(true);
-    };
-
     const handleSearchWisata = (e) => {
         e.preventDefault();
         const data = props.semua;
@@ -117,7 +112,7 @@ export default function Home(props) {
                                                     />
                                                     <label
                                                         htmlFor="my-modal-5"
-                                                        className="btn btn-sm btn-circle right-2 top-2"
+                                                        className="btn border-none btn-sm   bg-red-600"
                                                     >
                                                         ✕
                                                     </label>
@@ -135,6 +130,106 @@ export default function Home(props) {
                                             id="scroll-search"
                                             className="mt-24 overflow-y-scroll h-full"
                                         >
+                                            {dataSearch.length == 0 && (
+                                                <div className="flex flex-col justify-start p-6">
+                                                    <div className="flex items-start">
+                                                        <h1 className="text-[#252525] font-semibold">
+                                                            Destinasi Populer
+                                                        </h1>
+                                                    </div>
+                                                    <div className="flex flex-col justify-between items-start">
+                                                        {props.gunung.map(
+                                                            (item, index) => {
+                                                                if (index < 2)
+                                                                    return (
+                                                                        <Link
+                                                                            key={
+                                                                                item.uuid
+                                                                            }
+                                                                            href={`/destinasi/${pisahkanStripSetiapKata(
+                                                                                item.nama
+                                                                            )}`}
+                                                                            className="flex flex-col items-start gap-2 pl-0 pr-0 p-3 bg-white rounded-xl w-full"
+                                                                        >
+                                                                            <div className="flex justify-between w-full">
+                                                                                <div className="flex justify-center items-center gap-4">
+                                                                                    {item.kategori ===
+                                                                                    "Danau" ? (
+                                                                                        <svg
+                                                                                            width="24"
+                                                                                            height="24"
+                                                                                            viewBox="0 0 24 24"
+                                                                                            fill="none"
+                                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                                        >
+                                                                                            <path
+                                                                                                d="M20 11.9999H22V13.9999H20C18.62 13.9999 17.26 13.6499 16 12.9999C13.5 14.2999 10.5 14.2999 8 12.9999C6.74 13.6499 5.37 13.9999 4 13.9999H2V11.9999H4C5.39 11.9999 6.78 11.5299 8 10.6699C10.44 12.3799 13.56 12.3799 16 10.6699C17.22 11.5299 18.61 11.9999 20 11.9999ZM20 5.99992H22V7.99992H20C18.62 7.99992 17.26 7.64992 16 6.99992C13.5 8.29992 10.5 8.29992 8 6.99992C6.74 7.64992 5.37 7.99992 4 7.99992H2V5.99992H4C5.39 5.99992 6.78 5.52992 8 4.66992C10.44 6.37992 13.56 6.37992 16 4.66992C17.22 5.52992 18.61 5.99992 20 5.99992ZM20 17.9999H22V19.9999H20C18.62 19.9999 17.26 19.6499 16 18.9999C13.5 20.2999 10.5 20.2999 8 18.9999C6.74 19.6499 5.37 19.9999 4 19.9999H2V17.9999H4C5.39 17.9999 6.78 17.5299 8 16.6699C10.44 18.3799 13.56 18.3799 16 16.6699C17.22 17.5299 18.61 17.9999 20 17.9999Z"
+                                                                                                fill="#9C9C9C"
+                                                                                            />
+                                                                                        </svg>
+                                                                                    ) : item.kategori ===
+                                                                                      "Gunung" ? (
+                                                                                        <svg
+                                                                                            width="24"
+                                                                                            height="24"
+                                                                                            viewBox="0 0 24 24"
+                                                                                            fill="none"
+                                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                                        >
+                                                                                            <path
+                                                                                                d="M14 6L10.25 11L13.1 14.8L11.5 16C9.81 13.75 7 10 7 10L1 18H23L14 6Z"
+                                                                                                fill="#9C9C9C"
+                                                                                            />
+                                                                                        </svg>
+                                                                                    ) : (
+                                                                                        <svg
+                                                                                            width="24"
+                                                                                            height="24"
+                                                                                            viewBox="0 0 24 24"
+                                                                                            fill="none"
+                                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                                        >
+                                                                                            <path
+                                                                                                d="M20 20C18.61 20 17.22 19.53 16 18.67C13.56 20.38 10.44 20.38 8 18.67C6.78 19.53 5.39 20 4 20H2V22H4C5.37 22 6.74 21.65 8 21C10.5 22.3 13.5 22.3 16 21C17.26 21.65 18.62 22 20 22H22V20M20 16C18.61 16 17.22 15.53 16 14.67C13.56 16.38 10.44 16.38 8 14.67C6.78 15.53 5.39 16 4 16H2V18H4C5.37 18 6.74 17.65 8 17C10.5 18.3 13.5 18.3 16 17C17.26 17.65 18.62 18 20 18H22V16M22 2H2V4H6V16H18V4H22M9 4H11V10H9M13 8H15V14H13V8Z"
+                                                                                                fill="#9C9C9C"
+                                                                                            />
+                                                                                        </svg>
+                                                                                    )}
+                                                                                    <div className="flex flex-col justify-start items-start">
+                                                                                        <p className="text-sm">
+                                                                                            {ambilKataSebelumKoma(
+                                                                                                item.alamat
+                                                                                            )}
+                                                                                        </p>
+                                                                                        <h1 className="font-normal text-lg">
+                                                                                            {
+                                                                                                item.nama
+                                                                                            }
+                                                                                        </h1>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div className="flex items-center gap-2">
+                                                                                    <input
+                                                                                        type="radio"
+                                                                                        name="rating-1"
+                                                                                        className="mask mask-star bg-orange-400"
+                                                                                        disabled
+                                                                                    />
+                                                                                    <h1>
+                                                                                        {
+                                                                                            item.rating
+                                                                                        }
+                                                                                    </h1>
+                                                                                </div>
+                                                                            </div>
+                                                                            <div className="h-[1px] w-full bg-[#EAEAEA]"></div>
+                                                                        </Link>
+                                                                    );
+                                                            }
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            )}
                                             {dataSearch.length > 0 &&
                                                 dataSearch.map((item) => {
                                                     return (
@@ -145,58 +240,73 @@ export default function Home(props) {
                                                             )}`}
                                                             className="flex flex-col items-start gap-2 pl-6 pr-6 p-3 bg-white rounded-xl w-full"
                                                         >
-                                                            <div className="flex justify-center items-center gap-4">
-                                                                {item.kategori ===
-                                                                "Danau" ? (
-                                                                    <svg
-                                                                        width="24"
-                                                                        height="24"
-                                                                        viewBox="0 0 24 24"
-                                                                        fill="none"
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                    >
-                                                                        <path
-                                                                            d="M20 11.9999H22V13.9999H20C18.62 13.9999 17.26 13.6499 16 12.9999C13.5 14.2999 10.5 14.2999 8 12.9999C6.74 13.6499 5.37 13.9999 4 13.9999H2V11.9999H4C5.39 11.9999 6.78 11.5299 8 10.6699C10.44 12.3799 13.56 12.3799 16 10.6699C17.22 11.5299 18.61 11.9999 20 11.9999ZM20 5.99992H22V7.99992H20C18.62 7.99992 17.26 7.64992 16 6.99992C13.5 8.29992 10.5 8.29992 8 6.99992C6.74 7.64992 5.37 7.99992 4 7.99992H2V5.99992H4C5.39 5.99992 6.78 5.52992 8 4.66992C10.44 6.37992 13.56 6.37992 16 4.66992C17.22 5.52992 18.61 5.99992 20 5.99992ZM20 17.9999H22V19.9999H20C18.62 19.9999 17.26 19.6499 16 18.9999C13.5 20.2999 10.5 20.2999 8 18.9999C6.74 19.6499 5.37 19.9999 4 19.9999H2V17.9999H4C5.39 17.9999 6.78 17.5299 8 16.6699C10.44 18.3799 13.56 18.3799 16 16.6699C17.22 17.5299 18.61 17.9999 20 17.9999Z"
-                                                                            fill="#9C9C9C"
-                                                                        />
-                                                                    </svg>
-                                                                ) : item.kategori ===
-                                                                  "Gunung" ? (
-                                                                    <svg
-                                                                        width="24"
-                                                                        height="24"
-                                                                        viewBox="0 0 24 24"
-                                                                        fill="none"
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                    >
-                                                                        <path
-                                                                            d="M14 6L10.25 11L13.1 14.8L11.5 16C9.81 13.75 7 10 7 10L1 18H23L14 6Z"
-                                                                            fill="#9C9C9C"
-                                                                        />
-                                                                    </svg>
-                                                                ) : (
-                                                                    <svg
-                                                                        width="24"
-                                                                        height="24"
-                                                                        viewBox="0 0 24 24"
-                                                                        fill="none"
-                                                                        xmlns="http://www.w3.org/2000/svg"
-                                                                    >
-                                                                        <path
-                                                                            d="M20 20C18.61 20 17.22 19.53 16 18.67C13.56 20.38 10.44 20.38 8 18.67C6.78 19.53 5.39 20 4 20H2V22H4C5.37 22 6.74 21.65 8 21C10.5 22.3 13.5 22.3 16 21C17.26 21.65 18.62 22 20 22H22V20M20 16C18.61 16 17.22 15.53 16 14.67C13.56 16.38 10.44 16.38 8 14.67C6.78 15.53 5.39 16 4 16H2V18H4C5.37 18 6.74 17.65 8 17C10.5 18.3 13.5 18.3 16 17C17.26 17.65 18.62 18 20 18H22V16M22 2H2V4H6V16H18V4H22M9 4H11V10H9M13 8H15V14H13V8Z"
-                                                                            fill="#9C9C9C"
-                                                                        />
-                                                                    </svg>
-                                                                )}
-                                                                <div className="flex flex-col justify-start items-start">
-                                                                    <p className="text-sm">
-                                                                        {ambilKataSebelumKoma(
-                                                                            item.alamat
-                                                                        )}
-                                                                    </p>
-                                                                    <h1 className="font-normal text-lg">
+                                                            <div className="flex justify-between w-full">
+                                                                <div className="flex justify-center items-center gap-4">
+                                                                    {item.kategori ===
+                                                                    "Danau" ? (
+                                                                        <svg
+                                                                            width="24"
+                                                                            height="24"
+                                                                            viewBox="0 0 24 24"
+                                                                            fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                        >
+                                                                            <path
+                                                                                d="M20 11.9999H22V13.9999H20C18.62 13.9999 17.26 13.6499 16 12.9999C13.5 14.2999 10.5 14.2999 8 12.9999C6.74 13.6499 5.37 13.9999 4 13.9999H2V11.9999H4C5.39 11.9999 6.78 11.5299 8 10.6699C10.44 12.3799 13.56 12.3799 16 10.6699C17.22 11.5299 18.61 11.9999 20 11.9999ZM20 5.99992H22V7.99992H20C18.62 7.99992 17.26 7.64992 16 6.99992C13.5 8.29992 10.5 8.29992 8 6.99992C6.74 7.64992 5.37 7.99992 4 7.99992H2V5.99992H4C5.39 5.99992 6.78 5.52992 8 4.66992C10.44 6.37992 13.56 6.37992 16 4.66992C17.22 5.52992 18.61 5.99992 20 5.99992ZM20 17.9999H22V19.9999H20C18.62 19.9999 17.26 19.6499 16 18.9999C13.5 20.2999 10.5 20.2999 8 18.9999C6.74 19.6499 5.37 19.9999 4 19.9999H2V17.9999H4C5.39 17.9999 6.78 17.5299 8 16.6699C10.44 18.3799 13.56 18.3799 16 16.6699C17.22 17.5299 18.61 17.9999 20 17.9999Z"
+                                                                                fill="#9C9C9C"
+                                                                            />
+                                                                        </svg>
+                                                                    ) : item.kategori ===
+                                                                      "Gunung" ? (
+                                                                        <svg
+                                                                            width="24"
+                                                                            height="24"
+                                                                            viewBox="0 0 24 24"
+                                                                            fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                        >
+                                                                            <path
+                                                                                d="M14 6L10.25 11L13.1 14.8L11.5 16C9.81 13.75 7 10 7 10L1 18H23L14 6Z"
+                                                                                fill="#9C9C9C"
+                                                                            />
+                                                                        </svg>
+                                                                    ) : (
+                                                                        <svg
+                                                                            width="24"
+                                                                            height="24"
+                                                                            viewBox="0 0 24 24"
+                                                                            fill="none"
+                                                                            xmlns="http://www.w3.org/2000/svg"
+                                                                        >
+                                                                            <path
+                                                                                d="M20 20C18.61 20 17.22 19.53 16 18.67C13.56 20.38 10.44 20.38 8 18.67C6.78 19.53 5.39 20 4 20H2V22H4C5.37 22 6.74 21.65 8 21C10.5 22.3 13.5 22.3 16 21C17.26 21.65 18.62 22 20 22H22V20M20 16C18.61 16 17.22 15.53 16 14.67C13.56 16.38 10.44 16.38 8 14.67C6.78 15.53 5.39 16 4 16H2V18H4C5.37 18 6.74 17.65 8 17C10.5 18.3 13.5 18.3 16 17C17.26 17.65 18.62 18 20 18H22V16M22 2H2V4H6V16H18V4H22M9 4H11V10H9M13 8H15V14H13V8Z"
+                                                                                fill="#9C9C9C"
+                                                                            />
+                                                                        </svg>
+                                                                    )}
+                                                                    <div className="flex flex-col justify-start items-start">
+                                                                        <p className="text-sm">
+                                                                            {ambilKataSebelumKoma(
+                                                                                item.alamat
+                                                                            )}
+                                                                        </p>
+                                                                        <h1 className="font-normal text-lg">
+                                                                            {
+                                                                                item.nama
+                                                                            }
+                                                                        </h1>
+                                                                    </div>
+                                                                </div>
+                                                                <div className="flex items-center gap-2">
+                                                                    <input
+                                                                        type="radio"
+                                                                        name="rating-1"
+                                                                        className="mask mask-star bg-orange-400"
+                                                                        disabled
+                                                                    />
+                                                                    <h1>
                                                                         {
-                                                                            item.nama
+                                                                            item.rating
                                                                         }
                                                                     </h1>
                                                                 </div>
@@ -493,7 +603,7 @@ export default function Home(props) {
                         </div>
                         <div className="flex flex-col w-full border-opacity-50 relative h-[48px]">
                             <div className="divider">
-                                Geser untuk melihat kartu
+                                Geser untuk melihat destinasi
                             </div>
                         </div>
                     </div>
@@ -568,7 +678,7 @@ export default function Home(props) {
                             </div>
                             <div className="flex flex-col w-full border-opacity-50 relative h-[48px]">
                                 <div className="divider  text-gray-200 before:bg-gray-200 after:bg-gray-200">
-                                    Geser untuk melihat kartu
+                                    Geser untuk melihat destinasi
                                 </div>
                             </div>
                         </div>

@@ -92,11 +92,11 @@ const DetailWisata = (props) => {
                     >
                         <div className="flex flex-col gap-[32px]">
                             <div className="flex flex-col gap-[12px]">
-                                <div className="heading-and-rating-detail-wisata flex flex-col md:flex-row justify-between md:items-center ">
+                                <div className="heading-and-rating-detail-wisata flex flex-col md:flex-row justify-between md:items-center gap-3 ">
                                     <h1 className="text-[26px] md:text-[40px] leading-[120%] font-bold">
                                         {props.tempat_wisata.nama}
                                     </h1>
-                                    <div className="flex md:flex-col md:justify-center md:items-end gap-1">
+                                    <div className="flex items-center md:flex-col md:justify-center md:items-end gap-3 md:gap-1">
                                         <h1 className="text-gray-500">
                                             Harga Tiket
                                         </h1>

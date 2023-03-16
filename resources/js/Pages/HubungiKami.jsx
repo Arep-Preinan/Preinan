@@ -16,14 +16,15 @@ const HubungiKami = () => {
                             Preinan adalah sebuah website yang menawarkan
                             platform pencarian destinasi liburan di kawasan
                             indah Wonosobo. Didesain untuk mempromosikan
-                            pariwisata lokal dan mendukung UMKM, Preinan
-                            memiliki fitur memudahkan pembelian tiket masuk ke
-                            tempat wisata dan menyediakan e-tiket dengan barcode
-                            untuk keamanan dan kenyamanan pengunjung. Preinan
-                            juga menyediakan informasi lengkap tentang lokasi,
-                            harga tiket masuk, hingga akomodasi di sekitar
-                            tempat wisata di tiga kategori wisata menarik di
-                            Wonosobo, yaitu danau, gunung, dan air terjun.
+                            pariwisata lokal dan mendukung UMKM yang bergerak di
+                            sektor pariwisata, Preinan memiliki fitur memudahkan
+                            pembelian tiket masuk ke tempat wisata dan
+                            menyediakan e-tiket dengan barcode untuk keamanan
+                            dan kenyamanan pengunjung. Preinan juga menyediakan
+                            informasi lengkap tentang lokasi, harga tiket masuk,
+                            hingga akomodasi di sekitar tempat wisata di tiga
+                            kategori wisata menarik di Wonosobo, yaitu danau,
+                            gunung, dan air terjun.
                         </p>
                         <p className="text-justify">
                             Dengan fitur-fiturnya yang lengkap dan mudah
@@ -38,7 +39,7 @@ const HubungiKami = () => {
                     <div className="justify-center items-center mx-auto container pb-[48px] pt-[48px] pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col gap-[48px]">
                         <div className="flex flex-col gap-[24px] items-center">
                             <p className="text-[18px] text-[#FFBE58] font-medium leading-[140%]">
-                                Makna Website
+                                Tujuan Kami
                             </p>
                             <h1 className="text-[36px] leading-[54px] font-bold text-white">
                                 Visi dan Misi
@@ -59,27 +60,27 @@ const HubungiKami = () => {
                                     Misi
                                 </h1>
                                 <p className="text-justify  text-white">
-                                    1. Menyediakan platform pencarian destinasi
+                                    ○ Menyediakan platform pencarian destinasi
                                     liburan yang lengkap dan mudah diakses bagi
                                     pengunjung.{" "}
                                 </p>
                                 <p className="text-justify  text-white">
-                                    2. Mendukung UMKM lokal dengan mempromosikan
+                                    ○ Mendukung UMKM lokal dengan mempromosikan
                                     produk dan jasa mereka di platform kami.
                                 </p>
                                 <p className="text-justify  text-white">
-                                    3. Menjaga keamanan dan kenyamanan
-                                    pengunjung dengan menyediakan e-tiket yang
-                                    dilengkapi dengan barcode.
+                                    ○ Menjaga keamanan dan kenyamanan pengunjung
+                                    dengan menyediakan e-tiket yang dilengkapi
+                                    dengan barcode.
                                 </p>
                                 <p className="text-justify  text-white">
-                                    4. Menyediakan informasi lengkap tentang
+                                    ○ Menyediakan informasi lengkap tentang
                                     tempat wisata, termasuk lokasi, harga tiket
                                     masuk, dan informasi terkait akomodasi di
                                     sekitar area wisata.
                                 </p>{" "}
                                 <p className="text-justify  text-white">
-                                    5. Menjaga kepercayaan dan kepuasan
+                                    ○ Menjaga kepercayaan dan kepuasan
                                     pengunjung dengan memberikan pelayanan yang
                                     terbaik.
                                 </p>{" "}
@@ -98,7 +99,7 @@ const HubungiKami = () => {
                         </h1>
                     </div>
                     <div className="flex flex-col md:flex-row lg:justify-between">
-                        <div className="h-[524px] w-[395px] flex flex-col gap-6">
+                        <div className="h-[524px] w-full md:w-[395px] flex flex-col gap-6">
                             <div className="h-[395px] bg-[url(../images/pakFay.jpg)] bg-cover rounded-3xl"></div>
                             <div className="flex flex-col gap-2 p-4">
                                 <h1 className="text-[20px] leading-[120%] font-semibold text-[#232D45]">
@@ -107,7 +108,7 @@ const HubungiKami = () => {
                                 <p>Dosen Pendamping</p>
                             </div>
                         </div>
-                        <div className="h-[524px] w-[395px] flex flex-col gap-6">
+                        <div className="h-[524px] w-full md:w-[395px] flex flex-col gap-6">
                             <div className="h-[395px] bg-[url(../images/userReview.png)] bg-cover rounded-3xl"></div>
                             <div className="flex flex-col gap-2 p-4">
                                 <h1 className="text-[20px] leading-[120%] font-semibold text-[#232D45]">
@@ -116,7 +117,7 @@ const HubungiKami = () => {
                                 <p>Mahasiswa S1 Sistem Informasi</p>
                             </div>
                         </div>
-                        <div className="h-[524px] w-[395px] flex flex-col gap-6">
+                        <div className="h-[524px] w-full md:w-[395px] flex flex-col gap-6">
                             <div className="h-[395px] bg-[url(../images/wahyu.jpg)] bg-cover rounded-3xl"></div>
                             <div className="flex flex-col gap-2 p-4">
                                 <h1 className="text-[20px] leading-[120%] font-semibold text-[#232D45]">
