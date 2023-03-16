@@ -21,10 +21,6 @@ export default function Home(props) {
     const [dataSearch, setDataSearch] = useState([]);
     const [isSearch, setIsSearch] = useState(false);
 
-    useEffect(() => {
-        setLoadingPage(false);
-    }, []);
-
     const handleSearchWisata = (e) => {
         e.preventDefault();
         const data = props.semua;

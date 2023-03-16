@@ -2,10 +2,8 @@ import ButtonLoginRegister from "@/Components/ButtonLoginRegister";
 import Label from "@/Components/Label";
 import Input from "./Input";
 import { Head, Link, useForm } from "@inertiajs/react";
-import Navbar from "@/Partials/Navbar";
 import { useEffect, useState } from "react";
 import ButtonLoading from "@/Components/ButtonLoading";
-import { Button } from "@material-tailwind/react";
 
 const Login = ({ props, handleMode }) => {
     const { data, setData, post } = useForm({

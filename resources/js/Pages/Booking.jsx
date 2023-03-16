@@ -1,9 +1,7 @@
 import ButtonLoading from "@/Components/ButtonLoading";
 import CardBooking from "@/Components/CardBooking";
 import ModalWarning from "@/Components/ModalWarning";
-import { useForm, Link, Head } from "@inertiajs/react";
-import { useEffect, useState } from "react";
-import Button from "./../Components/Button";
+import { Head } from "@inertiajs/react";
 
 const Booking = (props) => {
 
