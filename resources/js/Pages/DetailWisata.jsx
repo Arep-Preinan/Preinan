@@ -26,7 +26,7 @@ const DetailWisata = (props) => {
             <Navbar user={props.auth.user}>
                 <Head title={props.tempat_wisata.nama} />
                 {/* konten yang ada pada bawah foto */}
-                <div className="container mx-auto pr-[20px] pl-[20px] md:pr-[50px] lg:pl-[100px] lg:pr-[100px] md:pl-[50px] flex flex-col gap-[48px]">
+                <div className="xl:pl-[100px] xl:pr-[100px] mx-auto container max-md:pr-[20px] max-md:pl-[20px] flex flex-col gap-[48px]">
                     <BreadCumbs
                         nama={props.tempat_wisata.nama}
                         active={"detail"}
@@ -42,7 +42,7 @@ const DetailWisata = (props) => {
                             }}
                             className={`bg-slate-300 rounded-3xl bg-no-repeat bg-cover`}
                         ></div>
-                        <div className="hidden md:grid  md:grid-cols-1 gap-5">
+                        <div className="hidden md:grid md:grid-cols-1 gap-5">
                             <div className="grid grid-cols-2 lg:grid-cols-[60%_auto] gap-5">
                                 <div
                                     style={{

@@ -394,7 +394,7 @@ const Destinasi = (props) => {
                                         {all.map((group, i) => (
                                             <button
                                                 key={i}
-                                                className={`btn ${
+                                                className={`btn  ${
                                                     pageAll === i &&
                                                     "btn-active"
                                                 }`}
