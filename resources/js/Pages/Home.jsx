@@ -29,6 +29,7 @@ export default function Home(props) {
     const [data, setData] = useState({});
 
     const [dataSearch, setDataSearch] = useState([]);
+    const [isSearch, setIsSearch] = useState(false);
     const [loadingPage, setLoadingPage] = useState(true);
 
     const [hasFocus, setHasFocus] = useState(false);
@@ -46,8 +47,10 @@ export default function Home(props) {
         const data = props.semua;
         const search = e.target.value;
         if (search === "") {
+            setIsSearch(false);
             setDataSearch([]);
         } else {
+            setIsSearch(true);
             const dataSearch = data.filter((item) => {
                 return item.nama.toLowerCase().includes(search.toLowerCase());
             });
@@ -130,8 +133,9 @@ export default function Home(props) {
                                             id="scroll-search"
                                             className="mt-24 overflow-y-scroll h-full"
                                         >
-                                            {dataSearch.length == 0 && (
-                                                <div className="flex flex-col justify-start p-6">
+                                            {
+                                                !isSearch && (
+                                                    <div className="flex flex-col justify-start p-6">
                                                     <div className="flex items-start">
                                                         <h1 className="text-[#252525] font-semibold">
                                                             Destinasi Populer
@@ -229,6 +233,10 @@ export default function Home(props) {
                                                         )}
                                                     </div>
                                                 </div>
+                                                )
+                                            }
+                                            { dataSearch.length == 0 && isSearch && (
+                                                <p>Destinasi Tidak Ditemukan</p>  
                                             )}
                                             {dataSearch.length > 0 &&
                                                 dataSearch.map((item) => {
