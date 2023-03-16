@@ -6,12 +6,7 @@ import OverviewData from "@/Components/OverviewData";
 import Button from "../Components/Button";
 import Heading from "../Components/Heading";
 import CardHome from "@/Components/CardHome";
-import { Splide, SplideSlide } from "@splidejs/react-splide";
-import {
-    SliderDanau,
-    SliderGunung,
-    SliderAirTerjun,
-} from "@/Components/Slider";
+
 import pisahkanStripSetiapKata from "@/function/pisahkanStripSetiapKata";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
