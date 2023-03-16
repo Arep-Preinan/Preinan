@@ -456,7 +456,7 @@ export default function Home(props) {
                                     <Link href="/destinasi">
                                         <Button
                                             text={"Eksplor Destinasi"}
-                                            className="bg-[#3258E8] text-white"
+                                            className="bg-[#3258E8] text-white  hover:bg-blue-500 hover:border-blue-600 transition duration-200 "
                                         />
                                     </Link>
                                 </div>
@@ -603,7 +603,7 @@ export default function Home(props) {
                         </div>
                         <div className="flex flex-col w-full border-opacity-50 relative h-[48px]">
                             <div className="divider">
-                                Geser untuk melihat destinasi
+                                Geser kartu untuk melihat lainnya
                             </div>
                         </div>
                     </div>
@@ -678,7 +678,7 @@ export default function Home(props) {
                             </div>
                             <div className="flex flex-col w-full border-opacity-50 relative h-[48px]">
                                 <div className="divider  text-gray-200 before:bg-gray-200 after:bg-gray-200">
-                                    Geser untuk melihat destinasi
+                                    Geser kartu untuk melihat lainnya
                                 </div>
                             </div>
                         </div>
@@ -749,8 +749,7 @@ export default function Home(props) {
                                             <input
                                                 type="radio"
                                                 name="rating-1"
-                                                className="mask mask-star  bg-orange-400"
-                                                checked
+                                                className="mask mask-star bg-orange-400"
                                                 disabled
                                             />
                                         </div>
@@ -760,7 +759,7 @@ export default function Home(props) {
                             <Link href="/destinasi">
                                 <Button
                                     text={"Eksplor Destinasi"}
-                                    className="bg-[#3258E8] text-white mt-[24px] "
+                                    className="bg-[#3258E8] text-white mt-[24px]  hover:bg-blue-500 hover:border-blue-600 transition duration-200"
                                 />
                             </Link>
                         </div>
