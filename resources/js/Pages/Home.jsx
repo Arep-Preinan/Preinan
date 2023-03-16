@@ -1,3 +1,4 @@
+import ModalBooking from "@/Components/ModalBooking";
 import { Head, Link } from "@inertiajs/react";
 import Navbar from "../Partials/Navbar";
 import { useEffect, useState } from "react";
@@ -5,10 +6,18 @@ import OverviewData from "@/Components/OverviewData";
 import Button from "../Components/Button";
 import Heading from "../Components/Heading";
 import CardHome from "@/Components/CardHome";
+import { Splide, SplideSlide } from "@splidejs/react-splide";
+import {
+    SliderDanau,
+    SliderGunung,
+    SliderAirTerjun,
+} from "@/Components/Slider";
 import pisahkanStripSetiapKata from "@/function/pisahkanStripSetiapKata";
+// Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { FreeMode, Pagination } from "swiper";
 import "swiper/css/pagination";
+// Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cards";
 
@@ -16,10 +25,22 @@ import "swiper/css/effect-cards";
 import { EffectCards } from "swiper";
 
 export default function Home(props) {
-
+    const [shoModal, setShowModal] = useState(false);
+    const [data, setData] = useState({});
 
     const [dataSearch, setDataSearch] = useState([]);
     const [isSearch, setIsSearch] = useState(false);
+    const [loadingPage, setLoadingPage] = useState(true);
+
+    const [hasFocus, setHasFocus] = useState(false);
+
+    const focus = () => {
+        setHasFocus(true);
+    };
+
+    useEffect(() => {
+        setLoadingPage(false);
+    }, []);
 
     const handleSearchWisata = (e) => {
         e.preventDefault();

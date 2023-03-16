@@ -3,6 +3,7 @@ import Input from "@/Components/Input";
 import Label from "@/Components/Label";
 import { useForm, Link, Head } from "@inertiajs/react";
 import { useState, useEffect } from "react";
+import Navbar from "@/Partials/Navbar";
 import ButtonLoading from "@/Components/ButtonLoading";
 
 const Register = ({ handleMode }) => {

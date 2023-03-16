@@ -1,26 +1,45 @@
-import ButtonLoginRegister from "@/Components/ButtonLoginRegister";
-import Label from "@/Components/Label";
-import Input from "./Input";
-import { Head, Link, useForm } from "@inertiajs/react";
+import { useForm } from "@inertiajs/react";
 import { useEffect, useState } from "react";
-import ButtonLoading from "@/Components/ButtonLoading";
+import successTransaction from "./successTransaction";
 
-const Login = ({ props, handleMode }) => {
-    const { data, setData, post } = useForm({
-        email: "",
-        password: "",
-    });
-    console.log(props);
-    const [IsMobile, setIsMobile] = useState(false);
+const ModalBooking = (props) => {
     let [isLoading, setLoading] = useState(false);
+    let [page, setPage] = useState(1);
 
-    const submit = (e) => {
-        e.preventDefault();
+    let { data, setData, post } = useForm({
+        jumlahTiket: 1,
+        tanggal: "",
+        user_id: props.id_user,
+        id_wisata: props.data.id,
+        totalHarga: props.data.harga,
+    });
+
+    const handleCounter = (e) => {
+        if (e === "plus") {
+            setData("jumlahTiket", ++data.jumlahTiket);
+            setData("totalHarga", data.jumlahTiket * props.data.harga);
+        } else if (e === "minus") {
+            if (data.jumlahTiket > 1) {
+                setData("jumlahTiket", --data.jumlahTiket);
+                setData("totalHarga", data.jumlahTiket * props.data.harga);
+            }
+        }
+    };
+
+    const destroyData = () => {
+        setData("jumlahTiket", 1);
+        setData("tanggal", "");
+        setData("totalHarga", 0);
+        setData("id_wisata", props.data.id);
+    };
+
+    const submitBooking = async () => {
         setLoading(true);
-        post(route("login.auth"), {
+        post(route("booking.store"), {
             preserveScroll: true,
             onSuccess: () => {
                 setLoading(false);
+                setPage(2);
             },
             onError: () => {
                 setLoading(false);
@@ -28,133 +47,117 @@ const Login = ({ props, handleMode }) => {
         });
     };
 
-    useEffect(() => {
-        if (window.innerWidth <= 768) {
-            setIsMobile(true);
-        } else {
-            setIsMobile(false);
-        }
-    }, []);
-
     return (
-        <div className="md:bg-[#fafafa]">
-            <form>
-                <Head title="Login" />
-                {/* {IsMobile && <Navbar />} */}
-                <div className="grid lg:grid-cols-2 ">
-                    <div className="grid place-items-center h-screen lg:scale-95 xl:scale-90">
-                        <div className="card bg-base-100 max-w-lg w-full">
-                            <div className="card-body md:p-[50px] flex flex-col gap-[20px] md:border-2 rounded-3xl">
-                                <Link href="/">
-                                    <div className="flex justify-center">
-                                        <img
-                                            src="../images/preinannotblack.svg"
-                                            alt=""
-                                            className="scale-150"
-                                        />
-                                    </div>
-                                </Link>
-                                <h1 className="text-[24px] text-[#2F3F4D] font-semibold">
-                                    Login
-                                </h1>
-                                <p className="text-[16px]">
-                                    Masuk ke akun anda untuk memulai transaksi
-                                </p>
-                                {props.errors.status && (
-                                    <div className="alert alert-error">
-                                        {props.errors.status}
-                                    </div>
-                                )}
-                                <div className="email flex flex-col gap-[12px]">
-                                    <Label text={"Alamat Email"} />
-                                    <Input
-                                        text={"e.g. johnsmilga@gmail.com"}
-                                        type="email"
-                                        name="email"
-                                        value={data.email}
-                                        onChange={(e) =>
-                                            setData("email", e.target.value)
-                                        }
+        <>
+            {page === 1 ? (
+                <>
+                    <input
+                        type="checkbox"
+                        id="my-modal-5"
+                        onClick={() => destroyData()}
+                        className="modal-toggle"
+                    />
+                    <div className="modal">
+                        <div className="modal-box w-11/12 max-w-5xl">
+                            <label
+                                htmlFor="my-modal-5"
+                                className="hover:cursor-pointer absolute top-5 right-5 p-2 text-gray-700"
+                            >
+                                X
+                            </label>
+                            <h3 className="font-bold text-lg">
+                                {props.data.nama}
+                            </h3>
+                            <p className="py-4">{props.data.alamat}</p>
+                            <img
+                                className="w-96"
+                                src={`/images/wisata/${props.data.gambar}`}
+                                alt={props.data.nama}
+                            />
+                            <p className="py-4">Tanggal</p>
+                            <input
+                                type="date"
+                                className="border-2 border-gray-300 p-2 rounded-lg w-full"
+                                onChange={(e) =>
+                                    setData("tanggal", e.target.value)
+                                }
+                            />
+                            <p className="py-4">Jumlah Orang</p>
+                            <div className="justify-center items-center">
+                                <div className="flex items-center">
+                                    <button
+                                        onClick={() => handleCounter("minus")}
+                                        className="bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded-l"
+                                        id="minusBtn"
+                                    >
+                                        -
+                                    </button>
+                                    <input
+                                        type="text"
+                                        className="border border-gray-400 py-2 px-4 rounded-none text-center w-20"
+                                        value={data.jumlahTiket}
+                                        id="counterInput"
+                                        readOnly
                                     />
+                                    <button
+                                        onClick={() => handleCounter("plus")}
+                                        className="bg-gray-300 text-gray-700 font-bold py-2 px-4 rounded-r"
+                                        id="plusBtn"
+                                    >
+                                        +
+                                    </button>
                                 </div>
-                                <div>
-                                    <div className="password">
-                                        <div className="flex flex-col gap-[12px]">
-                                            <div className="flex">
-                                                <Label text={"Kata Sandi"} />
-                                                <a href="">
-                                                    <p className="text-[#868B90] underline underline-offset-1 text-[12px] md:text-[14px]">
-                                                        Lupa Kata Sandi?
-                                                    </p>
-                                                </a>
-                                            </div>
-                                            <Input
-                                                name="password"
-                                                type="password"
-                                                value={data.password}
-                                                onChange={(e) =>
-                                                    setData(
-                                                        "password",
-                                                        e.target.value
-                                                    )
-                                                }
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="flex justify-between">
-                                        <div className="form-control">
-                                            <label className="label cursor-pointer flex gap-3">
-                                                <input
-                                                    type="checkbox"
-                                                    className="checkbox checkbox-sm"
-                                                />
-                                                <span className="label-text text-[#868B90] text-[12px] md:text-[14px]">
-                                                    ingat saya
-                                                </span>
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
+                            </div>
+                            <p>Rp {data.totalHarga}</p>
+                            <div className="modal-action">
                                 {isLoading ? (
-                                    <ButtonLoading />
+                                    <button
+                                        type="button"
+                                        className="bg-indigo-500"
+                                        disabled
+                                    >
+                                        <svg
+                                            className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                        >
+                                            <circle
+                                                className="opacity-25"
+                                                cx="12"
+                                                cy="12"
+                                                r="10"
+                                                stroke="currentColor"
+                                                stroke-width="4"
+                                            ></circle>
+                                            <path
+                                                className="opacity-75"
+                                                fill="currentColor"
+                                                d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                                            ></path>
+                                        </svg>
+                                        Processing...
+                                    </button>
                                 ) : (
-                                    <ButtonLoginRegister
-                                        text={"Login"}
-                                        onClick={(e) => submit(e)}
+                                    <button
+                                        className="btn"
+                                        onClick={() => submitBooking()}
                                         disabled={
-                                            data.email && data.password
-                                                ? false
-                                                : true
+                                            data.tanggal === "" ? true : false
                                         }
-                                    />
+                                    >
+                                        Pesan Sekarang
+                                    </button>
                                 )}
-                                <div className="divider">
-                                    <p className="text-gray-600 text-sm">
-                                        atau
-                                    </p>
-                                </div>
-                                <div
-                                    onClick={() => handleMode("register")}
-                                    className="text-center text-[#868B90] hover:cursor-pointer"
-                                >
-                                    <p className=" text-[12px] md:text-[16px]">
-                                        Belum Punya Akun?
-                                        <span className="underline underline-offset-1">
-                                            Buat Akun
-                                        </span>
-                                    </p>
-                                </div>
                             </div>
                         </div>
                     </div>
-                    <div
-                        className=" bg-blue-600 hidden lg:flex justify-start items-start"
-                        id="login-onboarding"
-                    ></div>
-                </div>
-            </form>
-        </div>
+                </>
+            ) : (
+                <>{successTransaction()}</>
+            )}
+        </>
     );
 };
 
-export default Login;
+export default ModalBooking;

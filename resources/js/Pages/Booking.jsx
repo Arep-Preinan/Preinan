@@ -1,9 +1,16 @@
 import ButtonLoading from "@/Components/ButtonLoading";
 import CardBooking from "@/Components/CardBooking";
 import ModalWarning from "@/Components/ModalWarning";
-import { Head } from "@inertiajs/react";
+import { useForm, Link, Head } from "@inertiajs/react";
+import { useEffect, useState } from "react";
+import Button from "./../Components/Button";
 
 const Booking = (props) => {
+    let [page, setPage] = useState(1);
+
+    const pindahHalaman = (e) => {
+        setPage(e);
+    };
 
     return (
         <>
