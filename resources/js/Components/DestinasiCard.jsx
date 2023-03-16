@@ -1,10 +1,15 @@
-import { Link } from "@inertiajs/react";
+import { Link, useForm } from "@inertiajs/react";
 import Button from "./Button";
 import pisahkanStripSetiapKata from "@/function/pisahkanStripSetiapKata";
 import ModalWarning from "./ModalWarning";
 
+// baru
 const DestinasiCard = (props) => {
     const { destinasi, auth } = props;
+
+    const { data, get } = useForm({
+        id_destinasi: destinasi.uuid,
+    });
 
     const handleBooking = () => {
         get(route("booking.create"));
@@ -14,6 +19,7 @@ const DestinasiCard = (props) => {
         let pisahkan = string.split(",");
         return pisahkan[0];
     };
+    console.log(auth)
     // console.log("nama",destinasi)
     return (
         <div className="card min-w-[295px] md:min-w-[auto] md:w-full bg-base-100 flex justify-between gap-[4px] rounded-3xl border-2 ">
@@ -43,7 +49,7 @@ const DestinasiCard = (props) => {
                     {destinasi.harga == 0 ? "Free" : `Rp. ${destinasi.harga}`}
                 </p>
                 <div className="grid grid-cols-2">
-                    {auth ? (
+                    {auth.user ? (
                         <label>
                             <Button
                                 onClick={() => handleBooking()}
@@ -60,11 +66,12 @@ const DestinasiCard = (props) => {
                                 Pesan
                             </label>
                             <ModalWarning
-                                title="Batalkan Pemesanan"
-                                message="Apakah anda yakin ingin membatalkan pesanan anda?"
-                                link="destinasi"
+                                konteks="login"
+                                title="Anda Belum Login"
+                                message="Silahkan login terlebih dahulu untuk memesan"
+                                link="auth"
                                 merah="Batal"
-                                biru="Lanjutkan"
+                                biru="Login"
                             />
                         </>
                     )}

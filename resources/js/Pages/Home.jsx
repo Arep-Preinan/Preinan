@@ -27,6 +27,8 @@ export default function Home(props) {
     const [isSearch, setIsSearch] = useState(false);
     const [loadingPage, setLoadingPage] = useState(true);
 
+    const [user, setUser] = useState(props.auth.user);
+
     const [hasFocus, setHasFocus] = useState(false);
 
     const focus = () => {
@@ -34,7 +36,7 @@ export default function Home(props) {
     };
 
     useEffect(() => {
-        setLoadingPage(false);
+        
     }, []);
 
     const handleSearchWisata = (e) => {
@@ -56,7 +58,6 @@ export default function Home(props) {
         let pisahkan = string.split(",");
         return pisahkan[0];
     };
-
     return (
         <div className="bg-[#fafafa]">
             <Navbar user={props.auth.user} active={"home"}>
