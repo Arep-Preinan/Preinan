@@ -49,7 +49,7 @@ function Navbar({ children, ...props }) {
                                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
                                         <Link href="/">
                                             <img
-                                                src="../images/preinannotblack.svg"
+                                                src="http://preinan.xxuz.com/images/preinannotblack.svg"
                                                 alt=""
                                             />
                                         </Link>

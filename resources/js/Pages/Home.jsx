@@ -423,7 +423,7 @@ export default function Home(props) {
                                     className="xl:w-[320px] max-md:h-[75px] max-lg:h-[320px] rounded-3xl bg-cover bg-top lg:bg-right-top "
                                     style={{
                                         backgroundImage:
-                                            'url("../images/gununghome.jpeg")',
+                                            'url("http://preinan.xxuz.com/images/gununghome.jpeg")',
                                     }}
                                 >
                                     <h1 className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50  bg-black bg-opacity-50 lg:hover:bg-gray-900 rounded-3xl transition duration-400">
