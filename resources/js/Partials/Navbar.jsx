@@ -43,7 +43,7 @@ function Navbar({ children, ...props }) {
                 <div className="drawer-content drawer-end flex flex-col ">
                     {/* <!-- Navbar --> */}
                     <div className="bg-white">
-                        <div className="w-full  md:pl-[32px] md:pr-[32px] xl:pl-[100px] xl:pr-[100px] mx-auto container max-md:pr-[20px] max-md:pl-[20px] pt-4 pb-4 md:pt-8 md:pb-8">
+                        <div className="w-full xl:pl-[100px] xl:pr-[100px] mx-auto container max-md:pr-[20px] max-md:pl-[20px] pt-4 pb-4 md:pt-8 md:pb-8">
                             <nav className="relative flex-wrap items-center justify-between  flex flex-col ">
                                 <div className="container flex items-center justify-between">
                                     <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
@@ -143,25 +143,20 @@ function Navbar({ children, ...props }) {
                                                             <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
                                                         </svg>
                                                     </a>
-                                                    <ul className="p-2 bg-base-100">
+                                                    <ul className="p-4 bg-base-100">
                                                         <li
-                                                            className={`nav-item ${
-                                                                props.active ==
-                                                                ""
-                                                                    ? ""
-                                                                    : "hover:bg-gray-200 rounded-xl p-3 transition duration-200"
-                                                            }`}
+                                                            className={`nav-item`}
                                                         >
                                                             <Link
                                                                 className={`flex items-center text-[16px] leading-[24px]  ${
                                                                     props.active ==
-                                                                    "tentang-kami"
+                                                                    "tiketku"
                                                                         ? "text-[#466BF3] font-medium"
                                                                         : "text-[#9C9C9C] font-normal  "
                                                                 } `}
-                                                                href="/hubungi-kami"
+                                                                href="/tiket-ku"
                                                             >
-                                                                Tentang Kami
+                                                                Tiketku
                                                             </Link>
                                                         </li>
                                                         <li>
@@ -323,7 +318,7 @@ function Navbar({ children, ...props }) {
                                             src="../images/icons/userIcons.svg"
                                             alt=""
                                         />
-                                        <h1 className="text-[16px] leading-[24px] text-gray-500">
+                                        <h1 className="text-[16px] leading-[24px] text-green-600">
                                             Selamat Datang, {props.user.name}
                                         </h1>
                                     </a>

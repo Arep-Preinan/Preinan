@@ -39,7 +39,7 @@ const Login = ({ props, handleMode }) => {
     }, []);
 
     return (
-        <div className="bg-[#fafafa]">
+        <div className="md:bg-[#fafafa]">
             <form>
                 <Head title="Login" />
                 {/* {IsMobile && <Navbar />} */}

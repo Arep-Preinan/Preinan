@@ -85,17 +85,13 @@ const Tiket = (props) => {
                                                   </div>
                                               </div>
                                           </div>
-                                          <div className="flex flex-row justify-between pb-6">
+                                          <div className="flex flex-row justify-end items-center pb-6">
                                               <label
                                                   htmlFor={`my-modal-${index}`}
-                                                  className="mt-2 text-[#3258E8]"
+                                                  className="border-none bg-[#24d12c] text-white text-[14px] pl-[32px] pr-[32px] pt-[12px] pb-[12px] btn"
                                               >
                                                   Detail Tiket
                                               </label>
-                                              <Button
-                                                  text={"Tiket Valid"}
-                                                  className="bg-[#24d12c] text-white text-[14px] p-0 "
-                                              />
                                           </div>
                                           <div className="h-[1px] w-full bg-[#EAEAEA]"></div>
                                           <input
