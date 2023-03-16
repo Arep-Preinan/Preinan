@@ -1,6 +1,5 @@
-import { Head, Link } from "@inertiajs/react";
+import { Head } from "@inertiajs/react";
 import formatTanggal from "@/function/formatTanggal";
-import Button from "@/Components/Button";
 import Navbar from "@/Partials/Navbar";
 import RatingReview from "@/Components/RatingReview";
 import { useState } from "react";

@@ -1,13 +1,10 @@
-import { Link, useForm } from "@inertiajs/react";
+import { Link } from "@inertiajs/react";
 import Button from "./Button";
 import pisahkanStripSetiapKata from "@/function/pisahkanStripSetiapKata";
 import ModalWarning from "./ModalWarning";
 
 const DestinasiCard = (props) => {
     const { destinasi, auth } = props;
-    const { data, get } = useForm({
-        id_destinasi: destinasi.uuid,
-    });
 
     const handleBooking = () => {
         get(route("booking.create"));

@@ -1,6 +1,6 @@
 import ButtonLoading from "@/Components/ButtonLoading";
-import { useForm, usePage } from "@inertiajs/react";
-import { useEffect, useState } from "react";
+import { useForm } from "@inertiajs/react";
+import { useState } from "react";
 import DetailKontak from "./DetailKontak";
 
 const CardBooking = (props) => {
@@ -13,13 +13,6 @@ const CardBooking = (props) => {
         tanggal: "",
         totalHarga: props.booking.destinasi.harga,
     });
-
-    const destroyData = () => {
-        setData("jumlahTiket", 1);
-        setData("tanggal", "");
-        setData("totalHarga", 0);
-        setData("id_wisata", props.booking.destinasi.uuid);
-    };
 
     const submitBooking = async () => {
         setLoading(true);

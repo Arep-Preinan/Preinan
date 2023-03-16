@@ -1,4 +1,3 @@
-import Heading from "@/Components/Heading";
 import { Link } from "@inertiajs/react";
 
 const BreadCumbs = ({ nama, active }) => {

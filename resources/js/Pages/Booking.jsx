@@ -6,11 +6,6 @@ import { useEffect, useState } from "react";
 import Button from "./../Components/Button";
 
 const Booking = (props) => {
-    let [page, setPage] = useState(1);
-
-    const pindahHalaman = (e) => {
-        setPage(e);
-    };
 
     return (
         <>
