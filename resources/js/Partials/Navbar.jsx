@@ -131,11 +131,12 @@ function Navbar({ children, ...props }) {
                                                     <li tabIndex={0}>
                                                         <a>
                                                             <h1 className="text-[16px] leading-[24px] text-gray-500">
-                                                                Hai,{" "}
+                                                                Hai{" "}
                                                                 {
                                                                     props.user
                                                                         .name
                                                                 }
+                                                                👋
                                                             </h1>
                                                             <svg
                                                                 className="fill-current"
@@ -237,6 +238,13 @@ function Navbar({ children, ...props }) {
                     ></label>
                     <ul className="menu p-4 w-80 bg-base-100 flex flex-col gap-3 pt-20">
                         {/* <!-- Sidebar content here --> */}
+                        <li className="disabled">
+                            <a>
+                                <h1 className="text-[16px] leading-[24px] text-[#252525]">
+                                    Hai, {props.user.name} 👋
+                                </h1>
+                            </a>
+                        </li>
                         <li
                             className={`nav-item rounded-xl  ${
                                 props.active == "home" && "bg-[#3258E8]"
@@ -303,7 +311,7 @@ function Navbar({ children, ...props }) {
                                         ? "text-white bg-[#3258E8]  font-medium"
                                         : "text-[#9C9C9C] font-normal  "
                                 } `}
-                                href="/hubungi-kami"
+                                href="/hubungi-kami "
                             >
                                 {props.active == "tentang-kami" ? (
                                     <img
@@ -324,17 +332,6 @@ function Navbar({ children, ...props }) {
                         <div className="h-[1px] w-full bg-[#EAEAEA]"></div>
                         {props.user ? (
                             <>
-                                <li>
-                                    <a>
-                                        <img
-                                            src="../images/icons/userIcons.svg"
-                                            alt=""
-                                        />
-                                        <h1 className="text-[16px] leading-[24px] text-green-600">
-                                            Selamat Datang, {props.user.name}
-                                        </h1>
-                                    </a>
-                                </li>
                                 <li>
                                     <Link
                                         href={"/tiket-ku"}
