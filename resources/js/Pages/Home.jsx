@@ -115,7 +115,7 @@ export default function Home(props) {
                                                     />
                                                     <label
                                                         htmlFor="my-modal-5"
-                                                        className="btn border-none btn-sm   bg-red-600"
+                                                        className="btn border-none btn-sm h-[45px] w-[45px]  bg-red-600"
                                                     >
                                                         ✕
                                                     </label>
