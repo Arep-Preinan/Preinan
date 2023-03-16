@@ -131,8 +131,11 @@ function Navbar({ children, ...props }) {
                                                     <li tabIndex={0}>
                                                         <a>
                                                             <h1 className="text-[16px] leading-[24px] text-gray-500">
-                                                                Hai{" "}
-                                                                {props.username}
+                                                                Hai,{" "}
+                                                                {
+                                                                    props.user
+                                                                        .name
+                                                                }
                                                                 👋
                                                             </h1>
                                                             <svg
@@ -238,7 +241,7 @@ function Navbar({ children, ...props }) {
                         <li className="disabled">
                             <a>
                                 <h1 className="text-[16px] leading-[24px] text-[#252525]">
-                                    Hai, {props.username} 👋
+                                    Hai, {props.user.name} 👋
                                 </h1>
                             </a>
                         </li>
