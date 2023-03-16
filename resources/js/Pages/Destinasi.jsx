@@ -137,7 +137,7 @@ const Destinasi = (props) => {
                             </Heading>
                         </div>
                         <div className="grid md:grid-cols-[auto_auto] lg:grid-cols-[auto_420px] md:gap-5 h-[540px] max-md:rounded-3xl max-md:overflow-hidden  ">
-                            <div className="flex hover:cursor-pointer transition  justify-center items-end md:rounded-[24px] bg-[url(http://preinan.xxuz.com/images/telaga2.jpg)] bg-no-repeat bg-cover md:bg-top lg:bg-cover">
+                            <div className="flex hover:cursor-pointer transition  justify-center items-end md:rounded-[24px] bg-[url(../images/telaga2.jpg)] bg-no-repeat bg-cover md:bg-top lg:bg-cover">
                                 <h1
                                     className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50 bg-black bg-opacity-50 lg:hover:bg-gray-900 md:rounded-3xl transition duration-400"
                                     onClick={() => {
@@ -148,7 +148,7 @@ const Destinasi = (props) => {
                                 </h1>
                             </div>
                             <div className="grid grid-cols-2 md:grid-cols-1 md:gap-5">
-                                <div className="hover:cursor-pointer bg-[url(http://preinan.xxuz.com/images/gunung2.jpg)] bg-no-repeat bg-cover md:bg-top lg:bg-center md:rounded-[24px]">
+                                <div className="hover:cursor-pointer bg-[url(../images/gunung2.jpg)] bg-no-repeat bg-cover md:bg-top lg:bg-center md:rounded-[24px]">
                                     <h1
                                         className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50 bg-black bg-opacity-50 lg:hover:bg-gray-900 md:rounded-3xl transition duration-400"
                                         onClick={() => {
@@ -158,7 +158,7 @@ const Destinasi = (props) => {
                                         Gunung
                                     </h1>
                                 </div>
-                                <div className="bg-[url(http://preinan.xxuz.com/images/curug.jpg)] bg-no-repeat bg-cover md:bg-top lg:bg-center md:rounded-[24px]">
+                                <div className="bg-[url(../images/curug.jpg)] bg-no-repeat bg-cover md:bg-top lg:bg-center md:rounded-[24px]">
                                     <h1
                                         className=" hover:cursor-pointer md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50 bg-black bg-opacity-50 lg:hover:bg-gray-900 md:rounded-3xl transition duration-400"
                                         onClick={() => {

@@ -46,8 +46,8 @@ const Booking = (props) => {
                                 title="Batalkan Pemesanan"
                                 message="Apakah anda yakin ingin membatalkan pesanan anda?"
                                 link="destinasi"
-                                merah="Lanjut pesan"
-                                biru="batal pesan"
+                                merah="batal pesan"
+                                biru="Lanjut pesan"
                             />
                         </div>
                     </div>
