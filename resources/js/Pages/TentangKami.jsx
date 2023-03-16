@@ -1,6 +1,6 @@
 import Navbar from "@/Partials/Navbar";
 
-const HubungiKami = () => {
+const TentangKami = () => {
     return (
         <div className="bg-[#FAFAFA] h-screen">
             <Navbar active={"tentang-kami"}>
@@ -133,4 +133,4 @@ const HubungiKami = () => {
     );
 };
 
-export default HubungiKami;
+export default TentangKami;

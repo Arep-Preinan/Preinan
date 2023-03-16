@@ -42,9 +42,9 @@ Route::get('/register', function () {
     return Inertia::render('Register');
 })->name('register');
 
-Route::get('/hubungi-kami', function () {
-    return Inertia::render('HubungiKami');
-})->name('hubungi-kami');
+Route::get('/tentang-kami', function () {
+    return Inertia::render('TentangKami');
+})->name('tentang-kami');
 
 Route::post('/register', [AuthController::class, "register"])->name('register.auth');
 
