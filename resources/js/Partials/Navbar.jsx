@@ -117,7 +117,7 @@ function Navbar({ children, ...props }) {
                                                             ? "text-[#466BF3] font-medium"
                                                             : "text-[#9C9C9C] font-normal  "
                                                     } `}
-                                                    href="/hubungi-kami"
+                                                    href="/tentang-kami"
                                                 >
                                                     Tentang Kami
                                                 </Link>
@@ -303,7 +303,7 @@ function Navbar({ children, ...props }) {
                                         ? "text-white bg-[#3258E8]  font-medium"
                                         : "text-[#9C9C9C] font-normal  "
                                 } `}
-                                href="/hubungi-kami"
+                                href="/tentang-kami"
                             >
                                 {props.active == "tentang-kami" ? (
                                     <img
