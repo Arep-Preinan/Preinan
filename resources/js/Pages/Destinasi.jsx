@@ -139,7 +139,10 @@ const Destinasi = (props) => {
                         <div className="grid md:grid-cols-[auto_auto] lg:grid-cols-[auto_420px] md:gap-5 h-[540px] max-md:rounded-3xl max-md:overflow-hidden  ">
                             <a
                                 href="#kumpulan-destinasi"
-                                className="flex hover:cursor-pointer transition  justify-center items-end md:rounded-[24px] bg-[url(../images/telaga2.jpg)] bg-no-repeat bg-cover md:bg-top lg:bg-cover"
+                                className="flex hover:cursor-pointer transition  justify-center items-end md:rounded-[24px] bg-no-repeat bg-cover md:bg-top lg:bg-cover"
+                                style={{
+                                    backgroundImage: `url(../images/telaga2.jpg)`,
+                                }}
                             >
                                 <h1
                                     className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50 bg-black bg-opacity-50 lg:hover:bg-gray-900 md:rounded-3xl transition duration-400"
@@ -153,7 +156,10 @@ const Destinasi = (props) => {
                             <div className="grid grid-cols-2 md:grid-cols-1 md:gap-5">
                                 <a
                                     href="#kumpulan-destinasi"
-                                    className="hover:cursor-pointer bg-[url(../images/gunung2.jpg)] bg-no-repeat bg-cover md:bg-top lg:bg-center md:rounded-[24px]"
+                                    className="hover:cursor-pointer bg-no-repeat bg-cover md:bg-top lg:bg-center md:rounded-[24px]"
+                                    style={{
+                                        backgroundImage: `url(../images/gunung2.jpg)`,
+                                    }}
                                 >
                                     <h1
                                         className="md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50 bg-black bg-opacity-50 lg:hover:bg-gray-900 md:rounded-3xl transition duration-400"
@@ -166,7 +172,10 @@ const Destinasi = (props) => {
                                 </a>
                                 <a
                                     href="#kumpulan-destinasi"
-                                    className="bg-[url(../images/curug.jpg)] bg-no-repeat bg-cover md:bg-top lg:bg-center md:rounded-[24px]"
+                                    className="bg-no-repeat bg-cover md:bg-top lg:bg-center md:rounded-[24px]"
+                                    style={{
+                                        backgroundImage: `url(../images/curug.jpg)`,
+                                    }}
                                 >
                                     <h1
                                         className=" hover:cursor-pointer md:text-4xl text-white w-full h-full grid place-items-center lg:opacity-0 lg:hover:opacity-50 bg-black bg-opacity-50 lg:hover:bg-gray-900 md:rounded-3xl transition duration-400"

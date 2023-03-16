@@ -87,7 +87,11 @@ const TentangKami = (props) => {
                                     terbaik.
                                 </p>{" "}
                             </div>
-                            <div className="h-[300px] md:h-full lg:h-[501px] bg-[url(../images/preinanMockup.jpeg)] bg-cover rounded-3xl"></div>
+                            <div className="h-[300px] md:h-full lg:h-[501px] bg-cover rounded-3xl"
+                                style={{ backgroundImage: "url('../images/preinanMockup.jpeg')" }}
+                            >
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -102,7 +106,9 @@ const TentangKami = (props) => {
                     </div>
                     <div className="flex flex-col md:flex-row lg:justify-between">
                         <div className="h-[524px] w-full md:w-[395px] flex flex-col gap-6">
-                            <div className="h-[395px] bg-[url(../images/pakFay.jpg)] bg-cover rounded-3xl"></div>
+                            <div className="h-[395px] bg-cover rounded-3xl"
+                                style={{backgroundImage: "url(../images/pakFay.jpg)"}}>
+                            </div>
                             <div className="flex flex-col gap-2 p-4">
                                 <h1 className="text-[20px] leading-[120%] font-semibold text-[#232D45]">
                                     Faishal Mufied Al Anshary, S.Kom., M.Kom
@@ -111,7 +117,9 @@ const TentangKami = (props) => {
                             </div>
                         </div>
                         <div className="h-[524px] w-full md:w-[395px] flex flex-col gap-6">
-                            <div className="h-[395px] bg-[url(../images/userReview.png)] bg-cover rounded-3xl"></div>
+                            <div className="h-[395px] bg-cover rounded-3xl" 
+                                style={{backgroundImage: "url(../images/userReview.png)"}}>
+                            </div>
                             <div className="flex flex-col gap-2 p-4">
                                 <h1 className="text-[20px] leading-[120%] font-semibold text-[#232D45]">
                                     Sultan Hafizh Alexander
@@ -120,7 +128,9 @@ const TentangKami = (props) => {
                             </div>
                         </div>
                         <div className="h-[524px] w-full md:w-[395px] flex flex-col gap-6">
-                            <div className="h-[395px] bg-[url(../images/wahyu.jpg)] bg-cover rounded-3xl"></div>
+                            <div className="h-[395px] bg-cover rounded-3xl"
+                                style={{backgroundImage: "url(../images/wahyu.jpg)"}}
+                            ></div>
                             <div className="flex flex-col gap-2 p-4">
                                 <h1 className="text-[20px] leading-[120%] font-semibold text-[#232D45]">
                                     Wahyudi Khoeris Salimi

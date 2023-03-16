@@ -62,7 +62,11 @@ export default function Home(props) {
         <div className="bg-[#fafafa]">
             <Navbar user={props.auth.user} active={"home"}>
                 <div>
-                    <div className="grid text-center place-items-center h-[631px] w-full bg-[url(../images/backgroundHero3.svg)] bg-no-repeat bg-cover   ">
+                    <div className="grid text-center place-items-center h-[631px] w-full bg-no-repeat bg-cover" 
+                        style={{
+                            backgroundImage: `url(../images/backgroundHero3.svg)`,
+                        }}
+                    >
                         <div className="flex flex-col justify-center items-center gap-[40px]">
                             <div className="flex flex-col gap-2 md:gap-[8px] lg:gap-[12px]">
                                 <h1 className="font-semibold leading-[120%] text-3xl md:text-3xl lg:text-[42px] text-white">
@@ -715,7 +719,11 @@ export default function Home(props) {
                                     id="user-review-home"
                                     className="flex items-center gap-3"
                                 >
-                                    <div className="h-[64px] w-[64px] rounded-full bg-[url(../images/userReview.png)] bg-cover"></div>
+                                    <div className="h-[64px] w-[64px] rounded-full bg-cover"
+                                        style={{
+                                            backgroundImage: `url(../images/userReview.png)`,
+                                        }}
+                                    ></div>
                                     <div>
                                         <div className="name-user-home flex gap-[8px]">
                                             <h1 className="text-[#232631] font-semibold text-lg">
