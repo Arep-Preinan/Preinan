@@ -67,7 +67,7 @@ const CardBooking = (props) => {
     return (
         /* section card */
         <div
-            className="card w-full max-w-[550px] md:max-h-[500px] bg-base-100 p-5"
+            className="card w-full lg:max-w-[550px] md:max-h-[500px] bg-base-100 p-5"
             id="rekomendasi-detail-wisata"
         >
             <div className="flex flex-col gap-3 md:gap-6">
