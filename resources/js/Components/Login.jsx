@@ -44,16 +44,18 @@ const Login = ({ props, handleMode }) => {
                 <Head title="Login" />
                 {/* {IsMobile && <Navbar />} */}
                 <div className="grid lg:grid-cols-2 ">
-                    <div className="grid place-items-center h-screen">
+                    <div className="grid place-items-center h-screen lg:scale-95 xl:scale-90">
                         <div className="card bg-base-100 max-w-lg w-full">
                             <div className="card-body md:p-[50px] flex flex-col gap-[20px] md:border-2 rounded-3xl">
-                                <div className="flex justify-center">
-                                    <img
-                                        src="../images/preinannotblack.svg"
-                                        alt=""
-                                        className="w-[300px]"
-                                    />
-                                </div>
+                                <Link href="/">
+                                    <div className="flex justify-center">
+                                        <img
+                                            src="../images/preinannotblack.svg"
+                                            alt=""
+                                            className="scale-150"
+                                        />
+                                    </div>
+                                </Link>
                                 <h1 className="text-[24px] text-[#2F3F4D] font-semibold">
                                     Login
                                 </h1>

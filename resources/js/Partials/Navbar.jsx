@@ -124,99 +124,104 @@ function Navbar({ children, ...props }) {
                                             </li>
                                         </ul>
                                     </div>
-                                    {props.user ? (
-                                        <>
-                                            <ul className="menu menu-horizontal px-1 hidden lg:flex">
-                                                <li tabIndex={0}>
-                                                    <a>
-                                                        <h1 className="text-[16px] leading-[24px] text-gray-500">
-                                                            Hai,{" "}
-                                                            {props.user.name}
-                                                        </h1>
-                                                        <svg
-                                                            className="fill-current"
-                                                            xmlns="http://www.w3.org/2000/svg"
-                                                            width="20"
-                                                            height="20"
-                                                            viewBox="0 0 24 24"
-                                                        >
-                                                            <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-                                                        </svg>
-                                                    </a>
-                                                    <ul className=" bg-base-100">
-                                                        <li>
-                                                            <Link
-                                                                href={
-                                                                    "/tiket-ku"
+                                    <div className="flex gap-4">
+                                        {props.user ? (
+                                            <>
+                                                <ul className="menu menu-horizontal px-1 hidden lg:flex">
+                                                    <li tabIndex={0}>
+                                                        <a>
+                                                            <h1 className="text-[16px] leading-[24px] text-gray-500">
+                                                                Hai,{" "}
+                                                                {
+                                                                    props.user
+                                                                        .name
                                                                 }
-                                                                className={`w-full flex gap-3  ${
-                                                                    props.active ==
-                                                                    "tiketku"
-                                                                        ? "text-white bg-[#3258E8]  font-medium"
-                                                                        : "text-[#9C9C9C] font-normal  "
-                                                                } `}
+                                                            </h1>
+                                                            <svg
+                                                                className="fill-current"
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                width="20"
+                                                                height="20"
+                                                                viewBox="0 0 24 24"
                                                             >
-                                                                {props.active ==
-                                                                "tiketku" ? (
+                                                                <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                                                            </svg>
+                                                        </a>
+                                                        <ul className=" bg-base-100">
+                                                            <li>
+                                                                <Link
+                                                                    href={
+                                                                        "/tiket-ku"
+                                                                    }
+                                                                    className={`w-full flex gap-3  ${
+                                                                        props.active ==
+                                                                        "tiketku"
+                                                                            ? "text-white bg-[#3258E8]  font-medium"
+                                                                            : "text-[#9C9C9C] font-normal  "
+                                                                    } `}
+                                                                >
+                                                                    {props.active ==
+                                                                    "tiketku" ? (
+                                                                        <img
+                                                                            src="../images/icons/ticket-active.svg"
+                                                                            alt=""
+                                                                        />
+                                                                    ) : (
+                                                                        <img
+                                                                            src="../images/icons/ticket-no-active.svg"
+                                                                            alt=""
+                                                                        />
+                                                                    )}
+                                                                    Tiket ku
+                                                                </Link>
+                                                            </li>
+                                                            <li>
+                                                                <Link
+                                                                    method="post"
+                                                                    href="/logout"
+                                                                    as="button"
+                                                                    className="text-red-500"
+                                                                >
                                                                     <img
-                                                                        src="../images/icons/ticket-active.svg"
+                                                                        src="../images/icons/logout-no-active.svg"
                                                                         alt=""
                                                                     />
-                                                                ) : (
-                                                                    <img
-                                                                        src="../images/icons/ticket-no-active.svg"
-                                                                        alt=""
-                                                                    />
-                                                                )}
-                                                                Tiket ku
-                                                            </Link>
-                                                        </li>
-                                                        <li>
-                                                            <Link
-                                                                method="post"
-                                                                href="/logout"
-                                                                as="button"
-                                                                className="text-red-500"
-                                                            >
-                                                                <img
-                                                                    src="../images/icons/logout-no-active.svg"
-                                                                    alt=""
-                                                                />
-                                                                Logout
-                                                            </Link>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-                                            </ul>
-                                        </>
-                                    ) : (
-                                        <Link
-                                            href={"/auth"}
-                                            className="btn w-[143px] h-[48px] hidden md:flex"
-                                            id="button-navbar"
-                                        >
-                                            Login
-                                        </Link>
-                                    )}
-                                    <div className="flex-none lg:hidden">
-                                        <label
-                                            htmlFor="my-drawer-3"
-                                            className="btn btn-square bg-[#3258E8] border-none"
-                                        >
-                                            <svg
-                                                xmlns="http://www.w3.org/2000/svg"
-                                                fill="none"
-                                                viewBox="0 0 24 24"
-                                                className="inline-block w-6 h-6 stroke-current"
+                                                                    Logout
+                                                                </Link>
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </>
+                                        ) : (
+                                            <Link
+                                                href={"/auth"}
+                                                className="btn w-[143px] h-[48px] hidden md:flex"
+                                                id="button-navbar"
                                             >
-                                                <path
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                    strokeWidth="2"
-                                                    d="M4 6h16M4 12h16M4 18h16"
-                                                ></path>
-                                            </svg>
-                                        </label>
+                                                Login
+                                            </Link>
+                                        )}
+                                        <div className="flex-none lg:hidden">
+                                            <label
+                                                htmlFor="my-drawer-3"
+                                                className="btn btn-square bg-[#3258E8] border-none"
+                                            >
+                                                <svg
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                    fill="none"
+                                                    viewBox="0 0 24 24"
+                                                    className="inline-block w-6 h-6 stroke-current"
+                                                >
+                                                    <path
+                                                        strokeLinecap="round"
+                                                        strokeLinejoin="round"
+                                                        strokeWidth="2"
+                                                        d="M4 6h16M4 12h16M4 18h16"
+                                                    ></path>
+                                                </svg>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
                             </nav>

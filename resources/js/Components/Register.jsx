@@ -73,16 +73,18 @@ const Register = ({ handleMode }) => {
                     className="h-full w-full bg-blue-600 hidden xl:flex shrink"
                     id="login-onboarding"
                 ></div>
-                <div className="grid place-items-center h-screen">
+                <div className="grid place-items-center h-screen lg:scale-95 xl:scale-75">
                     <div className="card  bg-base-100 max-w-3xl  w-full">
                         <div className="card-body md:p-[50px] flex flex-col gap-[20px] md:border-2 rounded-3xl">
-                            <div className="flex justify-center">
-                                <img
-                                    src="../images/preinannotblack.svg"
-                                    alt=""
-                                    className="w-[300px]"
-                                />
-                            </div>
+                            <Link href="/">
+                                <div className="flex justify-center">
+                                    <img
+                                        src="../images/preinannotblack.svg"
+                                        alt=""
+                                        className="w-[300px]"
+                                    />
+                                </div>
+                            </Link>
                             <h1 className="text-[24px] text-[#2F3F4D] font-semibold">
                                 Register
                             </h1>
