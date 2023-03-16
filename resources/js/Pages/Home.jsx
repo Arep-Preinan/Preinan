@@ -15,7 +15,8 @@ import {
 import pisahkanStripSetiapKata from "@/function/pisahkanStripSetiapKata";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-
+import { FreeMode, Pagination } from "swiper";
+import "swiper/css/pagination";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/effect-cards";
@@ -197,7 +198,7 @@ export default function Home(props) {
                             </div>
                             <div className="lg:w-[339px] flex flex-col xl:flex-row gap-8">
                                 <img
-                                    src="http://preinan.xxuz.com/images/icons/scantiket.svg"
+                                    src="../images/icons/scanTiket.svg"
                                     alt=""
                                     className="w-[64px] h-[64px]"
                                 />
@@ -311,8 +312,8 @@ export default function Home(props) {
                     </div>
                     {/* Overview Destinasi Danau */}
                     <div className="bg-[#3258E8]">
-                        <div className="mx-auto container pt-[48px] pb-[48px] xl:pl-[100px] xl:pr-[100px]  ">
-                            <div className="grid grid-cols-1 lg:flex  justify-center lg:gap-[120px] gap-[56px] items-center max-md:overflow-hidden">
+                        <div className="mx-auto container pt-[48px] pb-[32px] md:pb-[48px] xl:pl-[100px] xl:pr-[100px]  ">
+                            <div className="grid grid-cols-1 lg:flex  justify-center lg:gap-[120px] md:gap-[56px] items-center max-md:overflow-hidden">
                                 <div className="flex items-start flex-col gap-[12px] lg:gap-6 max-md:pr-[20px] max-md:pl-[20px] max-lg:pl-[50px]">
                                     <Heading.Tagline
                                         text={"Destinasi Danau"}
@@ -341,10 +342,11 @@ export default function Home(props) {
                                     <Swiper
                                         effect={"cards"}
                                         grabCursor={true}
-                                        modules={[EffectCards]}
-                                        className="mySwiper max-md:scale-75"
+                                        pagination={true}
+                                        modules={[EffectCards, Pagination]}
+                                        className="mySwiper max-md:scale-90 swiper1"
                                     >
-                                        {props.gunung.map((item) => {
+                                        {props.danau.map((item) => {
                                             return (
                                                 <SwiperSlide
                                                     key={item.uuid}
@@ -399,12 +401,49 @@ export default function Home(props) {
                                 </Link>
                             </div>
                             <div
-                                id="destinasi-gunung-container"
-                                className="flex gap-[36px] "
+                            // id="destinasi-gunung-container"
+                            // className="flex gap-[36px] "
                             >
-                                <div className="mySlider overflow-x-hidden">
+                                {/* <div className="mySlider overflow-x-hidden">
                                     <SliderGunung data={props.gunung} />
-                                </div>
+                                </div> */}
+                                <Swiper
+                                    slidesPerView={3}
+                                    spaceBetween={32}
+                                    breakpoints={{
+                                        0: {
+                                            slidesPerView: 1,
+                                        },
+                                        768: {
+                                            slidesPerView: 2,
+                                        },
+                                        1024: {
+                                            slidesPerView: 3,
+                                        },
+                                    }}
+                                    pagination={{
+                                        dynamicBullets: true,
+                                    }}
+                                    modules={[FreeMode, Pagination]}
+                                    className="mySwiper swiper2 "
+                                >
+                                    {props.gunung.map((item) => {
+                                        return (
+                                            <SwiperSlide
+                                                key={item.uuid}
+                                                className="splide__slide max-w-[384px_!important]"
+                                            >
+                                                <CardHome
+                                                    destinasi={item}
+                                                    id={item.uuid}
+                                                    kategori={item.kategori}
+                                                    nama={item.nama}
+                                                    rating={item.rating}
+                                                />
+                                            </SwiperSlide>
+                                        );
+                                    })}
+                                </Swiper>
                             </div>
                         </div>
                     </div>
@@ -414,7 +453,7 @@ export default function Home(props) {
                     <div className="bg-[#3258E8]">
                         <div className="mx-auto container pt-[48px] pb-[48px]  xl:pl-[100px] xl:pr-[100px] flex flex-col">
                             <div className="flex flex-col gap-[32px] ">
-                                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 max-md:pr-[20px] max-md:pl-[20px] max-lg:pl-[50px]">
+                                <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6 max-md:pr-[20px] max-md:pl-[20px] ">
                                     <div>
                                         <Heading>
                                             <h1 className="leading-[140%] font-semibold text-[18px] text-[#FFBE58]">
@@ -437,9 +476,46 @@ export default function Home(props) {
                                         />
                                     </Link>
                                 </div>
-                                <div className="mySlider overflow-x-hidden">
+                                {/* <div className="mySlider overflow-x-hidden">
                                     <SliderAirTerjun data={props.air_terjun} />
-                                </div>
+                                </div> */}
+                                <Swiper
+                                    slidesPerView={3}
+                                    spaceBetween={32}
+                                    breakpoints={{
+                                        0: {
+                                            slidesPerView: 1,
+                                        },
+                                        768: {
+                                            slidesPerView: 2,
+                                        },
+                                        1024: {
+                                            slidesPerView: 3,
+                                        },
+                                    }}
+                                    pagination={{
+                                        dynamicBullets: true,
+                                    }}
+                                    modules={[FreeMode, Pagination]}
+                                    className="mySwiper swiper2 max-md:"
+                                >
+                                    {props.air_terjun.map((item) => {
+                                        return (
+                                            <SwiperSlide
+                                                key={item.uuid}
+                                                className="splide__slide max-w-[384px_!important]"
+                                            >
+                                                <CardHome
+                                                    destinasi={item}
+                                                    id={item.uuid}
+                                                    kategori={item.kategori}
+                                                    nama={item.nama}
+                                                    rating={item.rating}
+                                                />
+                                            </SwiperSlide>
+                                        );
+                                    })}
+                                </Swiper>
                             </div>
                         </div>
                     </div>

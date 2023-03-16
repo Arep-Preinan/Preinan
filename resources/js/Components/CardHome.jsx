@@ -67,14 +67,14 @@ const KategoriRating = ({ kategori, rating }) => {
                     {kategori}
                 </p>
             </div>
-            <div className="rating flex items-center gap-2">
-                <p className="text-base text-gray-600">{rating}</p>
+            <div className="rating flex items-center gap-1">
                 <input
                     type="radio"
                     name="rating-1"
                     className="mask mask-star bg-orange-400"
                     disabled
                 />
+                <p className="text-base text-gray-600 mt-1">{rating}</p>
             </div>
         </div>
     );
@@ -85,10 +85,7 @@ const NamaLokasi = ({ nama, lokasi }) => {
         <div>
             <h1 className="cardhome-nama">{nama}</h1>
             <div className="flex gap-2">
-                <img
-                    src="/images/icons/iconlokasi.svg"
-                    alt=""
-                />
+                <img src="/images/icons/iconlokasi.svg" alt="" />
                 <p className="cardhome-lokasi">{lokasi}</p>
             </div>
         </div>

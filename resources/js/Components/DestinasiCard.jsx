@@ -5,7 +5,6 @@ import ModalWarning from "./ModalWarning";
 
 const DestinasiCard = (props) => {
     const { destinasi, auth } = props;
-    console.log(props);
     const { data, get } = useForm({
         id_destinasi: destinasi.uuid,
     });
@@ -106,13 +105,13 @@ const KategoriRating = ({ kategori, rating }) => {
             </div>
             <div className="flex">
                 <div className="rating flex items-center gap-2">
-                    <p className="text-base text-gray-600">{rating}</p>
                     <input
                         type="radio"
                         name="rating-1"
                         className="mask mask-star bg-orange-400"
                         disabled
                     />
+                    <p className="text-base text-gray-600">{rating}</p>
                 </div>
             </div>
         </div>
@@ -124,10 +123,7 @@ const NamaLokasi = ({ nama, lokasi }) => {
         <div>
             <h1 className="cardhome-nama">{nama}</h1>
             <div className="flex gap-2">
-                <img
-                    src="/images/icons/iconlokasi.svg"
-                    alt=""
-                />
+                <img src="/images/icons/iconlokasi.svg" alt="" />
                 <p className="cardhome-lokasi">{lokasi}</p>
             </div>
         </div>

@@ -14,7 +14,7 @@ const Destinasi = (props) => {
     let [pageAirTerjun, setPageAirTerjun] = useState(0);
     let [pageDanau, setPageDanau] = useState(0);
 
-    let [urutkan, setUrutkan] = useState("Urutkan");
+    let [urutkan, setUrutkan] = useState("Berdasarkan");
 
     const [all, setAll] = useState(props.all);
     const [gunung, setGunung] = useState(props.gunung);
@@ -121,7 +121,7 @@ const Destinasi = (props) => {
             <Navbar user={props.auth.user} active={"destinasi"}>
                 <div
                     id="destinasi"
-                    className="mx-auto container max-md:pr-[20px] max-md:pl-[20px]  xl:pl-[100px] xl:pr-[100px] flex flex-col gap-[50px]"
+                    className="mx-auto container max-md:pr-[20px] max-md:pl-[20px]  xl:pl-[100px] xl:pr-[100px] flex flex-col gap-[32px] lg:gap-[50px]"
                 >
                     {/* Layout gambar diatas */}
 
@@ -236,7 +236,7 @@ const Destinasi = (props) => {
                     />
                 </div> */}
                     <div className="flex flex-col">
-                        <div className="flex flex-col md:flex-row">
+                        <div className="flex flex-col md:flex-row gap-5">
                             <input
                                 onChange={(e) => {
                                     searchDestinasi(e.target.value);

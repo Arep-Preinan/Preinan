@@ -40,158 +40,175 @@ function Navbar({ children, ...props }) {
                     type="checkbox"
                     className="drawer-toggle"
                 />
-                <div className="drawer-content drawer-end flex flex-col">
+                <div className="drawer-content drawer-end flex flex-col ">
                     {/* <!-- Navbar --> */}
-                    <div className="w-full xl:pl-[100px] xl:pr-[100px] mx-auto container max-md:pr-[20px] max-md:pl-[20px] pt-4 pb-4 md:pt-8 md:pb-8">
-                        <nav className="relative flex-wrap items-center justify-between   flex flex-col ">
-                            <div className="container flex items-center justify-between">
-                                <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
-                                    <Link href="/">
-                                        <img
-                                            src="../images/preinannotblack.svg"
-                                            alt=""
-                                        />
-                                    </Link>
-                                    <button
-                                        className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
-                                        type="button"
-                                    ></button>
-                                </div>
-                                <div
-                                    className={
-                                        "lg:flex justify-center items-center" +
-                                        (navbarOpen ? " flex" : " hidden")
-                                    }
-                                    id="example-navbar-danger"
-                                >
-                                    <ul className="lg:flex flex-col hidden lg:flex-row gap-[30px]  items-center justify-center">
-                                        <li
-                                            className={`nav-item ${
-                                                props.active == "home"
-                                                    ? ""
-                                                    : "hover:bg-gray-200 rounded-xl p-3 transition duration-200"
-                                            }`}
-                                        >
-                                            <Link
-                                                href={"/"}
-                                                className={`flex items-center text-[16px] leading-[24px]  ${
+                    <div className="bg-white">
+                        <div className="w-full  md:pl-[32px] md:pr-[32px] xl:pl-[100px] xl:pr-[100px] mx-auto container max-md:pr-[20px] max-md:pl-[20px] pt-4 pb-4 md:pt-8 md:pb-8">
+                            <nav className="relative flex-wrap items-center justify-between  flex flex-col ">
+                                <div className="container flex items-center justify-between">
+                                    <div className="w-full relative flex justify-between lg:w-auto lg:static lg:block lg:justify-start">
+                                        <Link href="/">
+                                            <img
+                                                src="../images/preinannotblack.svg"
+                                                alt=""
+                                            />
+                                        </Link>
+                                        <button
+                                            className="text-white cursor-pointer text-xl leading-none px-3 py-1 border border-solid border-transparent rounded bg-transparent block lg:hidden outline-none focus:outline-none"
+                                            type="button"
+                                        ></button>
+                                    </div>
+                                    <div
+                                        className={
+                                            "lg:flex justify-center items-center" +
+                                            (navbarOpen ? " flex" : " hidden")
+                                        }
+                                        id="example-navbar-danger"
+                                    >
+                                        <ul className="lg:flex flex-col hidden lg:flex-row gap-[30px]  items-center justify-center">
+                                            <li
+                                                className={`nav-item ${
                                                     props.active == "home"
-                                                        ? "text-[#466BF3] font-medium"
-                                                        : "text-[#9C9C9C] font-normal  "
-                                                } `}
+                                                        ? ""
+                                                        : "hover:bg-gray-200 rounded-xl p-3 transition duration-200"
+                                                }`}
                                             >
-                                                Halaman Utama
-                                            </Link>
-                                        </li>
-                                        <li
-                                            className={`nav-item ${
-                                                props.active == "destinasi"
-                                                    ? ""
-                                                    : "hover:bg-gray-200 rounded-xl p-3 transition duration-200"
-                                            }`}
-                                        >
-                                            <Link
-                                                className={`flex items-center text-[16px] leading-[24px]  ${
+                                                <Link
+                                                    href={"/"}
+                                                    className={`flex items-center text-[16px] leading-[24px]  ${
+                                                        props.active == "home"
+                                                            ? "text-[#466BF3] font-medium"
+                                                            : "text-[#9C9C9C] font-normal  "
+                                                    } `}
+                                                >
+                                                    Halaman Utama
+                                                </Link>
+                                            </li>
+                                            <li
+                                                className={`nav-item ${
                                                     props.active == "destinasi"
-                                                        ? "text-[#466BF3] font-medium"
-                                                        : "text-[#9C9C9C] font-normal  "
-                                                } `}
-                                                href="/destinasi"
+                                                        ? ""
+                                                        : "hover:bg-gray-200 rounded-xl p-3 transition duration-200"
+                                                }`}
                                             >
-                                                Destinasi
-                                            </Link>
-                                        </li>
-                                        <li
-                                            className={`nav-item ${
-                                                props.active == ""
-                                                    ? ""
-                                                    : "hover:bg-gray-200 rounded-xl p-3 transition duration-200"
-                                            }`}
-                                        >
-                                            <Link
-                                                className={`flex items-center text-[16px] leading-[24px]  ${
-                                                    props.active ==
-                                                    "tentang-kami"
-                                                        ? "text-[#466BF3] font-medium"
-                                                        : "text-[#9C9C9C] font-normal  "
-                                                } `}
-                                                href="/hubungi-kami"
+                                                <Link
+                                                    className={`flex items-center text-[16px] leading-[24px]  ${
+                                                        props.active ==
+                                                        "destinasi"
+                                                            ? "text-[#466BF3] font-medium"
+                                                            : "text-[#9C9C9C] font-normal  "
+                                                    } `}
+                                                    href="/destinasi"
+                                                >
+                                                    Destinasi
+                                                </Link>
+                                            </li>
+                                            <li
+                                                className={`nav-item ${
+                                                    props.active == ""
+                                                        ? ""
+                                                        : "hover:bg-gray-200 rounded-xl p-3 transition duration-200"
+                                                }`}
                                             >
-                                                Tentang Kami
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                </div>
-                                {props.user ? (
-                                    <>
-                                        <ul className="menu menu-horizontal px-1 hidden lg:flex">
-                                            <li tabIndex={0}>
-                                                <a>
-                                                    <h1 className="text-[16px] leading-[24px] text-gray-500">
-                                                        Hai, {props.user.name}
-                                                    </h1>
-                                                    <svg
-                                                        className="fill-current"
-                                                        xmlns="http://www.w3.org/2000/svg"
-                                                        width="20"
-                                                        height="20"
-                                                        viewBox="0 0 24 24"
-                                                    >
-                                                        <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
-                                                    </svg>
-                                                </a>
-                                                <ul className="p-2 bg-base-100">
-                                                    <li>
-                                                        <Link
-                                                            href={"/tiket-ku"}
-                                                        >
-                                                            Tiket ku
-                                                        </Link>
-                                                    </li>
-                                                    <li>
-                                                        <Link
-                                                            method="post"
-                                                            href="/logout"
-                                                            as="button"
-                                                        >
-                                                            Logout
-                                                        </Link>
-                                                    </li>
-                                                </ul>
+                                                <Link
+                                                    className={`flex items-center text-[16px] leading-[24px]  ${
+                                                        props.active ==
+                                                        "tentang-kami"
+                                                            ? "text-[#466BF3] font-medium"
+                                                            : "text-[#9C9C9C] font-normal  "
+                                                    } `}
+                                                    href="/hubungi-kami"
+                                                >
+                                                    Tentang Kami
+                                                </Link>
                                             </li>
                                         </ul>
-                                    </>
-                                ) : (
-                                    <Link
-                                        href={"/auth"}
-                                        className="btn w-[143px] h-[48px] hidden md:flex"
-                                        id="button-navbar"
-                                    >
-                                        Login
-                                    </Link>
-                                )}
-                                <div className="flex-none lg:hidden">
-                                    <label
-                                        htmlFor="my-drawer-3"
-                                        className="btn btn-square bg-[#3258E8] border-none"
-                                    >
-                                        <svg
-                                            xmlns="http://www.w3.org/2000/svg"
-                                            fill="none"
-                                            viewBox="0 0 24 24"
-                                            className="inline-block w-6 h-6 stroke-current"
+                                    </div>
+                                    {props.user ? (
+                                        <>
+                                            <ul className="menu menu-horizontal px-1 hidden lg:flex">
+                                                <li tabIndex={0}>
+                                                    <a>
+                                                        <h1 className="text-[16px] leading-[24px] text-gray-500">
+                                                            Hai,{" "}
+                                                            {props.user.name}
+                                                        </h1>
+                                                        <svg
+                                                            className="fill-current"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            width="20"
+                                                            height="20"
+                                                            viewBox="0 0 24 24"
+                                                        >
+                                                            <path d="M7.41,8.58L12,13.17L16.59,8.58L18,10L12,16L6,10L7.41,8.58Z" />
+                                                        </svg>
+                                                    </a>
+                                                    <ul className="p-2 bg-base-100">
+                                                        <li
+                                                            className={`nav-item ${
+                                                                props.active ==
+                                                                ""
+                                                                    ? ""
+                                                                    : "hover:bg-gray-200 rounded-xl p-3 transition duration-200"
+                                                            }`}
+                                                        >
+                                                            <Link
+                                                                className={`flex items-center text-[16px] leading-[24px]  ${
+                                                                    props.active ==
+                                                                    "tentang-kami"
+                                                                        ? "text-[#466BF3] font-medium"
+                                                                        : "text-[#9C9C9C] font-normal  "
+                                                                } `}
+                                                                href="/hubungi-kami"
+                                                            >
+                                                                Tentang Kami
+                                                            </Link>
+                                                        </li>
+                                                        <li>
+                                                            <Link
+                                                                method="post"
+                                                                href="/logout"
+                                                                as="button"
+                                                            >
+                                                                Logout
+                                                            </Link>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </>
+                                    ) : (
+                                        <Link
+                                            href={"/auth"}
+                                            className="btn w-[143px] h-[48px] hidden md:flex"
+                                            id="button-navbar"
                                         >
-                                            <path
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                                strokeWidth="2"
-                                                d="M4 6h16M4 12h16M4 18h16"
-                                            ></path>
-                                        </svg>
-                                    </label>
+                                            Login
+                                        </Link>
+                                    )}
+                                    <div className="flex-none lg:hidden">
+                                        <label
+                                            htmlFor="my-drawer-3"
+                                            className="btn btn-square bg-[#3258E8] border-none"
+                                        >
+                                            <svg
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                fill="none"
+                                                viewBox="0 0 24 24"
+                                                className="inline-block w-6 h-6 stroke-current"
+                                            >
+                                                <path
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                    strokeWidth="2"
+                                                    d="M4 6h16M4 12h16M4 18h16"
+                                                ></path>
+                                            </svg>
+                                        </label>
+                                    </div>
                                 </div>
-                            </div>
-                        </nav>
+                            </nav>
+                        </div>
                     </div>
                     {/* <!-- Page content here --> */}
                     {children}
@@ -201,7 +218,7 @@ function Navbar({ children, ...props }) {
                         htmlFor="my-drawer-3"
                         className="drawer-overlay"
                     ></label>
-                    <ul className="menu p-4 w-80 bg-base-100 flex flex-col gap-3 ">
+                    <ul className="menu p-4 w-80 bg-base-100 flex flex-col gap-3 pt-20">
                         {/* <button
                             className="flex justify-end"
                             htmlFor="my-drawer-3"
@@ -238,7 +255,7 @@ function Navbar({ children, ...props }) {
                                         alt=""
                                     />
                                 )}
-                                <p className="text-[14px] leading-[24px]">
+                                <p className="text-[16px] leading-[24px]">
                                     Halaman Utama
                                 </p>
                             </Link>
@@ -267,7 +284,7 @@ function Navbar({ children, ...props }) {
                                         alt=""
                                     />
                                 )}
-                                <p className="text-[14px] leading-[24px]">
+                                <p className="text-[16px] leading-[24px]">
                                     Destinasi
                                 </p>
                             </Link>
@@ -292,7 +309,7 @@ function Navbar({ children, ...props }) {
                                         alt=""
                                     />
                                 )}
-                                <p className=" text-[14px] leading-[24px]">
+                                <p className=" text-[16px] leading-[24px]">
                                     Tentang Kami
                                 </p>
                             </Link>
@@ -300,15 +317,25 @@ function Navbar({ children, ...props }) {
                         <div className="h-[1px] w-full bg-[#EAEAEA]"></div>
                         {props.user ? (
                             <>
-                                <a>
-                                    <h1 className="text-[16px] leading-[24px] text-gray-500">
-                                        Selamat Datang, {props.user.name}
-                                    </h1>
-                                </a>
+                                <li>
+                                    <a>
+                                        <img
+                                            src="../images/icons/userIcons.svg"
+                                            alt=""
+                                        />
+                                        <h1 className="text-[16px] leading-[24px] text-gray-500">
+                                            Selamat Datang, {props.user.name}
+                                        </h1>
+                                    </a>
+                                </li>
                                 <li>
                                     <Link
                                         href={"/tiket-ku"}
-                                        className={"text-[#9c9c9c]"}
+                                        className={`w-full flex gap-3  ${
+                                            props.active == "tiketku"
+                                                ? "text-white bg-[#3258E8]  font-medium"
+                                                : "text-[#9C9C9C] font-normal  "
+                                        } `}
                                     >
                                         {props.active == "tiketku" ? (
                                             <img
