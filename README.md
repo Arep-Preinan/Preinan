@@ -10,6 +10,9 @@ Preinan also offers three attractive categories of tourism: lakes, mountains, an
 
 With its comprehensive and user-friendly features, Preinan is the best solution for those who want to plan an unforgettable vacation in Wonosobo. Visit the Preinan website and discover your dream holiday destination!
 
+## Figma Link
+https://www.figma.com/file/tl3Gns5hOvvhknBkykTfbJ/Goout%2B-%2BTravel%2BLanding%2BPage?type=design&node-id=506%3A338&mode=design&t=DNWf3J0NDQn7DyS5-1
+
 ## "Looking for Vacation Destinations? Choose Preinan to Make Your Heart Happy! Stress-Free Online Ticketing to Wonosobo!"
 
 # Essential Pages
