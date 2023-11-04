@@ -132,7 +132,10 @@ function Navbar({ children, ...props }) {
                                                         <a>
                                                             <h1 className="text-[16px] leading-[24px] text-gray-500">
                                                                 Hai{" "}
-                                                                {props.user.name}
+                                                                {
+                                                                    props.user
+                                                                        .name
+                                                                }
                                                                 👋
                                                             </h1>
                                                             <svg
@@ -237,13 +240,11 @@ function Navbar({ children, ...props }) {
                         {/* <!-- Sidebar content here --> */}
                         <li className="disabled">
                             <a>
-                                {
-                                    props.user ? (
-                                        <h1 className="text-[16px] leading-[24px] text-[#252525]">
-                                            Hai, {props.user.name} 👋
-                                        </h1>
-                                    ) : null
-                                }
+                                {props.user ? (
+                                    <h1 className="text-[16px] leading-[24px] text-[#252525]">
+                                        Hai, {props.user.name} 👋
+                                    </h1>
+                                ) : null}
                             </a>
                         </li>
                         <li
